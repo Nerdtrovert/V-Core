@@ -47,6 +47,7 @@ Early computational benchmarking, timing repeatability, timing source cross-vali
 V-Core/
 │
 ├── README.md
+├── LICENSE
 ├── LICENSE_RECOMMENDATION.md
 ├── .gitignore
 │
@@ -204,7 +205,8 @@ The firmware runs experiments sequentially and outputs results via serial (11520
 
 | File | Description |
 |------|-------------|
-| `LICENSE_RECOMMENDATION.md` | License analysis (BSD-3-Clause recommended) |
+| [LICENSE](LICENSE) | Complete Apache License, Version 2.0 text |
+| [LICENSE_RECOMMENDATION.md](LICENSE_RECOMMENDATION.md) | Implemented license decision and scope notes |
 | `research/reports/V-Core_Experiment_007_Report.docx` | Phase 1 formal report |
 | `research/reports/V-Core_Experiments_006_008_009_Consolidated_Report.docx` | Phase 2 consolidated report |
 | `research/methodology/experiment-001-baseline.md` | Exp 001 baseline methodology |
@@ -235,9 +237,21 @@ This work provides the following original contributions to the study of dual-cor
 
 ## License
 
-**Pending decision** — Recommendation: **BSD-3-Clause** (see `LICENSE_RECOMMENDATION.md`)
+V-Core original work is licensed under the **Apache License, Version 2.0 (Apache-2.0)**. Copyright 2026 Prajwal Navada G P.
 
-No `LICENSE` file has been created yet. The project maintainer will select a license before publication.
+SPDX-License-Identifier: Apache-2.0
+
+You may use, modify and distribute the original work subject to the terms of the [root LICENSE file](LICENSE), which contains the complete license text.
+
+### Third-party materials and exclusions
+
+This license and copyright statement apply only to V-Core original work. Third-party materials retain their original copyright, attribution and license terms; they are not relicensed under Prajwal Navada G P's copyright. In particular:
+
+- The college project rubric, recorded in `RESTRUCTURE_REPORT.md` as `archive/Circular3- CSE- Miniproject- BCS568-BIS568-BAD568-projectrubrics2112026 (1).pdf`, is excluded. That PDF is absent from this checkout, so its attribution and terms could not be inspected; any copy retains its original attribution and terms.
+- The archived [college presentation template](archive/presentations/5th_Semester_Mini_Project_Presentation_Template.pptx) is excluded. Inspection of its text and metadata found no explicit license notice. Its existing credits and any applicable original terms remain intact; this repository's Apache-2.0 license grants no rights to third-party template content, branding or other third-party elements reused in presentations or reports.
+- ESP-IDF and its dependencies, including FreeRTOS, retain their own licenses and notices. The repository-level license does not replace those terms.
+
+See [the license decision record](LICENSE_RECOMMENDATION.md) for implementation notes.
 
 ---
 
