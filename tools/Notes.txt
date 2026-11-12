@@ -1,0 +1,39 @@
+=================================================================
+V-CORE: CYCLE COUNT -> EXECUTION TIME
+=================================================================
+
+64-element dot product
+Median cycles: 1,974
+--------------------------------------------------
+160 MHz:
+  Execution time: 12.3375 us
+  Execution time: 12337.50 ns
+240 MHz:
+  Execution time: 8.2250 us
+  Execution time: 8225.00 ns
+
+1024-element dot product
+Median cycles: 31,716
+--------------------------------------------------
+160 MHz:
+  Execution time: 198.2250 us
+  Execution time: 198225.00 ns
+240 MHz:
+  Execution time: 132.1500 us
+  Execution time: 132150.00 ns
+
+===============================================================
+Experiment 003: CPU Frequency Scaling and Wall-Clock Cross-Check
+===============================================================
+
+Dot-product benchmarks using 64-element and 1024-element vectors were executed at 160 MHz and 240 MHz on the ESP32. 
+Both workloads produced the expected results at both frequencies.
+
+Median cycle counts remained approximately constant across the two configurations, 
+while measured wall-clock execution time decreased from 13 µs to 9 µs for the 64-element workload
+and from 199 µs to 133 µs for the 1024-element workload.
+
+The large-workload timing reduction of approximately 33.2% closely matched the
+theoretical 33.3% reduction expected from increasing CPU frequency by a factor of 1.5. 
+This provides a useful cross-check between cycle-count and wall-clock measurements. 
+However, the microsecond-resolution timer was insufficient to characterize fine-grained timing variability.

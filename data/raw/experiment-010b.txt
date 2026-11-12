@@ -1,0 +1,63 @@
+
+Exp010B booting...
+CPU frequency configured by ESP-IDF.
+I (256) main_task: Returned from app_main()
+Core 1 worker ready. Starting Exp010B.
+
+========================================
+Exp010B: Dual-core partitioned dot product
+Core 0: coordinator + first half
+Core 1: worker + second half
+Warm-up: 100 | Measured: 1000
+========================================
+
+[Exp010B] N=16
+min=4338, mean=6367.573, median=7593, SD=1307.649, P95=7633, P99=7633, max=9694
+checksum=911
+checksum_validation=PASS (matches Exp010A)
+
+[Exp010B] N=64
+min=4873, mean=8014.303, median=8021, SD=556.761, P95=8221, P99=8221, max=9829
+checksum=3928
+checksum_validation=PASS (matches Exp010A)
+
+[Exp010B] N=256
+min=8849, mean=11348.321, median=11527, SD=748.241, P95=11639, P99=11639, max=13241
+checksum=15904
+checksum_validation=PASS (matches Exp010A)
+
+[Exp010B] N=1024
+min=23441, mean=26050.770, median=26119, SD=600.974, P95=26231, P99=26231, max=28223
+checksum=64149
+checksum_validation=PASS (matches Exp010A)
+
+[Exp010B] N=4096
+min=81807, mean=84349.991, median=84486, SD=653.803, P95=84620, P99=84620, max=86223
+checksum=257987
+checksum_validation=PASS (matches Exp010A)
+
+Exp010B complete.
+Exp010B finished. Coordinator task deleting itself.
+
+
+1. Exp010A vs Exp010B
+Using the median CCOUNT values:
+Vector size	A: Single core	B: Dual core	Reduction
+16	517	7,593	-1,368%
+64	1,957	8,021	-310%
+256	7,717	11,527	-49.4%
+1,024	30,757	26,119	15.1%
+4,096	122,917	84,486	31.3%
+
+Negative reduction means the dual-core version took longer. Values are cycles.
+
+Size	Single	Dual
+16	517	7593
+64	1957	8021
+256	7717	11527
+1024	30757	26119
+4096	122917	84486
+
+\[
+\text{Speedup}=\frac{T_A}{T_B}
+\]

@@ -1,0 +1,49 @@
+# ESP-IDF build artifacts
+firmware/active/build/
+vcore/
+vcore/build/
+**/build/
+*.bin
+*.elf
+*.map
+*.log
+*.tmp
+# sdkconfig tracked for reproducibility; sdkconfig.old ignored as backup
+sdkconfig.old
+
+# IDE/OS
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Build artifacts
+*.o
+*.a
+*.so
+
+# CMake
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles/
+compile_commands.json
+
+# Ninja
+build.ninja
+*.ninja_deps
+*.ninja_log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+
+# Optional: Large presentation files (consider Git LFS instead)
+# *.pptx
+# *.pdf
+
+# Archive directory is tracked (contains superseded source versions and research evidence)
+# archive/
+

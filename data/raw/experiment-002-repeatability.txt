@@ -1,0 +1,5837 @@
+
+========================================
+EXPERIMENT 002 - RUN 1 OF 5
+Date: Wed Oct 14 10:02:42 IST 2026
+========================================
+[1/4] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/partition_table/partition-table.bin /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.bin
+vcore.bin binary size 0x23510 bytes. Smallest app partition is 0x100000 bytes. 0xdcaf0 bytes (86%) free.
+[2/4] Performing build step for 'bootloader'
+[1/1] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.bin
+Bootloader binary size 0x6640 bytes. 0x9c0 bytes (9%) free.
+[3/4] No install step for 'bootloader'
+[4/4] Completed 'bootloader'
+Executing action: all (aliases: build)
+Running ninja in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build
+Executing "ninja all"...
+Executing action: flash
+Serial port /dev/cu.usbserial-0001:
+Connecting.....
+Detecting chip type... ESP32
+Running ninja in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build
+Executing "ninja flash"...
+[1/5] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/partition_table/partition-table.bin /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.bin
+vcore.bin binary size 0x23510 bytes. Smallest app partition is 0x100000 bytes. 0xdcaf0 bytes (86%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.bin
+Bootloader binary size 0x6640 bytes. 0x9c0 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] Running utility command for flash
+esptool --chip esp32 -p /dev/cu.usbserial-0001 -b 460800 --before=default-reset --after=hard-reset write-flash --flash-mode dio --flash-freq 40m --flash-size 4MB 0x1000 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 vcore.bin --diff-with bootloader/bootloader_flashed.bin partition_table/partition-table_flashed.bin vcore_flashed.bin
+esptool v5.5.0
+Serial port /dev/cu.usbserial-0001:
+Connecting....
+Connected to ESP32 on /dev/cu.usbserial-0001:
+Chip type:          ESP32-D0WD-V3 (revision v3.1)
+Features:           Wi-Fi, BT, Dual Core + LP Core, 240MHz, Vref calibration in eFuse, Coding Scheme None
+Crystal frequency:  40MHz
+MAC:                30:76:f5:92:11:2c
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+
+Writing 'bootloader/bootloader.bin' at 0x00001000...
+SHA digest in image updated.
+SHA digest in image updated.
+No changed sectors found, verifying if data is in flash...
+'bootloader/bootloader.bin' at 0x00001000 verified.
+
+Writing 'partition_table/partition-table.bin' at 0x00008000...
+No changed sectors found, verifying if data is in flash...
+'partition_table/partition-table.bin' at 0x00008000 verified.
+
+Writing 'vcore.bin' at 0x00010000...
+No changed sectors found, verifying if data is in flash...
+'vcore.bin' at 0x00010000 verified.
+
+Hard resetting via RTS pin...
+--- esp-idf-monitor 1.10.0 on /dev/cu.usbserial-0001 115200
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+Executing action: monitor
+Running idf_monitor in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore
+Executing "/Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.elf /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.elf -m '/Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python' '/Users/prajwalnavadagp/.espressif/v6.1/esp-idf/tools/idf.py'"...
+E�:   1974 cycles
+[0;32mI (296) V-CORE: Mean:  ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15824
+load:0x40080400,len:3988
+--- 0x40080400: _invalid_pc_placeholder at /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/xtensa/xtensa_vectors.S:2259
+entry 0x40080644
+--- 0x40080644: call_start_cpu0 at /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c:27
+[0;32mI (27) boot: ESP-IDF v6.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Oct 13 2026 23:28:51[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=08c9ch ( 35996) map[0m
+[0;32mI (99) esp_image: segment 1: paddr=00018cc4 vaddr=3ffb0000 size=02b0ch ( 11020) load[0m
+[0;32mI (103) esp_image: segment 2: paddr=0001b7d8 vaddr=40080000 size=04840h ( 18496) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0d0d4h ( 53460) map[0m
+[0;32mI (131) esp_image: segment 4: paddr=0002d0fc vaddr=40084840 size=063c0h ( 25536) load[0m
+[0;32mI (141) esp_image: segment 5: paddr=000334c4 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (147) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (147) boot: Disabling RNG early entropy source...[0m
+[0;32mI (159) cpu_start: Multicore app[0m
+[0;32mI (168) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (168) cpu_start: Pro cpu start user code[0m
+[0;32mI (168) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (174) app_init: Project name:     vcore[0m
+[0;32mI (177) app_init: App version:      1[0m
+[0;32mI (181) app_init: Compile time:     Oct 13 2026 23:28:43[0m
+[0;32mI (186) app_init: ELF file SHA256:  20fe874ef...[0m
+[0;32mI (190) app_init: ESP-IDF:          v6.1[0m
+[0;32mI (194) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (198) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (202) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (206) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (212) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (217) heap_init: At 3FFB7478 len 00028B88 (162 KiB): DRAM[0m
+[0;32mI (222) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (227) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (233) heap_init: At 4008AC00 len 00015400 (85 KiB): IRAM[0m
+[0;32mI (240) spi_flash: detected chip: generic[0m
+[0;32mI (242) spi_flash: flash io: dio[0m
+[0;32mI (246) main_task: Started on CPU0[0m
+[0;32mI (246) main_task: Calling app_main()[0m
+[0;32mI (246) V-CORE: ========================================[0m
+[0;32mI (256) V-CORE:  V-CORE: DOT-PRODUCT BENCHMARK[0m
+[0;32mI (256) V-CORE:  EXPERIMENT 002: TIMING VARIABILITY[0m
+[0;32mI (256) V-CORE: ========================================[0m
+[0;32mI (276) V-CORE: ========== SMALL WORKLOAD ==========[0m
+[0;32mI (276) V-CORE: Vector size: 64[0m
+[0;32mI (276) V-CORE: Trials: 1000[0m
+[0;32mI (276) V-CORE: Result:   25984[0m
+[0;32mI (286) V-CORE: Expected: 25984[0m
+[0;32mI (286) V-CORE: Correct:  YES[0m
+[0;32mI (286) V-CORE: Minimum:  1974 cycles[0m
+[0;32mI (296) V-CORE: Median:   1974 cycles[0m
+[0;32mI (296) V-CORE: Mean:     1975.32 cycles[0m
+[0;32mI (296) V-CORE: Std dev:  41.66 cycles[0m
+[0;32mI (306) V-CORE: P90:      1974 cycles[0m
+[0;32mI (306) V-CORE: P95:      1974 cycles[0m
+[0;32mI (306) V-CORE: P99:      1974 cycles[0m
+[0;32mI (316) V-CORE: Maximum:  3292 cycles[0m
+[0;32mI (516) V-CORE: ========== LARGE WORKLOAD ==========[0m
+[0;32mI (516) V-CORE: Vector size: 1024[0m
+[0;32mI (516) V-CORE: Trials: 1000[0m
+[0;32mI (516) V-CORE: Result:   15634[0m
+[0;32mI (516) V-CORE: Expected: 15634[0m
+[0;32mI (526) V-CORE: Correct:  YES[0m
+[0;32mI (526) V-CORE: Minimum:  31716 cycles[0m
+[0;32mI (526) V-CORE: Median:   31716 cycles[0m
+[0;32mI (536) V-CORE: Mean:     31742.12 cycles[0m
+[0;32mI (536) V-CORE: Std dev:  181.80 cycles[0m
+[0;32mI (536) V-CORE: P90:      31716 cycles[0m
+[0;32mI (546) V-CORE: P95:      31716 cycles[0m
+[0;32mI (546) V-CORE: P99:      33014 cycles[0m
+[0;32mI (546) V-CORE: Maximum:  33032 cycles[0m
+
+RAW_SAMPLES_BEGIN
+rank,small_cycles,large_cycles
+1,1974,31716
+2,1974,31716
+3,1974,31716
+4,1974,31716
+5,1974,31716
+6,1974,31716
+7,1974,31716
+8,1974,31716
+9,1974,31716
+10,1974,31716
+11,1974,31716
+12,1974,31716
+13,1974,31716
+14,1974,31716
+15,1974,31716
+16,1974,31716
+17,1974,31716
+18,1974,31716
+19,1974,31716
+20,1974,31716
+21,1974,31716
+22,1974,31716
+23,1974,31716
+24,1974,31716
+25,1974,31716
+26,1974,31716
+27,1974,31716
+28,1974,31716
+29,1974,31716
+30,1974,31716
+31,1974,31716
+32,1974,31716
+33,1974,31716
+34,1974,31716
+35,1974,31716
+36,1974,31716
+37,1974,31716
+38,1974,31716
+39,1974,31716
+40,1974,31716
+41,1974,31716
+42,1974,31716
+43,1974,31716
+44,1974,31716
+45,1974,31716
+46,1974,31716
+47,1974,31716
+48,1974,31716
+49,1974,31716
+50,1974,31716
+51,1974,31716
+52,1974,31716
+53,1974,31716
+54,1974,31716
+55,1974,31716
+56,1974,31716
+57,1974,31716
+58,1974,31716
+59,1974,31716
+60,1974,31716
+61,1974,31716
+62,1974,31716
+63,1974,31716
+64,1974,31716
+65,1974,31716
+66,1974,31716
+67,1974,31716
+68,1974,31716
+69,1974,31716
+70,1974,31716
+71,1974,31716
+72,1974,31716
+73,1974,31716
+74,1974,31716
+75,1974,31716
+76,1974,31716
+77,1974,31716
+78,1974,31716
+79,1974,31716
+80,1974,31716
+81,1974,31716
+82,1974,31716
+83,1974,31716
+84,1974,31716
+85,1974,31716
+86,1974,31716
+87,1974,31716
+88,1974,31716
+89,1974,31716
+90,1974,31716
+91,1974,31716
+92,1974,31716
+93,1974,31716
+94,1974,31716
+95,1974,31716
+96,1974,31716
+97,1974,31716
+98,1974,31716
+99,1974,31716
+100,1974,31716
+101,1974,31716
+102,1974,31716
+103,1974,31716
+104,1974,31716
+105,1974,31716
+106,1974,31716
+107,1974,31716
+108,1974,31716
+109,1974,31716
+110,1974,31716
+111,1974,31716
+112,1974,31716
+113,1974,31716
+114,1974,31716
+115,1974,31716
+116,1974,31716
+117,1974,31716
+118,1974,31716
+119,1974,31716
+120,1974,31716
+121,1974,31716
+122,1974,31716
+123,1974,31716
+124,1974,31716
+125,1974,31716
+126,1974,31716
+127,1974,31716
+128,1974,31716
+129,1974,31716
+130,1974,31716
+131,1974,31716
+132,1974,31716
+133,1974,31716
+134,1974,31716
+135,1974,31716
+136,1974,31716
+137,1974,31716
+138,1974,31716
+139,1974,31716
+140,1974,31716
+141,1974,31716
+142,1974,31716
+143,1974,31716
+144,1974,31716
+145,1974,31716
+146,1974,31716
+147,1974,31716
+148,1974,31716
+149,1974,31716
+150,1974,31716
+151,1974,31716
+152,1974,31716
+153,1974,31716
+154,1974,31716
+155,1974,31716
+156,1974,31716
+157,1974,31716
+158,1974,31716
+159,1974,31716
+160,1974,31716
+161,1974,31716
+162,1974,31716
+163,1974,31716
+164,1974,31716
+165,1974,31716
+166,1974,31716
+167,1974,31716
+168,1974,31716
+169,1974,31716
+170,1974,31716
+171,1974,31716
+172,1974,31716
+173,1974,31716
+174,1974,31716
+175,1974,31716
+176,1974,31716
+177,1974,31716
+178,1974,31716
+179,1974,31716
+180,1974,31716
+181,1974,31716
+182,1974,31716
+183,1974,31716
+184,1974,31716
+185,1974,31716
+186,1974,31716
+187,1974,31716
+188,1974,31716
+189,1974,31716
+190,1974,31716
+191,1974,31716
+192,1974,31716
+193,1974,31716
+194,1974,31716
+195,1974,31716
+196,1974,31716
+197,1974,31716
+198,1974,31716
+199,1974,31716
+200,1974,31716
+201,1974,31716
+202,1974,31716
+203,1974,31716
+204,1974,31716
+205,1974,31716
+206,1974,31716
+207,1974,31716
+208,1974,31716
+209,1974,31716
+210,1974,31716
+211,1974,31716
+212,1974,31716
+213,1974,31716
+214,1974,31716
+215,1974,31716
+216,1974,31716
+217,1974,31716
+218,1974,31716
+219,1974,31716
+220,1974,31716
+221,1974,31716
+222,1974,31716
+223,1974,31716
+224,1974,31716
+225,1974,31716
+226,1974,31716
+227,1974,31716
+228,1974,31716
+229,1974,31716
+230,1974,31716
+231,1974,31716
+232,1974,31716
+233,1974,31716
+234,1974,31716
+235,1974,31716
+236,1974,31716
+237,1974,31716
+238,1974,31716
+239,1974,31716
+240,1974,31716
+241,1974,31716
+242,1974,31716
+243,1974,31716
+244,1974,31716
+245,1974,31716
+246,1974,31716
+247,1974,31716
+248,1974,31716
+249,1974,31716
+250,1974,31716
+251,1974,31716
+252,1974,31716
+253,1974,31716
+254,1974,31716
+255,1974,31716
+256,1974,31716
+257,1974,31716
+258,1974,31716
+259,1974,31716
+260,1974,31716
+261,1974,31716
+262,1974,31716
+263,1974,31716
+264,1974,31716
+265,1974,31716
+266,1974,31716
+267,1974,31716
+268,1974,31716
+269,1974,31716
+270,1974,31716
+271,1974,31716
+272,1974,31716
+273,1974,31716
+274,1974,31716
+275,1974,31716
+276,1974,31716
+277,1974,31716
+278,1974,31716
+279,1974,31716
+280,1974,31716
+281,1974,31716
+282,1974,31716
+283,1974,31716
+284,1974,31716
+285,1974,31716
+286,1974,31716
+287,1974,31716
+288,1974,31716
+289,1974,31716
+290,1974,31716
+291,1974,31716
+292,1974,31716
+293,1974,31716
+294,1974,31716
+295,1974,31716
+296,1974,31716
+297,1974,31716
+298,1974,31716
+299,1974,31716
+300,1974,31716
+301,1974,31716
+302,1974,31716
+303,1974,31716
+304,1974,31716
+305,1974,31716
+306,1974,31716
+307,1974,31716
+308,1974,31716
+309,1974,31716
+310,1974,31716
+311,1974,31716
+312,1974,31716
+313,1974,31716
+314,1974,31716
+315,1974,31716
+316,1974,31716
+317,1974,31716
+318,1974,31716
+319,1974,31716
+320,1974,31716
+321,1974,31716
+322,1974,31716
+323,1974,31716
+324,1974,31716
+325,1974,31716
+326,1974,31716
+327,1974,31716
+328,1974,31716
+329,1974,31716
+330,1974,31716
+331,1974,31716
+332,1974,31716
+333,1974,31716
+334,1974,31716
+335,1974,31716
+336,1974,31716
+337,1974,31716
+338,1974,31716
+339,1974,31716
+340,1974,31716
+341,1974,31716
+342,1974,31716
+343,1974,31716
+344,1974,31716
+345,1974,31716
+346,1974,31716
+347,1974,31716
+348,1974,31716
+349,1974,31716
+350,1974,31716
+351,1974,31716
+352,1974,31716
+353,1974,31716
+354,1974,31716
+355,1974,31716
+356,1974,31716
+357,1974,31716
+358,1974,31716
+359,1974,31716
+360,1974,31716
+361,1974,31716
+362,1974,31716
+363,1974,31716
+364,1974,31716
+365,1974,31716
+366,1974,31716
+367,1974,31716
+368,1974,31716
+369,1974,31716
+370,1974,31716
+371,1974,31716
+372,1974,31716
+373,1974,31716
+374,1974,31716
+375,1974,31716
+376,1974,31716
+377,1974,31716
+378,1974,31716
+379,1974,31716
+380,1974,31716
+381,1974,31716
+382,1974,31716
+383,1974,31716
+384,1974,31716
+385,1974,31716
+386,1974,31716
+387,1974,31716
+388,1974,31716
+389,1974,31716
+390,1974,31716
+391,1974,31716
+392,1974,31716
+393,1974,31716
+394,1974,31716
+395,1974,31716
+396,1974,31716
+397,1974,31716
+398,1974,31716
+399,1974,31716
+400,1974,31716
+401,1974,31716
+402,1974,31716
+403,1974,31716
+404,1974,31716
+405,1974,31716
+406,1974,31716
+407,1974,31716
+408,1974,31716
+409,1974,31716
+410,1974,31716
+411,1974,31716
+412,1974,31716
+413,1974,31716
+414,1974,31716
+415,1974,31716
+416,1974,31716
+417,1974,31716
+418,1974,31716
+419,1974,31716
+420,1974,31716
+421,1974,31716
+422,1974,31716
+423,1974,31716
+424,1974,31716
+425,1974,31716
+426,1974,31716
+427,1974,31716
+428,1974,31716
+429,1974,31716
+430,1974,31716
+431,1974,31716
+432,1974,31716
+433,1974,31716
+434,1974,31716
+435,1974,31716
+436,1974,31716
+437,1974,31716
+438,1974,31716
+439,1974,31716
+440,1974,31716
+441,1974,31716
+442,1974,31716
+443,1974,31716
+444,1974,31716
+445,1974,31716
+446,1974,31716
+447,1974,31716
+448,1974,31716
+449,1974,31716
+450,1974,31716
+451,1974,31716
+452,1974,31716
+453,1974,31716
+454,1974,31716
+455,1974,31716
+456,1974,31716
+457,1974,31716
+458,1974,31716
+459,1974,31716
+460,1974,31716
+461,1974,31716
+462,1974,31716
+463,1974,31716
+464,1974,31716
+465,1974,31716
+466,1974,31716
+467,1974,31716
+468,1974,31716
+469,1974,31716
+470,1974,31716
+471,1974,31716
+472,1974,31716
+473,1974,31716
+474,1974,31716
+475,1974,31716
+476,1974,31716
+477,1974,31716
+478,1974,31716
+479,1974,31716
+480,1974,31716
+481,1974,31716
+482,1974,31716
+483,1974,31716
+484,1974,31716
+485,1974,31716
+486,1974,31716
+487,1974,31716
+488,1974,31716
+489,1974,31716
+490,1974,31716
+491,1974,31716
+492,1974,31716
+493,1974,31716
+494,1974,31716
+495,1974,31716
+496,1974,31716
+497,1974,31716
+498,1974,31716
+499,1974,31716
+500,1974,31716
+501,1974,31716
+502,1974,31716
+503,1974,31716
+504,1974,31716
+505,1974,31716
+506,1974,31716
+507,1974,31716
+508,1974,31716
+509,1974,31716
+510,1974,31716
+511,1974,31716
+512,1974,31716
+513,1974,31716
+514,1974,31716
+515,1974,31716
+516,1974,31716
+517,1974,31716
+518,1974,31716
+519,1974,31716
+520,1974,31716
+521,1974,31716
+522,1974,31716
+523,1974,31716
+524,1974,31716
+525,1974,31716
+526,1974,31716
+527,1974,31716
+528,1974,31716
+529,1974,31716
+530,1974,31716
+531,1974,31716
+532,1974,31716
+533,1974,31716
+534,1974,31716
+535,1974,31716
+536,1974,31716
+537,1974,31716
+538,1974,31716
+539,1974,31716
+540,1974,31716
+541,1974,31716
+542,1974,31716
+543,1974,31716
+544,1974,31716
+545,1974,31716
+546,1974,31716
+547,1974,31716
+548,1974,31716
+549,1974,31716
+550,1974,31716
+551,1974,31716
+552,1974,31716
+553,1974,31716
+554,1974,31716
+555,1974,31716
+556,1974,31716
+557,1974,31716
+558,1974,31716
+559,1974,31716
+560,1974,31716
+561,1974,31716
+562,1974,31716
+563,1974,31716
+564,1974,31716
+565,1974,31716
+566,1974,31716
+567,1974,31716
+568,1974,31716
+569,1974,31716
+570,1974,31716
+571,1974,31716
+572,1974,31716
+573,1974,31716
+574,1974,31716
+575,1974,31716
+576,1974,31716
+577,1974,31716
+578,1974,31716
+579,1974,31716
+580,1974,31716
+581,1974,31716
+582,1974,31716
+583,1974,31716
+584,1974,31716
+585,1974,31716
+586,1974,31716
+587,1974,31716
+588,1974,31716
+589,1974,31716
+590,1974,31716
+591,1974,31716
+592,1974,31716
+593,1974,31716
+594,1974,31716
+595,1974,31716
+596,1974,31716
+597,1974,31716
+598,1974,31716
+599,1974,31716
+600,1974,31716
+601,1974,31716
+602,1974,31716
+603,1974,31716
+604,1974,31716
+605,1974,31716
+606,1974,31716
+607,1974,31716
+608,1974,31716
+609,1974,31716
+610,1974,31716
+611,1974,31716
+612,1974,31716
+613,1974,31716
+614,1974,31716
+615,1974,31716
+616,1974,31716
+617,1974,31716
+618,1974,31716
+619,1974,31716
+620,1974,31716
+621,1974,31716
+622,1974,31716
+623,1974,31716
+624,1974,31716
+625,1974,31716
+626,1974,31716
+627,1974,31716
+628,1974,31716
+629,1974,31716
+630,1974,31716
+631,1974,31716
+632,1974,31716
+633,1974,31716
+634,1974,31716
+635,1974,31716
+636,1974,31716
+637,1974,31716
+638,1974,31716
+639,1974,31716
+640,1974,31716
+641,1974,31716
+642,1974,31716
+643,1974,31716
+644,1974,31716
+645,1974,31716
+646,1974,31716
+647,1974,31716
+648,1974,31716
+649,1974,31716
+650,1974,31716
+651,1974,31716
+652,1974,31716
+653,1974,31716
+654,1974,31716
+655,1974,31716
+656,1974,31716
+657,1974,31716
+658,1974,31716
+659,1974,31716
+660,1974,31716
+661,1974,31716
+662,1974,31716
+663,1974,31716
+664,1974,31716
+665,1974,31716
+666,1974,31716
+667,1974,31716
+668,1974,31716
+669,1974,31716
+670,1974,31716
+671,1974,31716
+672,1974,31716
+673,1974,31716
+674,1974,31716
+675,1974,31716
+676,1974,31716
+677,1974,31716
+678,1974,31716
+679,1974,31716
+680,1974,31716
+681,1974,31716
+682,1974,31716
+683,1974,31716
+684,1974,31716
+685,1974,31716
+686,1974,31716
+687,1974,31716
+688,1974,31716
+689,1974,31716
+690,1974,31716
+691,1974,31716
+692,1974,31716
+693,1974,31716
+694,1974,31716
+695,1974,31716
+696,1974,31716
+697,1974,31716
+698,1974,31716
+699,1974,31716
+700,1974,31716
+701,1974,31716
+702,1974,31716
+703,1974,31716
+704,1974,31716
+705,1974,31716
+706,1974,31716
+707,1974,31716
+708,1974,31716
+709,1974,31716
+710,1974,31716
+711,1974,31716
+712,1974,31716
+713,1974,31716
+714,1974,31716
+715,1974,31716
+716,1974,31716
+717,1974,31716
+718,1974,31716
+719,1974,31716
+720,1974,31716
+721,1974,31716
+722,1974,31716
+723,1974,31716
+724,1974,31716
+725,1974,31716
+726,1974,31716
+727,1974,31716
+728,1974,31716
+729,1974,31716
+730,1974,31716
+731,1974,31716
+732,1974,31716
+733,1974,31716
+734,1974,31716
+735,1974,31716
+736,1974,31716
+737,1974,31716
+738,1974,31716
+739,1974,31716
+740,1974,31716
+741,1974,31716
+742,1974,31716
+743,1974,31716
+744,1974,31716
+745,1974,31716
+746,1974,31716
+747,1974,31716
+748,1974,31716
+749,1974,31716
+750,1974,31716
+751,1974,31716
+752,1974,31716
+753,1974,31716
+754,1974,31716
+755,1974,31716
+756,1974,31716
+757,1974,31716
+758,1974,31716
+759,1974,31716
+760,1974,31716
+761,1974,31716
+762,1974,31716
+763,1974,31716
+764,1974,31716
+765,1974,31716
+766,1974,31716
+767,1974,31716
+768,1974,31716
+769,1974,31716
+770,1974,31716
+771,1974,31716
+772,1974,31716
+773,1974,31716
+774,1974,31716
+775,1974,31716
+776,1974,31716
+777,1974,31716
+778,1974,31716
+779,1974,31716
+780,1974,31716
+781,1974,31716
+782,1974,31716
+783,1974,31716
+784,1974,31716
+785,1974,31716
+786,1974,31716
+787,1974,31716
+788,1974,31716
+789,1974,31716
+790,1974,31716
+791,1974,31716
+792,1974,31716
+793,1974,31716
+794,1974,31716
+795,1974,31716
+796,1974,31716
+797,1974,31716
+798,1974,31716
+799,1974,31716
+800,1974,31716
+801,1974,31716
+802,1974,31716
+803,1974,31716
+804,1974,31716
+805,1974,31716
+806,1974,31716
+807,1974,31716
+808,1974,31716
+809,1974,31716
+810,1974,31716
+811,1974,31716
+812,1974,31716
+813,1974,31716
+814,1974,31716
+815,1974,31716
+816,1974,31716
+817,1974,31716
+818,1974,31716
+819,1974,31716
+820,1974,31716
+821,1974,31716
+822,1974,31716
+823,1974,31716
+824,1974,31716
+825,1974,31716
+826,1974,31716
+827,1974,31716
+828,1974,31716
+829,1974,31716
+830,1974,31716
+831,1974,31716
+832,1974,31716
+833,1974,31716
+834,1974,31716
+835,1974,31716
+836,1974,31716
+837,1974,31716
+838,1974,31716
+839,1974,31716
+840,1974,31716
+841,1974,31716
+842,1974,31716
+843,1974,31716
+844,1974,31716
+845,1974,31716
+846,1974,31716
+847,1974,31716
+848,1974,31716
+849,1974,31716
+850,1974,31716
+851,1974,31716
+852,1974,31716
+853,1974,31716
+854,1974,31716
+855,1974,31716
+856,1974,31716
+857,1974,31716
+858,1974,31716
+859,1974,31716
+860,1974,31716
+861,1974,31716
+862,1974,31716
+863,1974,31716
+864,1974,31716
+865,1974,31716
+866,1974,31716
+867,1974,31716
+868,1974,31716
+869,1974,31716
+870,1974,31716
+871,1974,31716
+872,1974,31716
+873,1974,31716
+874,1974,31716
+875,1974,31716
+876,1974,31716
+877,1974,31716
+878,1974,31716
+879,1974,31716
+880,1974,31716
+881,1974,31716
+882,1974,31716
+883,1974,31716
+884,1974,31716
+885,1974,31716
+886,1974,31716
+887,1974,31716
+888,1974,31716
+889,1974,31716
+890,1974,31716
+891,1974,31716
+892,1974,31716
+893,1974,31716
+894,1974,31716
+895,1974,31716
+896,1974,31716
+897,1974,31716
+898,1974,31716
+899,1974,31716
+900,1974,31716
+901,1974,31716
+902,1974,31716
+903,1974,31716
+904,1974,31716
+905,1974,31716
+906,1974,31716
+907,1974,31716
+908,1974,31716
+909,1974,31716
+910,1974,31716
+911,1974,31716
+912,1974,31716
+913,1974,31716
+914,1974,31716
+915,1974,31716
+916,1974,31716
+917,1974,31716
+918,1974,31716
+919,1974,31716
+920,1974,31716
+921,1974,31716
+922,1974,31716
+923,1974,31716
+924,1974,31716
+925,1974,31716
+926,1974,31716
+927,1974,31716
+928,1974,31716
+929,1974,31716
+930,1974,31716
+931,1974,31716
+932,1974,31716
+933,1974,31716
+934,1974,31716
+935,1974,31716
+936,1974,31716
+937,1974,31716
+938,1974,31716
+939,1974,31716
+940,1974,31716
+941,1974,31716
+942,1974,31716
+943,1974,31716
+944,1974,31716
+945,1974,31716
+946,1974,31716
+947,1974,31716
+948,1974,31716
+949,1974,31716
+950,1974,31716
+951,1974,31716
+952,1974,31716
+953,1974,31716
+954,1974,31716
+955,1974,31716
+956,1974,31716
+957,1974,31716
+958,1974,31716
+959,1974,31716
+960,1974,31716
+961,1974,31719
+962,1974,31719
+963,1974,31720
+964,1974,31720
+965,1974,31720
+966,1974,31720
+967,1974,31721
+968,1974,31721
+969,1974,31722
+970,1974,31723
+971,1974,31723
+972,1974,31723
+973,1974,31724
+974,1974,31725
+975,1974,31725
+976,1974,31726
+977,1974,31726
+978,1974,31726
+979,1974,31728
+980,1974,31731
+981,1974,33011
+982,1974,33011
+983,1974,33013
+984,1974,33013
+985,1974,33013
+986,1974,33014
+987,1974,33014
+988,1974,33014
+989,1974,33014
+990,1974,33014
+991,1974,33014
+992,1974,33014
+993,1974,33014
+994,1974,33014
+995,1974,33015
+996,1974,33015
+997,1974,33015
+998,1976,33015
+999,1978,33015
+1000,3292,33032
+RAW_SAMPLES_END
+[0;32mI (1936) V-CORE: ========================================[0m
+[0;32mI (1946) main_task: Returned from app_main()[0m
+������������������������������������������������������������
+Done
+END OF RUN 1
+
+========================================
+EXPERIMENT 002 - RUN 2 OF 5
+Date: Wed Oct 14 10:04:52 IST 2026
+========================================
+[1/4] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/partition_table/partition-table.bin /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.bin
+vcore.bin binary size 0x23510 bytes. Smallest app partition is 0x100000 bytes. 0xdcaf0 bytes (86%) free.
+[2/4] Performing build step for 'bootloader'
+[1/1] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.bin
+Bootloader binary size 0x6640 bytes. 0x9c0 bytes (9%) free.
+[3/4] No install step for 'bootloader'
+[4/4] Completed 'bootloader'
+Executing action: all (aliases: build)
+Running ninja in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build
+Executing "ninja all"...
+Executing action: flash
+Serial port /dev/cu.usbserial-0001:
+Connecting....
+Detecting chip type... ESP32
+Running ninja in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build
+Executing "ninja flash"...
+[1/5] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/partition_table/partition-table.bin /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.bin
+vcore.bin binary size 0x23510 bytes. Smallest app partition is 0x100000 bytes. 0xdcaf0 bytes (86%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.bin
+Bootloader binary size 0x6640 bytes. 0x9c0 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] Running utility command for flash
+esptool --chip esp32 -p /dev/cu.usbserial-0001 -b 460800 --before=default-reset --after=hard-reset write-flash --flash-mode dio --flash-freq 40m --flash-size 4MB 0x1000 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 vcore.bin --diff-with bootloader/bootloader_flashed.bin partition_table/partition-table_flashed.bin vcore_flashed.bin
+esptool v5.5.0
+Serial port /dev/cu.usbserial-0001:
+Connecting....
+Connected to ESP32 on /dev/cu.usbserial-0001:
+Chip type:          ESP32-D0WD-V3 (revision v3.1)
+Features:           Wi-Fi, BT, Dual Core + LP Core, 240MHz, Vref calibration in eFuse, Coding Scheme None
+Crystal frequency:  40MHz
+MAC:                30:76:f5:92:11:2c
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+
+Writing 'bootloader/bootloader.bin' at 0x00001000...
+SHA digest in image updated.
+SHA digest in image updated.
+No changed sectors found, verifying if data is in flash...
+'bootloader/bootloader.bin' at 0x00001000 verified.
+
+Writing 'partition_table/partition-table.bin' at 0x00008000...
+No changed sectors found, verifying if data is in flash...
+'partition_table/partition-table.bin' at 0x00008000 verified.
+
+Writing 'vcore.bin' at 0x00010000...
+No changed sectors found, verifying if data is in flash...
+'vcore.bin' at 0x00010000 verified.
+
+Hard resetting via RTS pin...
+--- esp-idf-monitor 1.10.0 on /dev/cu.usbserial-0001 115200
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+Executing action: monitor
+Running idf_monitor in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore
+Executing "/Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.elf /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.elf -m '/Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python' '/Users/prajwalnavadagp/.espressif/v6.1/esp-idf/tools/idf.py'"...
+�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x �x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x �x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x �x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x�x �x�x�x�x�x�x�x�x�x�x�x�x�x�x�=
+I ��SMALL WORKLOAD ==========
+I ��SMALL WORKLOAD ==========
+I ��SMALL WORKLOAD ==========
+I ��SMALL WORKLOAD ==========
+I ��SMALL WORKLOAD ==========
+I ��SMALL WORKLOAD ==========
+--- WARNING: Failed to decode multiple lines in a row. Try checking the baud rate and XTAL frequency setting in menuconfig
+--- WARNING: Failed to decode multiple lines in a row. Try checking the baud rate and XTAL frequency setting in menuconfig
+[0;32mI (276) V-COR�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15824
+load:0x40080400,len:3988
+--- 0x40080400: _invalid_pc_placeholder at /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/xtensa/xtensa_vectors.S:2259
+entry 0x40080644
+--- 0x40080644: call_start_cpu0 at /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c:27
+[0;32mI (27) boot: ESP-IDF v6.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Oct 13 2026 23:28:51[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=08c9ch ( 35996) map[0m
+[0;32mI (99) esp_image: segment 1: paddr=00018cc4 vaddr=3ffb0000 size=02b0ch ( 11020) load[0m
+[0;32mI (103) esp_image: segment 2: paddr=0001b7d8 vaddr=40080000 size=04840h ( 18496) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0d0d4h ( 53460) map[0m
+[0;32mI (131) esp_image: segment 4: paddr=0002d0fc vaddr=40084840 size=063c0h ( 25536) load[0m
+[0;32mI (141) esp_image: segment 5: paddr=000334c4 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (147) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (147) boot: Disabling RNG early entropy source...[0m
+[0;32mI (159) cpu_start: Multicore app[0m
+[0;32mI (168) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (168) cpu_start: Pro cpu start user code[0m
+[0;32mI (168) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (174) app_init: Project name:     vcore[0m
+[0;32mI (177) app_init: App version:      1[0m
+[0;32mI (181) app_init: Compile time:     Oct 13 2026 23:28:43[0m
+[0;32mI (186) app_init: ELF file SHA256:  20fe874ef...[0m
+[0;32mI (190) app_init: ESP-IDF:          v6.1[0m
+[0;32mI (194) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (198) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (202) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (206) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (212) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (217) heap_init: At 3FFB7478 len 00028B88 (162 KiB): DRAM[0m
+[0;32mI (222) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (227) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (233) heap_init: At 4008AC00 len 00015400 (85 KiB): IRAM[0m
+[0;32mI (240) spi_flash: detected chip: generic[0m
+[0;32mI (242) spi_flash: flash io: dio[0m
+[0;32mI (246) main_task: Started on CPU0[0m
+[0;32mI (246) main_task: Calling app_main()[0m
+[0;32mI (246) V-CORE: ========================================[0m
+[0;32mI (256) V-CORE:  V-CORE: DOT-PRODUCT BENCHMARK[0m
+[0;32mI (256) V-CORE:  EXPERIMENT 002: TIMING VARIABILITY[0m
+[0;32mI (256) V-CORE: ========================================[0m
+[0;32mI (276) V-CORE: ========== SMALL WORKLOAD ==========[0m
+[0;32mI (276) V-CORE: Vector size: 64[0m
+[0;32mI (276) V-CORE: Trials: 1000[0m
+[0;32mI (276) V-CORE: Result:   25984[0m
+[0;32mI (286) V-CORE: Expected: 25984[0m
+[0;32mI (286) V-CORE: Correct:  YES[0m
+[0;32mI (286) V-CORE: Minimum:  1974 cycles[0m
+[0;32mI (296) V-CORE: Median:   1974 cycles[0m
+[0;32mI (296) V-CORE: Mean:     1975.32 cycles[0m
+[0;32mI (296) V-CORE: Std dev:  41.66 cycles[0m
+[0;32mI (306) V-CORE: P90:      1974 cycles[0m
+[0;32mI (306) V-CORE: P95:      1974 cycles[0m
+[0;32mI (306) V-CORE: P99:      1974 cycles[0m
+[0;32mI (316) V-CORE: Maximum:  3292 cycles[0m
+[0;32mI (516) V-CORE: ========== LARGE WORKLOAD ==========[0m
+[0;32mI (516) V-CORE: Vector size: 1024[0m
+[0;32mI (516) V-CORE: Trials: 1000[0m
+[0;32mI (516) V-CORE: Result:   15634[0m
+[0;32mI (516) V-CORE: Expected: 15634[0m
+[0;32mI (526) V-CORE: Correct:  YES[0m
+[0;32mI (526) V-CORE: Minimum:  31716 cycles[0m
+[0;32mI (526) V-CORE: Median:   31716 cycles[0m
+[0;32mI (536) V-CORE: Mean:     31742.12 cycles[0m
+[0;32mI (536) V-CORE: Std dev:  181.80 cycles[0m
+[0;32mI (536) V-CORE: P90:      31716 cycles[0m
+[0;32mI (546) V-CORE: P95:      31716 cycles[0m
+[0;32mI (546) V-CORE: P99:      33014 cycles[0m
+[0;32mI (546) V-CORE: Maximum:  33032 cycles[0m
+
+RAW_SAMPLES_BEGIN
+rank,small_cycles,large_cycles
+1,1974,31716
+2,1974,31716
+3,1974,31716
+4,1974,31716
+5,1974,31716
+6,1974,31716
+7,1974,31716
+8,1974,31716
+9,1974,31716
+10,1974,31716
+11,1974,31716
+12,1974,31716
+13,1974,31716
+14,1974,31716
+15,1974,31716
+16,1974,31716
+17,1974,31716
+18,1974,31716
+19,1974,31716
+20,1974,31716
+21,1974,31716
+22,1974,31716
+23,1974,31716
+24,1974,31716
+25,1974,31716
+26,1974,31716
+27,1974,31716
+28,1974,31716
+29,1974,31716
+30,1974,31716
+31,1974,31716
+32,1974,31716
+33,1974,31716
+34,1974,31716
+35,1974,31716
+36,1974,31716
+37,1974,31716
+38,1974,31716
+39,1974,31716
+40,1974,31716
+41,1974,31716
+42,1974,31716
+43,1974,31716
+44,1974,31716
+45,1974,31716
+46,1974,31716
+47,1974,31716
+48,1974,31716
+49,1974,31716
+50,1974,31716
+51,1974,31716
+52,1974,31716
+53,1974,31716
+54,1974,31716
+55,1974,31716
+56,1974,31716
+57,1974,31716
+58,1974,31716
+59,1974,31716
+60,1974,31716
+61,1974,31716
+62,1974,31716
+63,1974,31716
+64,1974,31716
+65,1974,31716
+66,1974,31716
+67,1974,31716
+68,1974,31716
+69,1974,31716
+70,1974,31716
+71,1974,31716
+72,1974,31716
+73,1974,31716
+74,1974,31716
+75,1974,31716
+76,1974,31716
+77,1974,31716
+78,1974,31716
+79,1974,31716
+80,1974,31716
+81,1974,31716
+82,1974,31716
+83,1974,31716
+84,1974,31716
+85,1974,31716
+86,1974,31716
+87,1974,31716
+88,1974,31716
+89,1974,31716
+90,1974,31716
+91,1974,31716
+92,1974,31716
+93,1974,31716
+94,1974,31716
+95,1974,31716
+96,1974,31716
+97,1974,31716
+98,1974,31716
+99,1974,31716
+100,1974,31716
+101,1974,31716
+102,1974,31716
+103,1974,31716
+104,1974,31716
+105,1974,31716
+106,1974,31716
+107,1974,31716
+108,1974,31716
+109,1974,31716
+110,1974,31716
+111,1974,31716
+112,1974,31716
+113,1974,31716
+114,1974,31716
+115,1974,31716
+116,1974,31716
+117,1974,31716
+118,1974,31716
+119,1974,31716
+120,1974,31716
+121,1974,31716
+122,1974,31716
+123,1974,31716
+124,1974,31716
+125,1974,31716
+126,1974,31716
+127,1974,31716
+128,1974,31716
+129,1974,31716
+130,1974,31716
+131,1974,31716
+132,1974,31716
+133,1974,31716
+134,1974,31716
+135,1974,31716
+136,1974,31716
+137,1974,31716
+138,1974,31716
+139,1974,31716
+140,1974,31716
+141,1974,31716
+142,1974,31716
+143,1974,31716
+144,1974,31716
+145,1974,31716
+146,1974,31716
+147,1974,31716
+148,1974,31716
+149,1974,31716
+150,1974,31716
+151,1974,31716
+152,1974,31716
+153,1974,31716
+154,1974,31716
+155,1974,31716
+156,1974,31716
+157,1974,31716
+158,1974,31716
+159,1974,31716
+160,1974,31716
+161,1974,31716
+162,1974,31716
+163,1974,31716
+164,1974,31716
+165,1974,31716
+166,1974,31716
+167,1974,31716
+168,1974,31716
+169,1974,31716
+170,1974,31716
+171,1974,31716
+172,1974,31716
+173,1974,31716
+174,1974,31716
+175,1974,31716
+176,1974,31716
+177,1974,31716
+178,1974,31716
+179,1974,31716
+180,1974,31716
+181,1974,31716
+182,1974,31716
+183,1974,31716
+184,1974,31716
+185,1974,31716
+186,1974,31716
+187,1974,31716
+188,1974,31716
+189,1974,31716
+190,1974,31716
+191,1974,31716
+192,1974,31716
+193,1974,31716
+194,1974,31716
+195,1974,31716
+196,1974,31716
+197,1974,31716
+198,1974,31716
+199,1974,31716
+200,1974,31716
+201,1974,31716
+202,1974,31716
+203,1974,31716
+204,1974,31716
+205,1974,31716
+206,1974,31716
+207,1974,31716
+208,1974,31716
+209,1974,31716
+210,1974,31716
+211,1974,31716
+212,1974,31716
+213,1974,31716
+214,1974,31716
+215,1974,31716
+216,1974,31716
+217,1974,31716
+218,1974,31716
+219,1974,31716
+220,1974,31716
+221,1974,31716
+222,1974,31716
+223,1974,31716
+224,1974,31716
+225,1974,31716
+226,1974,31716
+227,1974,31716
+228,1974,31716
+229,1974,31716
+230,1974,31716
+231,1974,31716
+232,1974,31716
+233,1974,31716
+234,1974,31716
+235,1974,31716
+236,1974,31716
+237,1974,31716
+238,1974,31716
+239,1974,31716
+240,1974,31716
+241,1974,31716
+242,1974,31716
+243,1974,31716
+244,1974,31716
+245,1974,31716
+246,1974,31716
+247,1974,31716
+248,1974,31716
+249,1974,31716
+250,1974,31716
+251,1974,31716
+252,1974,31716
+253,1974,31716
+254,1974,31716
+255,1974,31716
+256,1974,31716
+257,1974,31716
+258,1974,31716
+259,1974,31716
+260,1974,31716
+261,1974,31716
+262,1974,31716
+263,1974,31716
+264,1974,31716
+265,1974,31716
+266,1974,31716
+267,1974,31716
+268,1974,31716
+269,1974,31716
+270,1974,31716
+271,1974,31716
+272,1974,31716
+273,1974,31716
+274,1974,31716
+275,1974,31716
+276,1974,31716
+277,1974,31716
+278,1974,31716
+279,1974,31716
+280,1974,31716
+281,1974,31716
+282,1974,31716
+283,1974,31716
+284,1974,31716
+285,1974,31716
+286,1974,31716
+287,1974,31716
+288,1974,31716
+289,1974,31716
+290,1974,31716
+291,1974,31716
+292,1974,31716
+293,1974,31716
+294,1974,31716
+295,1974,31716
+296,1974,31716
+297,1974,31716
+298,1974,31716
+299,1974,31716
+300,1974,31716
+301,1974,31716
+302,1974,31716
+303,1974,31716
+304,1974,31716
+305,1974,31716
+306,1974,31716
+307,1974,31716
+308,1974,31716
+309,1974,31716
+310,1974,31716
+311,1974,31716
+312,1974,31716
+313,1974,31716
+314,1974,31716
+315,1974,31716
+316,1974,31716
+317,1974,31716
+318,1974,31716
+319,1974,31716
+320,1974,31716
+321,1974,31716
+322,1974,31716
+323,1974,31716
+324,1974,31716
+325,1974,31716
+326,1974,31716
+327,1974,31716
+328,1974,31716
+329,1974,31716
+330,1974,31716
+331,1974,31716
+332,1974,31716
+333,1974,31716
+334,1974,31716
+335,1974,31716
+336,1974,31716
+337,1974,31716
+338,1974,31716
+339,1974,31716
+340,1974,31716
+341,1974,31716
+342,1974,31716
+343,1974,31716
+344,1974,31716
+345,1974,31716
+346,1974,31716
+347,1974,31716
+348,1974,31716
+349,1974,31716
+350,1974,31716
+351,1974,31716
+352,1974,31716
+353,1974,31716
+354,1974,31716
+355,1974,31716
+356,1974,31716
+357,1974,31716
+358,1974,31716
+359,1974,31716
+360,1974,31716
+361,1974,31716
+362,1974,31716
+363,1974,31716
+364,1974,31716
+365,1974,31716
+366,1974,31716
+367,1974,31716
+368,1974,31716
+369,1974,31716
+370,1974,31716
+371,1974,31716
+372,1974,31716
+373,1974,31716
+374,1974,31716
+375,1974,31716
+376,1974,31716
+377,1974,31716
+378,1974,31716
+379,1974,31716
+380,1974,31716
+381,1974,31716
+382,1974,31716
+383,1974,31716
+384,1974,31716
+385,1974,31716
+386,1974,31716
+387,1974,31716
+388,1974,31716
+389,1974,31716
+390,1974,31716
+391,1974,31716
+392,1974,31716
+393,1974,31716
+394,1974,31716
+395,1974,31716
+396,1974,31716
+397,1974,31716
+398,1974,31716
+399,1974,31716
+400,1974,31716
+401,1974,31716
+402,1974,31716
+403,1974,31716
+404,1974,31716
+405,1974,31716
+406,1974,31716
+407,1974,31716
+408,1974,31716
+409,1974,31716
+410,1974,31716
+411,1974,31716
+412,1974,31716
+413,1974,31716
+414,1974,31716
+415,1974,31716
+416,1974,31716
+417,1974,31716
+418,1974,31716
+419,1974,31716
+420,1974,31716
+421,1974,31716
+422,1974,31716
+423,1974,31716
+424,1974,31716
+425,1974,31716
+426,1974,31716
+427,1974,31716
+428,1974,31716
+429,1974,31716
+430,1974,31716
+431,1974,31716
+432,1974,31716
+433,1974,31716
+434,1974,31716
+435,1974,31716
+436,1974,31716
+437,1974,31716
+438,1974,31716
+439,1974,31716
+440,1974,31716
+441,1974,31716
+442,1974,31716
+443,1974,31716
+444,1974,31716
+445,1974,31716
+446,1974,31716
+447,1974,31716
+448,1974,31716
+449,1974,31716
+450,1974,31716
+451,1974,31716
+452,1974,31716
+453,1974,31716
+454,1974,31716
+455,1974,31716
+456,1974,31716
+457,1974,31716
+458,1974,31716
+459,1974,31716
+460,1974,31716
+461,1974,31716
+462,1974,31716
+463,1974,31716
+464,1974,31716
+465,1974,31716
+466,1974,31716
+467,1974,31716
+468,1974,31716
+469,1974,31716
+470,1974,31716
+471,1974,31716
+472,1974,31716
+473,1974,31716
+474,1974,31716
+475,1974,31716
+476,1974,31716
+477,1974,31716
+478,1974,31716
+479,1974,31716
+480,1974,31716
+481,1974,31716
+482,1974,31716
+483,1974,31716
+484,1974,31716
+485,1974,31716
+486,1974,31716
+487,1974,31716
+488,1974,31716
+489,1974,31716
+490,1974,31716
+491,1974,31716
+492,1974,31716
+493,1974,31716
+494,1974,31716
+495,1974,31716
+496,1974,31716
+497,1974,31716
+498,1974,31716
+499,1974,31716
+500,1974,31716
+501,1974,31716
+502,1974,31716
+503,1974,31716
+504,1974,31716
+505,1974,31716
+506,1974,31716
+507,1974,31716
+508,1974,31716
+509,1974,31716
+510,1974,31716
+511,1974,31716
+512,1974,31716
+513,1974,31716
+514,1974,31716
+515,1974,31716
+516,1974,31716
+517,1974,31716
+518,1974,31716
+519,1974,31716
+520,1974,31716
+521,1974,31716
+522,1974,31716
+523,1974,31716
+524,1974,31716
+525,1974,31716
+526,1974,31716
+527,1974,31716
+528,1974,31716
+529,1974,31716
+530,1974,31716
+531,1974,31716
+532,1974,31716
+533,1974,31716
+534,1974,31716
+535,1974,31716
+536,1974,31716
+537,1974,31716
+538,1974,31716
+539,1974,31716
+540,1974,31716
+541,1974,31716
+542,1974,31716
+543,1974,31716
+544,1974,31716
+545,1974,31716
+546,1974,31716
+547,1974,31716
+548,1974,31716
+549,1974,31716
+550,1974,31716
+551,1974,31716
+552,1974,31716
+553,1974,31716
+554,1974,31716
+555,1974,31716
+556,1974,31716
+557,1974,31716
+558,1974,31716
+559,1974,31716
+560,1974,31716
+561,1974,31716
+562,1974,31716
+563,1974,31716
+564,1974,31716
+565,1974,31716
+566,1974,31716
+567,1974,31716
+568,1974,31716
+569,1974,31716
+570,1974,31716
+571,1974,31716
+572,1974,31716
+573,1974,31716
+574,1974,31716
+575,1974,31716
+576,1974,31716
+577,1974,31716
+578,1974,31716
+579,1974,31716
+580,1974,31716
+581,1974,31716
+582,1974,31716
+583,1974,31716
+584,1974,31716
+585,1974,31716
+586,1974,31716
+587,1974,31716
+588,1974,31716
+589,1974,31716
+590,1974,31716
+591,1974,31716
+592,1974,31716
+593,1974,31716
+594,1974,31716
+595,1974,31716
+596,1974,31716
+597,1974,31716
+598,1974,31716
+599,1974,31716
+600,1974,31716
+601,1974,31716
+602,1974,31716
+603,1974,31716
+604,1974,31716
+605,1974,31716
+606,1974,31716
+607,1974,31716
+608,1974,31716
+609,1974,31716
+610,1974,31716
+611,1974,31716
+612,1974,31716
+613,1974,31716
+614,1974,31716
+615,1974,31716
+616,1974,31716
+617,1974,31716
+618,1974,31716
+619,1974,31716
+620,1974,31716
+621,1974,31716
+622,1974,31716
+623,1974,31716
+624,1974,31716
+625,1974,31716
+626,1974,31716
+627,1974,31716
+628,1974,31716
+629,1974,31716
+630,1974,31716
+631,1974,31716
+632,1974,31716
+633,1974,31716
+634,1974,31716
+635,1974,31716
+636,1974,31716
+637,1974,31716
+638,1974,31716
+639,1974,31716
+640,1974,31716
+641,1974,31716
+642,1974,31716
+643,1974,31716
+644,1974,31716
+645,1974,31716
+646,1974,31716
+647,1974,31716
+648,1974,31716
+649,1974,31716
+650,1974,31716
+651,1974,31716
+652,1974,31716
+653,1974,31716
+654,1974,31716
+655,1974,31716
+656,1974,31716
+657,1974,31716
+658,1974,31716
+659,1974,31716
+660,1974,31716
+661,1974,31716
+662,1974,31716
+663,1974,31716
+664,1974,31716
+665,1974,31716
+666,1974,31716
+667,1974,31716
+668,1974,31716
+669,1974,31716
+670,1974,31716
+671,1974,31716
+672,1974,31716
+673,1974,31716
+674,1974,31716
+675,1974,31716
+676,1974,31716
+677,1974,31716
+678,1974,31716
+679,1974,31716
+680,1974,31716
+681,1974,31716
+682,1974,31716
+683,1974,31716
+684,1974,31716
+685,1974,31716
+686,1974,31716
+687,1974,31716
+688,1974,31716
+689,1974,31716
+690,1974,31716
+691,1974,31716
+692,1974,31716
+693,1974,31716
+694,1974,31716
+695,1974,31716
+696,1974,31716
+697,1974,31716
+698,1974,31716
+699,1974,31716
+700,1974,31716
+701,1974,31716
+702,1974,31716
+703,1974,31716
+704,1974,31716
+705,1974,31716
+706,1974,31716
+707,1974,31716
+708,1974,31716
+709,1974,31716
+710,1974,31716
+711,1974,31716
+712,1974,31716
+713,1974,31716
+714,1974,31716
+715,1974,31716
+716,1974,31716
+717,1974,31716
+718,1974,31716
+719,1974,31716
+720,1974,31716
+721,1974,31716
+722,1974,31716
+723,1974,31716
+724,1974,31716
+725,1974,31716
+726,1974,31716
+727,1974,31716
+728,1974,31716
+729,1974,31716
+730,1974,31716
+731,1974,31716
+732,1974,31716
+733,1974,31716
+734,1974,31716
+735,1974,31716
+736,1974,31716
+737,1974,31716
+738,1974,31716
+739,1974,31716
+740,1974,31716
+741,1974,31716
+742,1974,31716
+743,1974,31716
+744,1974,31716
+745,1974,31716
+746,1974,31716
+747,1974,31716
+748,1974,31716
+749,1974,31716
+750,1974,31716
+751,1974,31716
+752,1974,31716
+753,1974,31716
+754,1974,31716
+755,1974,31716
+756,1974,31716
+757,1974,31716
+758,1974,31716
+759,1974,31716
+760,1974,31716
+761,1974,31716
+762,1974,31716
+763,1974,31716
+764,1974,31716
+765,1974,31716
+766,1974,31716
+767,1974,31716
+768,1974,31716
+769,1974,31716
+770,1974,31716
+771,1974,31716
+772,1974,31716
+773,1974,31716
+774,1974,31716
+775,1974,31716
+776,1974,31716
+777,1974,31716
+778,1974,31716
+779,1974,31716
+780,1974,31716
+781,1974,31716
+782,1974,31716
+783,1974,31716
+784,1974,31716
+785,1974,31716
+786,1974,31716
+787,1974,31716
+788,1974,31716
+789,1974,31716
+790,1974,31716
+791,1974,31716
+792,1974,31716
+793,1974,31716
+794,1974,31716
+795,1974,31716
+796,1974,31716
+797,1974,31716
+798,1974,31716
+799,1974,31716
+800,1974,31716
+801,1974,31716
+802,1974,31716
+803,1974,31716
+804,1974,31716
+805,1974,31716
+806,1974,31716
+807,1974,31716
+808,1974,31716
+809,1974,31716
+810,1974,31716
+811,1974,31716
+812,1974,31716
+813,1974,31716
+814,1974,31716
+815,1974,31716
+816,1974,31716
+817,1974,31716
+818,1974,31716
+819,1974,31716
+820,1974,31716
+821,1974,31716
+822,1974,31716
+823,1974,31716
+824,1974,31716
+825,1974,31716
+826,1974,31716
+827,1974,31716
+828,1974,31716
+829,1974,31716
+830,1974,31716
+831,1974,31716
+832,1974,31716
+833,1974,31716
+834,1974,31716
+835,1974,31716
+836,1974,31716
+837,1974,31716
+838,1974,31716
+839,1974,31716
+840,1974,31716
+841,1974,31716
+842,1974,31716
+843,1974,31716
+844,1974,31716
+845,1974,31716
+846,1974,31716
+847,1974,31716
+848,1974,31716
+849,1974,31716
+850,1974,31716
+851,1974,31716
+852,1974,31716
+853,1974,31716
+854,1974,31716
+855,1974,31716
+856,1974,31716
+857,1974,31716
+858,1974,31716
+859,1974,31716
+860,1974,31716
+861,1974,31716
+862,1974,31716
+863,1974,31716
+864,1974,31716
+865,1974,31716
+866,1974,31716
+867,1974,31716
+868,1974,31716
+869,1974,31716
+870,1974,31716
+871,1974,31716
+872,1974,31716
+873,1974,31716
+874,1974,31716
+875,1974,31716
+876,1974,31716
+877,1974,31716
+878,1974,31716
+879,1974,31716
+880,1974,31716
+881,1974,31716
+882,1974,31716
+883,1974,31716
+884,1974,31716
+885,1974,31716
+886,1974,31716
+887,1974,31716
+888,1974,31716
+889,1974,31716
+890,1974,31716
+891,1974,31716
+892,1974,31716
+893,1974,31716
+894,1974,31716
+895,1974,31716
+896,1974,31716
+897,1974,31716
+898,1974,31716
+899,1974,31716
+900,1974,31716
+901,1974,31716
+902,1974,31716
+903,1974,31716
+904,1974,31716
+905,1974,31716
+906,1974,31716
+907,1974,31716
+908,1974,31716
+909,1974,31716
+910,1974,31716
+911,1974,31716
+912,1974,31716
+913,1974,31716
+914,1974,31716
+915,1974,31716
+916,1974,31716
+917,1974,31716
+918,1974,31716
+919,1974,31716
+920,1974,31716
+921,1974,31716
+922,1974,31716
+923,1974,31716
+924,1974,31716
+925,1974,31716
+926,1974,31716
+927,1974,31716
+928,1974,31716
+929,1974,31716
+930,1974,31716
+931,1974,31716
+932,1974,31716
+933,1974,31716
+934,1974,31716
+935,1974,31716
+936,1974,31716
+937,1974,31716
+938,1974,31716
+939,1974,31716
+940,1974,31716
+941,1974,31716
+942,1974,31716
+943,1974,31716
+944,1974,31716
+945,1974,31716
+946,1974,31716
+947,1974,31716
+948,1974,31716
+949,1974,31716
+950,1974,31716
+951,1974,31716
+952,1974,31716
+953,1974,31716
+954,1974,31716
+955,1974,31716
+956,1974,31716
+957,1974,31716
+958,1974,31716
+959,1974,31716
+960,1974,31716
+961,1974,31719
+962,1974,31719
+963,1974,31720
+964,1974,31720
+965,1974,31720
+966,1974,31720
+967,1974,31721
+968,1974,31721
+969,1974,31722
+970,1974,31723
+971,1974,31723
+972,1974,31723
+973,1974,31724
+974,1974,31725
+975,1974,31725
+976,1974,31726
+977,1974,31726
+978,1974,31726
+979,1974,31728
+980,1974,31731
+981,1974,33011
+982,1974,33011
+983,1974,33013
+984,1974,33013
+985,1974,33013
+986,1974,33014
+987,1974,33014
+988,1974,33014
+989,1974,33014
+990,1974,33014
+991,1974,33014
+992,1974,33014
+993,1974,33014
+994,1974,33014
+995,1974,33015
+996,1974,33015
+997,1974,33015
+998,1976,33015
+999,1978,33015
+1000,3292,33032
+RAW_SAMPLES_END
+[0;32mI (1936) V-CORE: ========================================[0m
+[0;32mI (1946) main_task: Returned from app_main()[0m
+
+Done
+END OF RUN 2
+
+========================================
+EXPERIMENT 002 - RUN 3 OF 5
+Date: Wed Oct 14 10:05:10 IST 2026
+========================================
+[1/4] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/partition_table/partition-table.bin /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.bin
+vcore.bin binary size 0x23510 bytes. Smallest app partition is 0x100000 bytes. 0xdcaf0 bytes (86%) free.
+[2/4] Performing build step for 'bootloader'
+[1/1] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.bin
+Bootloader binary size 0x6640 bytes. 0x9c0 bytes (9%) free.
+[3/4] No install step for 'bootloader'
+[4/4] Completed 'bootloader'
+Executing action: all (aliases: build)
+Running ninja in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build
+Executing "ninja all"...
+Executing action: flash
+Serial port /dev/cu.usbserial-0001:
+Connecting...........
+Detecting chip type... ESP32
+Running ninja in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build
+Executing "ninja flash"...
+[1/5] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/partition_table/partition-table.bin /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.bin
+vcore.bin binary size 0x23510 bytes. Smallest app partition is 0x100000 bytes. 0xdcaf0 bytes (86%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.bin
+Bootloader binary size 0x6640 bytes. 0x9c0 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] Running utility command for flash
+esptool --chip esp32 -p /dev/cu.usbserial-0001 -b 460800 --before=default-reset --after=hard-reset write-flash --flash-mode dio --flash-freq 40m --flash-size 4MB 0x1000 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 vcore.bin --diff-with bootloader/bootloader_flashed.bin partition_table/partition-table_flashed.bin vcore_flashed.bin
+esptool v5.5.0
+Serial port /dev/cu.usbserial-0001:
+Connecting.....
+Connected to ESP32 on /dev/cu.usbserial-0001:
+Chip type:          ESP32-D0WD-V3 (revision v3.1)
+Features:           Wi-Fi, BT, Dual Core + LP Core, 240MHz, Vref calibration in eFuse, Coding Scheme None
+Crystal frequency:  40MHz
+MAC:                30:76:f5:92:11:2c
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+
+Writing 'bootloader/bootloader.bin' at 0x00001000...
+SHA digest in image updated.
+SHA digest in image updated.
+No changed sectors found, verifying if data is in flash...
+'bootloader/bootloader.bin' at 0x00001000 verified.
+
+Writing 'partition_table/partition-table.bin' at 0x00008000...
+No changed sectors found, verifying if data is in flash...
+'partition_table/partition-table.bin' at 0x00008000 verified.
+
+Writing 'vcore.bin' at 0x00010000...
+No changed sectors found, verifying if data is in flash...
+'vcore.bin' at 0x00010000 verified.
+
+Hard resetting via RTS pin...
+--- esp-idf-monitor 1.10.0 on /dev/cu.usbserial-0001 115200
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+Executing action: monitor
+Running idf_monitor in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore
+Executing "/Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.elf /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.elf -m '/Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python' '/Users/prajwalnavadagp/.espressif/v6.1/esp-idf/tools/idf.py'"...
+��������������������������������j
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15824
+load:0x40080400,len:3988
+--- 0x40080400: _invalid_pc_placeholder at /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/xtensa/xtensa_vectors.S:2259
+entry 0x40080644
+--- 0x40080644: call_start_cpu0 at /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c:27
+[0;32mI (27) boot: ESP-IDF v6.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Oct 13 2026 23:28:51[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=08c9ch ( 35996) map[0m
+[0;32mI (99) esp_image: segment 1: paddr=00018cc4 vaddr=3ffb0000 size=02b0ch ( 11020) load[0m
+[0;32mI (103) esp_image: segment 2: paddr=0001b7d8 vaddr=40080000 size=04840h ( 18496) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0d0d4h ( 53460) map[0m
+[0;32mI (131) esp_image: segment 4: paddr=0002d0fc vaddr=40084840 size=063c0h ( 25536) load[0m
+[0;32mI (141) esp_image: segment 5: paddr=000334c4 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (147) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (147) boot: Disabling RNG early entropy source...[0m
+[0;32mI (159) cpu_start: Multicore app[0m
+[0;32mI (168) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (168) cpu_start: Pro cpu start user code[0m
+[0;32mI (168) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (174) app_init: Project name:     vcore[0m
+[0;32mI (177) app_init: App version:      1[0m
+[0;32mI (181) app_init: Compile time:     Oct 13 2026 23:28:43[0m
+[0;32mI (186) app_init: ELF file SHA256:  20fe874ef...[0m
+[0;32mI (190) app_init: ESP-IDF:          v6.1[0m
+[0;32mI (194) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (198) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (202) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (206) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (212) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (217) heap_init: At 3FFB7478 len 00028B88 (162 KiB): DRAM[0m
+[0;32mI (222) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (227) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (233) heap_init: At 4008AC00 len 00015400 (85 KiB): IRAM[0m
+[0;32mI (240) spi_flash: detected chip: generic[0m
+[0;32mI (242) spi_flash: flash io: dio[0m
+[0;32mI (246) main_task: Started on CPU0[0m
+[0;32mI (246) main_task: Calling app_main()[0m
+[0;32mI (246) V-CORE: ========================================[0m
+[0;32mI (256) V-CORE:  V-CORE: DOT-PRODUCT BENCHMARK[0m
+[0;32mI (256) V-CORE:  EXPERIMENT 002: TIMING VARIABILITY[0m
+[0;32mI (256) V-CORE: ========================================[0m
+[0;32mI (276) V-CORE: ========== SMALL WORKLOAD ==========[0m
+[0;32mI (276) V-CORE: Vector size: 64[0m
+[0;32mI (276) V-CORE: Trials: 1000[0m
+[0;32mI (276) V-CORE: Result:   25984[0m
+[0;32mI (286) V-CORE: Expected: 25984[0m
+[0;32mI (286) V-CORE: Correct:  YES[0m
+[0;32mI (286) V-CORE: Minimum:  1974 cycles[0m
+[0;32mI (296) V-CORE: Median:   1974 cycles[0m
+[0;32mI (296) V-CORE: Mean:     1975.28 cycles[0m
+[0;32mI (296) V-CORE: Std dev:  40.30 cycles[0m
+[0;32mI (306) V-CORE: P90:      1974 cycles[0m
+[0;32mI (306) V-CORE: P95:      1974 cycles[0m
+[0;32mI (306) V-CORE: P99:      1974 cycles[0m
+[0;32mI (316) V-CORE: Maximum:  3249 cycles[0m
+[0;32mI (516) V-CORE: ========== LARGE WORKLOAD ==========[0m
+[0;32mI (516) V-CORE: Vector size: 1024[0m
+[0;32mI (516) V-CORE: Trials: 1000[0m
+[0;32mI (516) V-CORE: Result:   15634[0m
+[0;32mI (516) V-CORE: Expected: 15634[0m
+[0;32mI (526) V-CORE: Correct:  YES[0m
+[0;32mI (526) V-CORE: Minimum:  31716 cycles[0m
+[0;32mI (526) V-CORE: Median:   31716 cycles[0m
+[0;32mI (536) V-CORE: Mean:     31742.17 cycles[0m
+[0;32mI (536) V-CORE: Std dev:  181.74 cycles[0m
+[0;32mI (536) V-CORE: P90:      31716 cycles[0m
+[0;32mI (546) V-CORE: P95:      31716 cycles[0m
+[0;32mI (546) V-CORE: P99:      33013 cycles[0m
+[0;32mI (546) V-CORE: Maximum:  33034 cycles[0m
+
+RAW_SAMPLES_BEGIN
+rank,small_cycles,large_cycles
+1,1974,31716
+2,1974,31716
+3,1974,31716
+4,1974,31716
+5,1974,31716
+6,1974,31716
+7,1974,31716
+8,1974,31716
+9,1974,31716
+10,1974,31716
+11,1974,31716
+12,1974,31716
+13,1974,31716
+14,1974,31716
+15,1974,31716
+16,1974,31716
+17,1974,31716
+18,1974,31716
+19,1974,31716
+20,1974,31716
+21,1974,31716
+22,1974,31716
+23,1974,31716
+24,1974,31716
+25,1974,31716
+26,1974,31716
+27,1974,31716
+28,1974,31716
+29,1974,31716
+30,1974,31716
+31,1974,31716
+32,1974,31716
+33,1974,31716
+34,1974,31716
+35,1974,31716
+36,1974,31716
+37,1974,31716
+38,1974,31716
+39,1974,31716
+40,1974,31716
+41,1974,31716
+42,1974,31716
+43,1974,31716
+44,1974,31716
+45,1974,31716
+46,1974,31716
+47,1974,31716
+48,1974,31716
+49,1974,31716
+50,1974,31716
+51,1974,31716
+52,1974,31716
+53,1974,31716
+54,1974,31716
+55,1974,31716
+56,1974,31716
+57,1974,31716
+58,1974,31716
+59,1974,31716
+60,1974,31716
+61,1974,31716
+62,1974,31716
+63,1974,31716
+64,1974,31716
+65,1974,31716
+66,1974,31716
+67,1974,31716
+68,1974,31716
+69,1974,31716
+70,1974,31716
+71,1974,31716
+72,1974,31716
+73,1974,31716
+74,1974,31716
+75,1974,31716
+76,1974,31716
+77,1974,31716
+78,1974,31716
+79,1974,31716
+80,1974,31716
+81,1974,31716
+82,1974,31716
+83,1974,31716
+84,1974,31716
+85,1974,31716
+86,1974,31716
+87,1974,31716
+88,1974,31716
+89,1974,31716
+90,1974,31716
+91,1974,31716
+92,1974,31716
+93,1974,31716
+94,1974,31716
+95,1974,31716
+96,1974,31716
+97,1974,31716
+98,1974,31716
+99,1974,31716
+100,1974,31716
+101,1974,31716
+102,1974,31716
+103,1974,31716
+104,1974,31716
+105,1974,31716
+106,1974,31716
+107,1974,31716
+108,1974,31716
+109,1974,31716
+110,1974,31716
+111,1974,31716
+112,1974,31716
+113,1974,31716
+114,1974,31716
+115,1974,31716
+116,1974,31716
+117,1974,31716
+118,1974,31716
+119,1974,31716
+120,1974,31716
+121,1974,31716
+122,1974,31716
+123,1974,31716
+124,1974,31716
+125,1974,31716
+126,1974,31716
+127,1974,31716
+128,1974,31716
+129,1974,31716
+130,1974,31716
+131,1974,31716
+132,1974,31716
+133,1974,31716
+134,1974,31716
+135,1974,31716
+136,1974,31716
+137,1974,31716
+138,1974,31716
+139,1974,31716
+140,1974,31716
+141,1974,31716
+142,1974,31716
+143,1974,31716
+144,1974,31716
+145,1974,31716
+146,1974,31716
+147,1974,31716
+148,1974,31716
+149,1974,31716
+150,1974,31716
+151,1974,31716
+152,1974,31716
+153,1974,31716
+154,1974,31716
+155,1974,31716
+156,1974,31716
+157,1974,31716
+158,1974,31716
+159,1974,31716
+160,1974,31716
+161,1974,31716
+162,1974,31716
+163,1974,31716
+164,1974,31716
+165,1974,31716
+166,1974,31716
+167,1974,31716
+168,1974,31716
+169,1974,31716
+170,1974,31716
+171,1974,31716
+172,1974,31716
+173,1974,31716
+174,1974,31716
+175,1974,31716
+176,1974,31716
+177,1974,31716
+178,1974,31716
+179,1974,31716
+180,1974,31716
+181,1974,31716
+182,1974,31716
+183,1974,31716
+184,1974,31716
+185,1974,31716
+186,1974,31716
+187,1974,31716
+188,1974,31716
+189,1974,31716
+190,1974,31716
+191,1974,31716
+192,1974,31716
+193,1974,31716
+194,1974,31716
+195,1974,31716
+196,1974,31716
+197,1974,31716
+198,1974,31716
+199,1974,31716
+200,1974,31716
+201,1974,31716
+202,1974,31716
+203,1974,31716
+204,1974,31716
+205,1974,31716
+206,1974,31716
+207,1974,31716
+208,1974,31716
+209,1974,31716
+210,1974,31716
+211,1974,31716
+212,1974,31716
+213,1974,31716
+214,1974,31716
+215,1974,31716
+216,1974,31716
+217,1974,31716
+218,1974,31716
+219,1974,31716
+220,1974,31716
+221,1974,31716
+222,1974,31716
+223,1974,31716
+224,1974,31716
+225,1974,31716
+226,1974,31716
+227,1974,31716
+228,1974,31716
+229,1974,31716
+230,1974,31716
+231,1974,31716
+232,1974,31716
+233,1974,31716
+234,1974,31716
+235,1974,31716
+236,1974,31716
+237,1974,31716
+238,1974,31716
+239,1974,31716
+240,1974,31716
+241,1974,31716
+242,1974,31716
+243,1974,31716
+244,1974,31716
+245,1974,31716
+246,1974,31716
+247,1974,31716
+248,1974,31716
+249,1974,31716
+250,1974,31716
+251,1974,31716
+252,1974,31716
+253,1974,31716
+254,1974,31716
+255,1974,31716
+256,1974,31716
+257,1974,31716
+258,1974,31716
+259,1974,31716
+260,1974,31716
+261,1974,31716
+262,1974,31716
+263,1974,31716
+264,1974,31716
+265,1974,31716
+266,1974,31716
+267,1974,31716
+268,1974,31716
+269,1974,31716
+270,1974,31716
+271,1974,31716
+272,1974,31716
+273,1974,31716
+274,1974,31716
+275,1974,31716
+276,1974,31716
+277,1974,31716
+278,1974,31716
+279,1974,31716
+280,1974,31716
+281,1974,31716
+282,1974,31716
+283,1974,31716
+284,1974,31716
+285,1974,31716
+286,1974,31716
+287,1974,31716
+288,1974,31716
+289,1974,31716
+290,1974,31716
+291,1974,31716
+292,1974,31716
+293,1974,31716
+294,1974,31716
+295,1974,31716
+296,1974,31716
+297,1974,31716
+298,1974,31716
+299,1974,31716
+300,1974,31716
+301,1974,31716
+302,1974,31716
+303,1974,31716
+304,1974,31716
+305,1974,31716
+306,1974,31716
+307,1974,31716
+308,1974,31716
+309,1974,31716
+310,1974,31716
+311,1974,31716
+312,1974,31716
+313,1974,31716
+314,1974,31716
+315,1974,31716
+316,1974,31716
+317,1974,31716
+318,1974,31716
+319,1974,31716
+320,1974,31716
+321,1974,31716
+322,1974,31716
+323,1974,31716
+324,1974,31716
+325,1974,31716
+326,1974,31716
+327,1974,31716
+328,1974,31716
+329,1974,31716
+330,1974,31716
+331,1974,31716
+332,1974,31716
+333,1974,31716
+334,1974,31716
+335,1974,31716
+336,1974,31716
+337,1974,31716
+338,1974,31716
+339,1974,31716
+340,1974,31716
+341,1974,31716
+342,1974,31716
+343,1974,31716
+344,1974,31716
+345,1974,31716
+346,1974,31716
+347,1974,31716
+348,1974,31716
+349,1974,31716
+350,1974,31716
+351,1974,31716
+352,1974,31716
+353,1974,31716
+354,1974,31716
+355,1974,31716
+356,1974,31716
+357,1974,31716
+358,1974,31716
+359,1974,31716
+360,1974,31716
+361,1974,31716
+362,1974,31716
+363,1974,31716
+364,1974,31716
+365,1974,31716
+366,1974,31716
+367,1974,31716
+368,1974,31716
+369,1974,31716
+370,1974,31716
+371,1974,31716
+372,1974,31716
+373,1974,31716
+374,1974,31716
+375,1974,31716
+376,1974,31716
+377,1974,31716
+378,1974,31716
+379,1974,31716
+380,1974,31716
+381,1974,31716
+382,1974,31716
+383,1974,31716
+384,1974,31716
+385,1974,31716
+386,1974,31716
+387,1974,31716
+388,1974,31716
+389,1974,31716
+390,1974,31716
+391,1974,31716
+392,1974,31716
+393,1974,31716
+394,1974,31716
+395,1974,31716
+396,1974,31716
+397,1974,31716
+398,1974,31716
+399,1974,31716
+400,1974,31716
+401,1974,31716
+402,1974,31716
+403,1974,31716
+404,1974,31716
+405,1974,31716
+406,1974,31716
+407,1974,31716
+408,1974,31716
+409,1974,31716
+410,1974,31716
+411,1974,31716
+412,1974,31716
+413,1974,31716
+414,1974,31716
+415,1974,31716
+416,1974,31716
+417,1974,31716
+418,1974,31716
+419,1974,31716
+420,1974,31716
+421,1974,31716
+422,1974,31716
+423,1974,31716
+424,1974,31716
+425,1974,31716
+426,1974,31716
+427,1974,31716
+428,1974,31716
+429,1974,31716
+430,1974,31716
+431,1974,31716
+432,1974,31716
+433,1974,31716
+434,1974,31716
+435,1974,31716
+436,1974,31716
+437,1974,31716
+438,1974,31716
+439,1974,31716
+440,1974,31716
+441,1974,31716
+442,1974,31716
+443,1974,31716
+444,1974,31716
+445,1974,31716
+446,1974,31716
+447,1974,31716
+448,1974,31716
+449,1974,31716
+450,1974,31716
+451,1974,31716
+452,1974,31716
+453,1974,31716
+454,1974,31716
+455,1974,31716
+456,1974,31716
+457,1974,31716
+458,1974,31716
+459,1974,31716
+460,1974,31716
+461,1974,31716
+462,1974,31716
+463,1974,31716
+464,1974,31716
+465,1974,31716
+466,1974,31716
+467,1974,31716
+468,1974,31716
+469,1974,31716
+470,1974,31716
+471,1974,31716
+472,1974,31716
+473,1974,31716
+474,1974,31716
+475,1974,31716
+476,1974,31716
+477,1974,31716
+478,1974,31716
+479,1974,31716
+480,1974,31716
+481,1974,31716
+482,1974,31716
+483,1974,31716
+484,1974,31716
+485,1974,31716
+486,1974,31716
+487,1974,31716
+488,1974,31716
+489,1974,31716
+490,1974,31716
+491,1974,31716
+492,1974,31716
+493,1974,31716
+494,1974,31716
+495,1974,31716
+496,1974,31716
+497,1974,31716
+498,1974,31716
+499,1974,31716
+500,1974,31716
+501,1974,31716
+502,1974,31716
+503,1974,31716
+504,1974,31716
+505,1974,31716
+506,1974,31716
+507,1974,31716
+508,1974,31716
+509,1974,31716
+510,1974,31716
+511,1974,31716
+512,1974,31716
+513,1974,31716
+514,1974,31716
+515,1974,31716
+516,1974,31716
+517,1974,31716
+518,1974,31716
+519,1974,31716
+520,1974,31716
+521,1974,31716
+522,1974,31716
+523,1974,31716
+524,1974,31716
+525,1974,31716
+526,1974,31716
+527,1974,31716
+528,1974,31716
+529,1974,31716
+530,1974,31716
+531,1974,31716
+532,1974,31716
+533,1974,31716
+534,1974,31716
+535,1974,31716
+536,1974,31716
+537,1974,31716
+538,1974,31716
+539,1974,31716
+540,1974,31716
+541,1974,31716
+542,1974,31716
+543,1974,31716
+544,1974,31716
+545,1974,31716
+546,1974,31716
+547,1974,31716
+548,1974,31716
+549,1974,31716
+550,1974,31716
+551,1974,31716
+552,1974,31716
+553,1974,31716
+554,1974,31716
+555,1974,31716
+556,1974,31716
+557,1974,31716
+558,1974,31716
+559,1974,31716
+560,1974,31716
+561,1974,31716
+562,1974,31716
+563,1974,31716
+564,1974,31716
+565,1974,31716
+566,1974,31716
+567,1974,31716
+568,1974,31716
+569,1974,31716
+570,1974,31716
+571,1974,31716
+572,1974,31716
+573,1974,31716
+574,1974,31716
+575,1974,31716
+576,1974,31716
+577,1974,31716
+578,1974,31716
+579,1974,31716
+580,1974,31716
+581,1974,31716
+582,1974,31716
+583,1974,31716
+584,1974,31716
+585,1974,31716
+586,1974,31716
+587,1974,31716
+588,1974,31716
+589,1974,31716
+590,1974,31716
+591,1974,31716
+592,1974,31716
+593,1974,31716
+594,1974,31716
+595,1974,31716
+596,1974,31716
+597,1974,31716
+598,1974,31716
+599,1974,31716
+600,1974,31716
+601,1974,31716
+602,1974,31716
+603,1974,31716
+604,1974,31716
+605,1974,31716
+606,1974,31716
+607,1974,31716
+608,1974,31716
+609,1974,31716
+610,1974,31716
+611,1974,31716
+612,1974,31716
+613,1974,31716
+614,1974,31716
+615,1974,31716
+616,1974,31716
+617,1974,31716
+618,1974,31716
+619,1974,31716
+620,1974,31716
+621,1974,31716
+622,1974,31716
+623,1974,31716
+624,1974,31716
+625,1974,31716
+626,1974,31716
+627,1974,31716
+628,1974,31716
+629,1974,31716
+630,1974,31716
+631,1974,31716
+632,1974,31716
+633,1974,31716
+634,1974,31716
+635,1974,31716
+636,1974,31716
+637,1974,31716
+638,1974,31716
+639,1974,31716
+640,1974,31716
+641,1974,31716
+642,1974,31716
+643,1974,31716
+644,1974,31716
+645,1974,31716
+646,1974,31716
+647,1974,31716
+648,1974,31716
+649,1974,31716
+650,1974,31716
+651,1974,31716
+652,1974,31716
+653,1974,31716
+654,1974,31716
+655,1974,31716
+656,1974,31716
+657,1974,31716
+658,1974,31716
+659,1974,31716
+660,1974,31716
+661,1974,31716
+662,1974,31716
+663,1974,31716
+664,1974,31716
+665,1974,31716
+666,1974,31716
+667,1974,31716
+668,1974,31716
+669,1974,31716
+670,1974,31716
+671,1974,31716
+672,1974,31716
+673,1974,31716
+674,1974,31716
+675,1974,31716
+676,1974,31716
+677,1974,31716
+678,1974,31716
+679,1974,31716
+680,1974,31716
+681,1974,31716
+682,1974,31716
+683,1974,31716
+684,1974,31716
+685,1974,31716
+686,1974,31716
+687,1974,31716
+688,1974,31716
+689,1974,31716
+690,1974,31716
+691,1974,31716
+692,1974,31716
+693,1974,31716
+694,1974,31716
+695,1974,31716
+696,1974,31716
+697,1974,31716
+698,1974,31716
+699,1974,31716
+700,1974,31716
+701,1974,31716
+702,1974,31716
+703,1974,31716
+704,1974,31716
+705,1974,31716
+706,1974,31716
+707,1974,31716
+708,1974,31716
+709,1974,31716
+710,1974,31716
+711,1974,31716
+712,1974,31716
+713,1974,31716
+714,1974,31716
+715,1974,31716
+716,1974,31716
+717,1974,31716
+718,1974,31716
+719,1974,31716
+720,1974,31716
+721,1974,31716
+722,1974,31716
+723,1974,31716
+724,1974,31716
+725,1974,31716
+726,1974,31716
+727,1974,31716
+728,1974,31716
+729,1974,31716
+730,1974,31716
+731,1974,31716
+732,1974,31716
+733,1974,31716
+734,1974,31716
+735,1974,31716
+736,1974,31716
+737,1974,31716
+738,1974,31716
+739,1974,31716
+740,1974,31716
+741,1974,31716
+742,1974,31716
+743,1974,31716
+744,1974,31716
+745,1974,31716
+746,1974,31716
+747,1974,31716
+748,1974,31716
+749,1974,31716
+750,1974,31716
+751,1974,31716
+752,1974,31716
+753,1974,31716
+754,1974,31716
+755,1974,31716
+756,1974,31716
+757,1974,31716
+758,1974,31716
+759,1974,31716
+760,1974,31716
+761,1974,31716
+762,1974,31716
+763,1974,31716
+764,1974,31716
+765,1974,31716
+766,1974,31716
+767,1974,31716
+768,1974,31716
+769,1974,31716
+770,1974,31716
+771,1974,31716
+772,1974,31716
+773,1974,31716
+774,1974,31716
+775,1974,31716
+776,1974,31716
+777,1974,31716
+778,1974,31716
+779,1974,31716
+780,1974,31716
+781,1974,31716
+782,1974,31716
+783,1974,31716
+784,1974,31716
+785,1974,31716
+786,1974,31716
+787,1974,31716
+788,1974,31716
+789,1974,31716
+790,1974,31716
+791,1974,31716
+792,1974,31716
+793,1974,31716
+794,1974,31716
+795,1974,31716
+796,1974,31716
+797,1974,31716
+798,1974,31716
+799,1974,31716
+800,1974,31716
+801,1974,31716
+802,1974,31716
+803,1974,31716
+804,1974,31716
+805,1974,31716
+806,1974,31716
+807,1974,31716
+808,1974,31716
+809,1974,31716
+810,1974,31716
+811,1974,31716
+812,1974,31716
+813,1974,31716
+814,1974,31716
+815,1974,31716
+816,1974,31716
+817,1974,31716
+818,1974,31716
+819,1974,31716
+820,1974,31716
+821,1974,31716
+822,1974,31716
+823,1974,31716
+824,1974,31716
+825,1974,31716
+826,1974,31716
+827,1974,31716
+828,1974,31716
+829,1974,31716
+830,1974,31716
+831,1974,31716
+832,1974,31716
+833,1974,31716
+834,1974,31716
+835,1974,31716
+836,1974,31716
+837,1974,31716
+838,1974,31716
+839,1974,31716
+840,1974,31716
+841,1974,31716
+842,1974,31716
+843,1974,31716
+844,1974,31716
+845,1974,31716
+846,1974,31716
+847,1974,31716
+848,1974,31716
+849,1974,31716
+850,1974,31716
+851,1974,31716
+852,1974,31716
+853,1974,31716
+854,1974,31716
+855,1974,31716
+856,1974,31716
+857,1974,31716
+858,1974,31716
+859,1974,31716
+860,1974,31716
+861,1974,31716
+862,1974,31716
+863,1974,31716
+864,1974,31716
+865,1974,31716
+866,1974,31716
+867,1974,31716
+868,1974,31716
+869,1974,31716
+870,1974,31716
+871,1974,31716
+872,1974,31716
+873,1974,31716
+874,1974,31716
+875,1974,31716
+876,1974,31716
+877,1974,31716
+878,1974,31716
+879,1974,31716
+880,1974,31716
+881,1974,31716
+882,1974,31716
+883,1974,31716
+884,1974,31716
+885,1974,31716
+886,1974,31716
+887,1974,31716
+888,1974,31716
+889,1974,31716
+890,1974,31716
+891,1974,31716
+892,1974,31716
+893,1974,31716
+894,1974,31716
+895,1974,31716
+896,1974,31716
+897,1974,31716
+898,1974,31716
+899,1974,31716
+900,1974,31716
+901,1974,31716
+902,1974,31716
+903,1974,31716
+904,1974,31716
+905,1974,31716
+906,1974,31716
+907,1974,31716
+908,1974,31716
+909,1974,31716
+910,1974,31716
+911,1974,31716
+912,1974,31716
+913,1974,31716
+914,1974,31716
+915,1974,31716
+916,1974,31716
+917,1974,31716
+918,1974,31716
+919,1974,31716
+920,1974,31716
+921,1974,31716
+922,1974,31716
+923,1974,31716
+924,1974,31716
+925,1974,31716
+926,1974,31716
+927,1974,31716
+928,1974,31716
+929,1974,31716
+930,1974,31716
+931,1974,31716
+932,1974,31716
+933,1974,31716
+934,1974,31716
+935,1974,31716
+936,1974,31716
+937,1974,31716
+938,1974,31716
+939,1974,31716
+940,1974,31716
+941,1974,31716
+942,1974,31716
+943,1974,31716
+944,1974,31716
+945,1974,31716
+946,1974,31716
+947,1974,31716
+948,1974,31716
+949,1974,31716
+950,1974,31716
+951,1974,31716
+952,1974,31716
+953,1974,31716
+954,1974,31716
+955,1974,31716
+956,1974,31716
+957,1974,31716
+958,1974,31716
+959,1974,31716
+960,1974,31716
+961,1974,31721
+962,1974,31722
+963,1974,31723
+964,1974,31723
+965,1974,31723
+966,1974,31723
+967,1974,31724
+968,1974,31724
+969,1974,31724
+970,1974,31724
+971,1974,31725
+972,1974,31726
+973,1974,31726
+974,1974,31727
+975,1974,31729
+976,1974,31730
+977,1974,31730
+978,1974,31732
+979,1974,31732
+980,1974,31733
+981,1974,33011
+982,1974,33012
+983,1974,33012
+984,1974,33012
+985,1974,33012
+986,1974,33013
+987,1974,33013
+988,1974,33013
+989,1974,33013
+990,1974,33013
+991,1974,33014
+992,1974,33014
+993,1974,33014
+994,1974,33014
+995,1974,33014
+996,1974,33014
+997,1974,33014
+998,1976,33015
+999,1979,33015
+1000,3249,33034
+RAW_SAMPLES_END
+[0;32mI (1936) V-CORE: ========================================[0m
+[0;32mI (1946) main_task: Returned from app_main()[0m
+
+Done
+END OF RUN 3
+
+========================================
+EXPERIMENT 002 - RUN 4 OF 5
+Date: Wed Oct 14 10:05:21 IST 2026
+========================================
+[1/4] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/partition_table/partition-table.bin /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.bin
+vcore.bin binary size 0x23510 bytes. Smallest app partition is 0x100000 bytes. 0xdcaf0 bytes (86%) free.
+[2/4] Performing build step for 'bootloader'
+[1/1] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.bin
+Bootloader binary size 0x6640 bytes. 0x9c0 bytes (9%) free.
+[3/4] No install step for 'bootloader'
+[4/4] Completed 'bootloader'
+Executing action: all (aliases: build)
+Running ninja in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build
+Executing "ninja all"...
+Executing action: flash
+Serial port /dev/cu.usbserial-0001:
+Connecting.....
+Detecting chip type... ESP32
+Running ninja in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build
+Executing "ninja flash"...
+[1/5] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/partition_table/partition-table.bin /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.bin
+vcore.bin binary size 0x23510 bytes. Smallest app partition is 0x100000 bytes. 0xdcaf0 bytes (86%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.bin
+Bootloader binary size 0x6640 bytes. 0x9c0 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] Running utility command for flash
+esptool --chip esp32 -p /dev/cu.usbserial-0001 -b 460800 --before=default-reset --after=hard-reset write-flash --flash-mode dio --flash-freq 40m --flash-size 4MB 0x1000 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 vcore.bin --diff-with bootloader/bootloader_flashed.bin partition_table/partition-table_flashed.bin vcore_flashed.bin
+esptool v5.5.0
+Serial port /dev/cu.usbserial-0001:
+Connecting....
+Connected to ESP32 on /dev/cu.usbserial-0001:
+Chip type:          ESP32-D0WD-V3 (revision v3.1)
+Features:           Wi-Fi, BT, Dual Core + LP Core, 240MHz, Vref calibration in eFuse, Coding Scheme None
+Crystal frequency:  40MHz
+MAC:                30:76:f5:92:11:2c
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+
+Writing 'bootloader/bootloader.bin' at 0x00001000...
+SHA digest in image updated.
+SHA digest in image updated.
+No changed sectors found, verifying if data is in flash...
+'bootloader/bootloader.bin' at 0x00001000 verified.
+
+Writing 'partition_table/partition-table.bin' at 0x00008000...
+No changed sectors found, verifying if data is in flash...
+'partition_table/partition-table.bin' at 0x00008000 verified.
+
+Writing 'vcore.bin' at 0x00010000...
+No changed sectors found, verifying if data is in flash...
+'vcore.bin' at 0x00010000 verified.
+
+Hard resetting via RTS pin...
+--- esp-idf-monitor 1.10.0 on /dev/cu.usbserial-0001 115200
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+Executing action: monitor
+Running idf_monitor in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore
+Executing "/Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.elf /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.elf -m '/Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python' '/Users/prajwalnavadagp/.espressif/v6.1/esp-idf/tools/idf.py'"...
+��xx x�xx�x x x����xx x�xx�x x x����xx x�xx�x x x����xx x�xx�x x x�������������������������������������j
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15824
+load:0x40080400,len:3988
+--- 0x40080400: _invalid_pc_placeholder at /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/xtensa/xtensa_vectors.S:2259
+entry 0x40080644
+--- 0x40080644: call_start_cpu0 at /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c:27
+[0;32mI (27) boot: ESP-IDF v6.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Oct 13 2026 23:28:51[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=08c9ch ( 35996) map[0m
+[0;32mI (99) esp_image: segment 1: paddr=00018cc4 vaddr=3ffb0000 size=02b0ch ( 11020) load[0m
+[0;32mI (103) esp_image: segment 2: paddr=0001b7d8 vaddr=40080000 size=04840h ( 18496) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0d0d4h ( 53460) map[0m
+[0;32mI (131) esp_image: segment 4: paddr=0002d0fc vaddr=40084840 size=063c0h ( 25536) load[0m
+[0;32mI (141) esp_image: segment 5: paddr=000334c4 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (147) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (147) boot: Disabling RNG early entropy source...[0m
+[0;32mI (159) cpu_start: Multicore app[0m
+[0;32mI (168) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (168) cpu_start: Pro cpu start user code[0m
+[0;32mI (168) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (174) app_init: Project name:     vcore[0m
+[0;32mI (177) app_init: App version:      1[0m
+[0;32mI (181) app_init: Compile time:     Oct 13 2026 23:28:43[0m
+[0;32mI (186) app_init: ELF file SHA256:  20fe874ef...[0m
+[0;32mI (190) app_init: ESP-IDF:          v6.1[0m
+[0;32mI (194) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (198) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (202) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (206) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (212) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (217) heap_init: At 3FFB7478 len 00028B88 (162 KiB): DRAM[0m
+[0;32mI (222) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (227) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (233) heap_init: At 4008AC00 len 00015400 (85 KiB): IRAM[0m
+[0;32mI (240) spi_flash: detected chip: generic[0m
+[0;32mI (242) spi_flash: flash io: dio[0m
+[0;32mI (246) main_task: Started on CPU0[0m
+[0;32mI (246) main_task: Calling app_main()[0m
+[0;32mI (246) V-CORE: ========================================[0m
+[0;32mI (256) V-CORE:  V-CORE: DOT-PRODUCT BENCHMARK[0m
+[0;32mI (256) V-CORE:  EXPERIMENT 002: TIMING VARIABILITY[0m
+[0;32mI (256) V-CORE: ========================================[0m
+[0;32mI (276) V-CORE: ========== SMALL WORKLOAD ==========[0m
+[0;32mI (276) V-CORE: Vector size: 64[0m
+[0;32mI (276) V-CORE: Trials: 1000[0m
+[0;32mI (276) V-CORE: Result:   25984[0m
+[0;32mI (286) V-CORE: Expected: 25984[0m
+[0;32mI (286) V-CORE: Correct:  YES[0m
+[0;32mI (286) V-CORE: Minimum:  1974 cycles[0m
+[0;32mI (296) V-CORE: Median:   1974 cycles[0m
+[0;32mI (296) V-CORE: Mean:     1975.32 cycles[0m
+[0;32mI (296) V-CORE: Std dev:  41.66 cycles[0m
+[0;32mI (306) V-CORE: P90:      1974 cycles[0m
+[0;32mI (306) V-CORE: P95:      1974 cycles[0m
+[0;32mI (306) V-CORE: P99:      1974 cycles[0m
+[0;32mI (316) V-CORE: Maximum:  3292 cycles[0m
+[0;32mI (516) V-CORE: ========== LARGE WORKLOAD ==========[0m
+[0;32mI (516) V-CORE: Vector size: 1024[0m
+[0;32mI (516) V-CORE: Trials: 1000[0m
+[0;32mI (516) V-CORE: Result:   15634[0m
+[0;32mI (516) V-CORE: Expected: 15634[0m
+[0;32mI (526) V-CORE: Correct:  YES[0m
+[0;32mI (526) V-CORE: Minimum:  31716 cycles[0m
+[0;32mI (526) V-CORE: Median:   31716 cycles[0m
+[0;32mI (536) V-CORE: Mean:     31742.12 cycles[0m
+[0;32mI (536) V-CORE: Std dev:  181.78 cycles[0m
+[0;32mI (536) V-CORE: P90:      31716 cycles[0m
+[0;32mI (546) V-CORE: P95:      31716 cycles[0m
+[0;32mI (546) V-CORE: P99:      33014 cycles[0m
+[0;32mI (546) V-CORE: Maximum:  33034 cycles[0m
+
+RAW_SAMPLES_BEGIN
+rank,small_cycles,large_cycles
+1,1974,31716
+2,1974,31716
+3,1974,31716
+4,1974,31716
+5,1974,31716
+6,1974,31716
+7,1974,31716
+8,1974,31716
+9,1974,31716
+10,1974,31716
+11,1974,31716
+12,1974,31716
+13,1974,31716
+14,1974,31716
+15,1974,31716
+16,1974,31716
+17,1974,31716
+18,1974,31716
+19,1974,31716
+20,1974,31716
+21,1974,31716
+22,1974,31716
+23,1974,31716
+24,1974,31716
+25,1974,31716
+26,1974,31716
+27,1974,31716
+28,1974,31716
+29,1974,31716
+30,1974,31716
+31,1974,31716
+32,1974,31716
+33,1974,31716
+34,1974,31716
+35,1974,31716
+36,1974,31716
+37,1974,31716
+38,1974,31716
+39,1974,31716
+40,1974,31716
+41,1974,31716
+42,1974,31716
+43,1974,31716
+44,1974,31716
+45,1974,31716
+46,1974,31716
+47,1974,31716
+48,1974,31716
+49,1974,31716
+50,1974,31716
+51,1974,31716
+52,1974,31716
+53,1974,31716
+54,1974,31716
+55,1974,31716
+56,1974,31716
+57,1974,31716
+58,1974,31716
+59,1974,31716
+60,1974,31716
+61,1974,31716
+62,1974,31716
+63,1974,31716
+64,1974,31716
+65,1974,31716
+66,1974,31716
+67,1974,31716
+68,1974,31716
+69,1974,31716
+70,1974,31716
+71,1974,31716
+72,1974,31716
+73,1974,31716
+74,1974,31716
+75,1974,31716
+76,1974,31716
+77,1974,31716
+78,1974,31716
+79,1974,31716
+80,1974,31716
+81,1974,31716
+82,1974,31716
+83,1974,31716
+84,1974,31716
+85,1974,31716
+86,1974,31716
+87,1974,31716
+88,1974,31716
+89,1974,31716
+90,1974,31716
+91,1974,31716
+92,1974,31716
+93,1974,31716
+94,1974,31716
+95,1974,31716
+96,1974,31716
+97,1974,31716
+98,1974,31716
+99,1974,31716
+100,1974,31716
+101,1974,31716
+102,1974,31716
+103,1974,31716
+104,1974,31716
+105,1974,31716
+106,1974,31716
+107,1974,31716
+108,1974,31716
+109,1974,31716
+110,1974,31716
+111,1974,31716
+112,1974,31716
+113,1974,31716
+114,1974,31716
+115,1974,31716
+116,1974,31716
+117,1974,31716
+118,1974,31716
+119,1974,31716
+120,1974,31716
+121,1974,31716
+122,1974,31716
+123,1974,31716
+124,1974,31716
+125,1974,31716
+126,1974,31716
+127,1974,31716
+128,1974,31716
+129,1974,31716
+130,1974,31716
+131,1974,31716
+132,1974,31716
+133,1974,31716
+134,1974,31716
+135,1974,31716
+136,1974,31716
+137,1974,31716
+138,1974,31716
+139,1974,31716
+140,1974,31716
+141,1974,31716
+142,1974,31716
+143,1974,31716
+144,1974,31716
+145,1974,31716
+146,1974,31716
+147,1974,31716
+148,1974,31716
+149,1974,31716
+150,1974,31716
+151,1974,31716
+152,1974,31716
+153,1974,31716
+154,1974,31716
+155,1974,31716
+156,1974,31716
+157,1974,31716
+158,1974,31716
+159,1974,31716
+160,1974,31716
+161,1974,31716
+162,1974,31716
+163,1974,31716
+164,1974,31716
+165,1974,31716
+166,1974,31716
+167,1974,31716
+168,1974,31716
+169,1974,31716
+170,1974,31716
+171,1974,31716
+172,1974,31716
+173,1974,31716
+174,1974,31716
+175,1974,31716
+176,1974,31716
+177,1974,31716
+178,1974,31716
+179,1974,31716
+180,1974,31716
+181,1974,31716
+182,1974,31716
+183,1974,31716
+184,1974,31716
+185,1974,31716
+186,1974,31716
+187,1974,31716
+188,1974,31716
+189,1974,31716
+190,1974,31716
+191,1974,31716
+192,1974,31716
+193,1974,31716
+194,1974,31716
+195,1974,31716
+196,1974,31716
+197,1974,31716
+198,1974,31716
+199,1974,31716
+200,1974,31716
+201,1974,31716
+202,1974,31716
+203,1974,31716
+204,1974,31716
+205,1974,31716
+206,1974,31716
+207,1974,31716
+208,1974,31716
+209,1974,31716
+210,1974,31716
+211,1974,31716
+212,1974,31716
+213,1974,31716
+214,1974,31716
+215,1974,31716
+216,1974,31716
+217,1974,31716
+218,1974,31716
+219,1974,31716
+220,1974,31716
+221,1974,31716
+222,1974,31716
+223,1974,31716
+224,1974,31716
+225,1974,31716
+226,1974,31716
+227,1974,31716
+228,1974,31716
+229,1974,31716
+230,1974,31716
+231,1974,31716
+232,1974,31716
+233,1974,31716
+234,1974,31716
+235,1974,31716
+236,1974,31716
+237,1974,31716
+238,1974,31716
+239,1974,31716
+240,1974,31716
+241,1974,31716
+242,1974,31716
+243,1974,31716
+244,1974,31716
+245,1974,31716
+246,1974,31716
+247,1974,31716
+248,1974,31716
+249,1974,31716
+250,1974,31716
+251,1974,31716
+252,1974,31716
+253,1974,31716
+254,1974,31716
+255,1974,31716
+256,1974,31716
+257,1974,31716
+258,1974,31716
+259,1974,31716
+260,1974,31716
+261,1974,31716
+262,1974,31716
+263,1974,31716
+264,1974,31716
+265,1974,31716
+266,1974,31716
+267,1974,31716
+268,1974,31716
+269,1974,31716
+270,1974,31716
+271,1974,31716
+272,1974,31716
+273,1974,31716
+274,1974,31716
+275,1974,31716
+276,1974,31716
+277,1974,31716
+278,1974,31716
+279,1974,31716
+280,1974,31716
+281,1974,31716
+282,1974,31716
+283,1974,31716
+284,1974,31716
+285,1974,31716
+286,1974,31716
+287,1974,31716
+288,1974,31716
+289,1974,31716
+290,1974,31716
+291,1974,31716
+292,1974,31716
+293,1974,31716
+294,1974,31716
+295,1974,31716
+296,1974,31716
+297,1974,31716
+298,1974,31716
+299,1974,31716
+300,1974,31716
+301,1974,31716
+302,1974,31716
+303,1974,31716
+304,1974,31716
+305,1974,31716
+306,1974,31716
+307,1974,31716
+308,1974,31716
+309,1974,31716
+310,1974,31716
+311,1974,31716
+312,1974,31716
+313,1974,31716
+314,1974,31716
+315,1974,31716
+316,1974,31716
+317,1974,31716
+318,1974,31716
+319,1974,31716
+320,1974,31716
+321,1974,31716
+322,1974,31716
+323,1974,31716
+324,1974,31716
+325,1974,31716
+326,1974,31716
+327,1974,31716
+328,1974,31716
+329,1974,31716
+330,1974,31716
+331,1974,31716
+332,1974,31716
+333,1974,31716
+334,1974,31716
+335,1974,31716
+336,1974,31716
+337,1974,31716
+338,1974,31716
+339,1974,31716
+340,1974,31716
+341,1974,31716
+342,1974,31716
+343,1974,31716
+344,1974,31716
+345,1974,31716
+346,1974,31716
+347,1974,31716
+348,1974,31716
+349,1974,31716
+350,1974,31716
+351,1974,31716
+352,1974,31716
+353,1974,31716
+354,1974,31716
+355,1974,31716
+356,1974,31716
+357,1974,31716
+358,1974,31716
+359,1974,31716
+360,1974,31716
+361,1974,31716
+362,1974,31716
+363,1974,31716
+364,1974,31716
+365,1974,31716
+366,1974,31716
+367,1974,31716
+368,1974,31716
+369,1974,31716
+370,1974,31716
+371,1974,31716
+372,1974,31716
+373,1974,31716
+374,1974,31716
+375,1974,31716
+376,1974,31716
+377,1974,31716
+378,1974,31716
+379,1974,31716
+380,1974,31716
+381,1974,31716
+382,1974,31716
+383,1974,31716
+384,1974,31716
+385,1974,31716
+386,1974,31716
+387,1974,31716
+388,1974,31716
+389,1974,31716
+390,1974,31716
+391,1974,31716
+392,1974,31716
+393,1974,31716
+394,1974,31716
+395,1974,31716
+396,1974,31716
+397,1974,31716
+398,1974,31716
+399,1974,31716
+400,1974,31716
+401,1974,31716
+402,1974,31716
+403,1974,31716
+404,1974,31716
+405,1974,31716
+406,1974,31716
+407,1974,31716
+408,1974,31716
+409,1974,31716
+410,1974,31716
+411,1974,31716
+412,1974,31716
+413,1974,31716
+414,1974,31716
+415,1974,31716
+416,1974,31716
+417,1974,31716
+418,1974,31716
+419,1974,31716
+420,1974,31716
+421,1974,31716
+422,1974,31716
+423,1974,31716
+424,1974,31716
+425,1974,31716
+426,1974,31716
+427,1974,31716
+428,1974,31716
+429,1974,31716
+430,1974,31716
+431,1974,31716
+432,1974,31716
+433,1974,31716
+434,1974,31716
+435,1974,31716
+436,1974,31716
+437,1974,31716
+438,1974,31716
+439,1974,31716
+440,1974,31716
+441,1974,31716
+442,1974,31716
+443,1974,31716
+444,1974,31716
+445,1974,31716
+446,1974,31716
+447,1974,31716
+448,1974,31716
+449,1974,31716
+450,1974,31716
+451,1974,31716
+452,1974,31716
+453,1974,31716
+454,1974,31716
+455,1974,31716
+456,1974,31716
+457,1974,31716
+458,1974,31716
+459,1974,31716
+460,1974,31716
+461,1974,31716
+462,1974,31716
+463,1974,31716
+464,1974,31716
+465,1974,31716
+466,1974,31716
+467,1974,31716
+468,1974,31716
+469,1974,31716
+470,1974,31716
+471,1974,31716
+472,1974,31716
+473,1974,31716
+474,1974,31716
+475,1974,31716
+476,1974,31716
+477,1974,31716
+478,1974,31716
+479,1974,31716
+480,1974,31716
+481,1974,31716
+482,1974,31716
+483,1974,31716
+484,1974,31716
+485,1974,31716
+486,1974,31716
+487,1974,31716
+488,1974,31716
+489,1974,31716
+490,1974,31716
+491,1974,31716
+492,1974,31716
+493,1974,31716
+494,1974,31716
+495,1974,31716
+496,1974,31716
+497,1974,31716
+498,1974,31716
+499,1974,31716
+500,1974,31716
+501,1974,31716
+502,1974,31716
+503,1974,31716
+504,1974,31716
+505,1974,31716
+506,1974,31716
+507,1974,31716
+508,1974,31716
+509,1974,31716
+510,1974,31716
+511,1974,31716
+512,1974,31716
+513,1974,31716
+514,1974,31716
+515,1974,31716
+516,1974,31716
+517,1974,31716
+518,1974,31716
+519,1974,31716
+520,1974,31716
+521,1974,31716
+522,1974,31716
+523,1974,31716
+524,1974,31716
+525,1974,31716
+526,1974,31716
+527,1974,31716
+528,1974,31716
+529,1974,31716
+530,1974,31716
+531,1974,31716
+532,1974,31716
+533,1974,31716
+534,1974,31716
+535,1974,31716
+536,1974,31716
+537,1974,31716
+538,1974,31716
+539,1974,31716
+540,1974,31716
+541,1974,31716
+542,1974,31716
+543,1974,31716
+544,1974,31716
+545,1974,31716
+546,1974,31716
+547,1974,31716
+548,1974,31716
+549,1974,31716
+550,1974,31716
+551,1974,31716
+552,1974,31716
+553,1974,31716
+554,1974,31716
+555,1974,31716
+556,1974,31716
+557,1974,31716
+558,1974,31716
+559,1974,31716
+560,1974,31716
+561,1974,31716
+562,1974,31716
+563,1974,31716
+564,1974,31716
+565,1974,31716
+566,1974,31716
+567,1974,31716
+568,1974,31716
+569,1974,31716
+570,1974,31716
+571,1974,31716
+572,1974,31716
+573,1974,31716
+574,1974,31716
+575,1974,31716
+576,1974,31716
+577,1974,31716
+578,1974,31716
+579,1974,31716
+580,1974,31716
+581,1974,31716
+582,1974,31716
+583,1974,31716
+584,1974,31716
+585,1974,31716
+586,1974,31716
+587,1974,31716
+588,1974,31716
+589,1974,31716
+590,1974,31716
+591,1974,31716
+592,1974,31716
+593,1974,31716
+594,1974,31716
+595,1974,31716
+596,1974,31716
+597,1974,31716
+598,1974,31716
+599,1974,31716
+600,1974,31716
+601,1974,31716
+602,1974,31716
+603,1974,31716
+604,1974,31716
+605,1974,31716
+606,1974,31716
+607,1974,31716
+608,1974,31716
+609,1974,31716
+610,1974,31716
+611,1974,31716
+612,1974,31716
+613,1974,31716
+614,1974,31716
+615,1974,31716
+616,1974,31716
+617,1974,31716
+618,1974,31716
+619,1974,31716
+620,1974,31716
+621,1974,31716
+622,1974,31716
+623,1974,31716
+624,1974,31716
+625,1974,31716
+626,1974,31716
+627,1974,31716
+628,1974,31716
+629,1974,31716
+630,1974,31716
+631,1974,31716
+632,1974,31716
+633,1974,31716
+634,1974,31716
+635,1974,31716
+636,1974,31716
+637,1974,31716
+638,1974,31716
+639,1974,31716
+640,1974,31716
+641,1974,31716
+642,1974,31716
+643,1974,31716
+644,1974,31716
+645,1974,31716
+646,1974,31716
+647,1974,31716
+648,1974,31716
+649,1974,31716
+650,1974,31716
+651,1974,31716
+652,1974,31716
+653,1974,31716
+654,1974,31716
+655,1974,31716
+656,1974,31716
+657,1974,31716
+658,1974,31716
+659,1974,31716
+660,1974,31716
+661,1974,31716
+662,1974,31716
+663,1974,31716
+664,1974,31716
+665,1974,31716
+666,1974,31716
+667,1974,31716
+668,1974,31716
+669,1974,31716
+670,1974,31716
+671,1974,31716
+672,1974,31716
+673,1974,31716
+674,1974,31716
+675,1974,31716
+676,1974,31716
+677,1974,31716
+678,1974,31716
+679,1974,31716
+680,1974,31716
+681,1974,31716
+682,1974,31716
+683,1974,31716
+684,1974,31716
+685,1974,31716
+686,1974,31716
+687,1974,31716
+688,1974,31716
+689,1974,31716
+690,1974,31716
+691,1974,31716
+692,1974,31716
+693,1974,31716
+694,1974,31716
+695,1974,31716
+696,1974,31716
+697,1974,31716
+698,1974,31716
+699,1974,31716
+700,1974,31716
+701,1974,31716
+702,1974,31716
+703,1974,31716
+704,1974,31716
+705,1974,31716
+706,1974,31716
+707,1974,31716
+708,1974,31716
+709,1974,31716
+710,1974,31716
+711,1974,31716
+712,1974,31716
+713,1974,31716
+714,1974,31716
+715,1974,31716
+716,1974,31716
+717,1974,31716
+718,1974,31716
+719,1974,31716
+720,1974,31716
+721,1974,31716
+722,1974,31716
+723,1974,31716
+724,1974,31716
+725,1974,31716
+726,1974,31716
+727,1974,31716
+728,1974,31716
+729,1974,31716
+730,1974,31716
+731,1974,31716
+732,1974,31716
+733,1974,31716
+734,1974,31716
+735,1974,31716
+736,1974,31716
+737,1974,31716
+738,1974,31716
+739,1974,31716
+740,1974,31716
+741,1974,31716
+742,1974,31716
+743,1974,31716
+744,1974,31716
+745,1974,31716
+746,1974,31716
+747,1974,31716
+748,1974,31716
+749,1974,31716
+750,1974,31716
+751,1974,31716
+752,1974,31716
+753,1974,31716
+754,1974,31716
+755,1974,31716
+756,1974,31716
+757,1974,31716
+758,1974,31716
+759,1974,31716
+760,1974,31716
+761,1974,31716
+762,1974,31716
+763,1974,31716
+764,1974,31716
+765,1974,31716
+766,1974,31716
+767,1974,31716
+768,1974,31716
+769,1974,31716
+770,1974,31716
+771,1974,31716
+772,1974,31716
+773,1974,31716
+774,1974,31716
+775,1974,31716
+776,1974,31716
+777,1974,31716
+778,1974,31716
+779,1974,31716
+780,1974,31716
+781,1974,31716
+782,1974,31716
+783,1974,31716
+784,1974,31716
+785,1974,31716
+786,1974,31716
+787,1974,31716
+788,1974,31716
+789,1974,31716
+790,1974,31716
+791,1974,31716
+792,1974,31716
+793,1974,31716
+794,1974,31716
+795,1974,31716
+796,1974,31716
+797,1974,31716
+798,1974,31716
+799,1974,31716
+800,1974,31716
+801,1974,31716
+802,1974,31716
+803,1974,31716
+804,1974,31716
+805,1974,31716
+806,1974,31716
+807,1974,31716
+808,1974,31716
+809,1974,31716
+810,1974,31716
+811,1974,31716
+812,1974,31716
+813,1974,31716
+814,1974,31716
+815,1974,31716
+816,1974,31716
+817,1974,31716
+818,1974,31716
+819,1974,31716
+820,1974,31716
+821,1974,31716
+822,1974,31716
+823,1974,31716
+824,1974,31716
+825,1974,31716
+826,1974,31716
+827,1974,31716
+828,1974,31716
+829,1974,31716
+830,1974,31716
+831,1974,31716
+832,1974,31716
+833,1974,31716
+834,1974,31716
+835,1974,31716
+836,1974,31716
+837,1974,31716
+838,1974,31716
+839,1974,31716
+840,1974,31716
+841,1974,31716
+842,1974,31716
+843,1974,31716
+844,1974,31716
+845,1974,31716
+846,1974,31716
+847,1974,31716
+848,1974,31716
+849,1974,31716
+850,1974,31716
+851,1974,31716
+852,1974,31716
+853,1974,31716
+854,1974,31716
+855,1974,31716
+856,1974,31716
+857,1974,31716
+858,1974,31716
+859,1974,31716
+860,1974,31716
+861,1974,31716
+862,1974,31716
+863,1974,31716
+864,1974,31716
+865,1974,31716
+866,1974,31716
+867,1974,31716
+868,1974,31716
+869,1974,31716
+870,1974,31716
+871,1974,31716
+872,1974,31716
+873,1974,31716
+874,1974,31716
+875,1974,31716
+876,1974,31716
+877,1974,31716
+878,1974,31716
+879,1974,31716
+880,1974,31716
+881,1974,31716
+882,1974,31716
+883,1974,31716
+884,1974,31716
+885,1974,31716
+886,1974,31716
+887,1974,31716
+888,1974,31716
+889,1974,31716
+890,1974,31716
+891,1974,31716
+892,1974,31716
+893,1974,31716
+894,1974,31716
+895,1974,31716
+896,1974,31716
+897,1974,31716
+898,1974,31716
+899,1974,31716
+900,1974,31716
+901,1974,31716
+902,1974,31716
+903,1974,31716
+904,1974,31716
+905,1974,31716
+906,1974,31716
+907,1974,31716
+908,1974,31716
+909,1974,31716
+910,1974,31716
+911,1974,31716
+912,1974,31716
+913,1974,31716
+914,1974,31716
+915,1974,31716
+916,1974,31716
+917,1974,31716
+918,1974,31716
+919,1974,31716
+920,1974,31716
+921,1974,31716
+922,1974,31716
+923,1974,31716
+924,1974,31716
+925,1974,31716
+926,1974,31716
+927,1974,31716
+928,1974,31716
+929,1974,31716
+930,1974,31716
+931,1974,31716
+932,1974,31716
+933,1974,31716
+934,1974,31716
+935,1974,31716
+936,1974,31716
+937,1974,31716
+938,1974,31716
+939,1974,31716
+940,1974,31716
+941,1974,31716
+942,1974,31716
+943,1974,31716
+944,1974,31716
+945,1974,31716
+946,1974,31716
+947,1974,31716
+948,1974,31716
+949,1974,31716
+950,1974,31716
+951,1974,31716
+952,1974,31716
+953,1974,31716
+954,1974,31716
+955,1974,31716
+956,1974,31716
+957,1974,31716
+958,1974,31716
+959,1974,31716
+960,1974,31716
+961,1974,31718
+962,1974,31719
+963,1974,31720
+964,1974,31720
+965,1974,31720
+966,1974,31720
+967,1974,31721
+968,1974,31721
+969,1974,31721
+970,1974,31722
+971,1974,31722
+972,1974,31722
+973,1974,31722
+974,1974,31724
+975,1974,31725
+976,1974,31725
+977,1974,31727
+978,1974,31729
+979,1974,31734
+980,1974,31736
+981,1974,33011
+982,1974,33011
+983,1974,33012
+984,1974,33012
+985,1974,33013
+986,1974,33014
+987,1974,33014
+988,1974,33014
+989,1974,33014
+990,1974,33014
+991,1974,33014
+992,1974,33014
+993,1974,33014
+994,1974,33014
+995,1974,33014
+996,1974,33014
+997,1974,33014
+998,1976,33015
+999,1976,33015
+1000,3292,33034
+RAW_SAMPLES_END
+[0;32mI (1936) V-CORE: ========================================[0m
+[0;32mI (1946) main_task: Returned from app_main()[0m
+
+Done
+END OF RUN 4
+
+========================================
+EXPERIMENT 002 - RUN 5 OF 5
+Date: Wed Oct 14 10:05:41 IST 2026
+========================================
+[1/4] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/partition_table/partition-table.bin /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.bin
+vcore.bin binary size 0x23510 bytes. Smallest app partition is 0x100000 bytes. 0xdcaf0 bytes (86%) free.
+[2/4] Performing build step for 'bootloader'
+[1/1] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.bin
+Bootloader binary size 0x6640 bytes. 0x9c0 bytes (9%) free.
+[3/4] No install step for 'bootloader'
+[4/4] Completed 'bootloader'
+Executing action: all (aliases: build)
+Running ninja in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build
+Executing "ninja all"...
+Executing action: flash
+Serial port /dev/cu.usbserial-0001:
+Connecting....
+Detecting chip type... ESP32
+Running ninja in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build
+Executing "ninja flash"...
+[1/5] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/partition_table/partition-table.bin /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.bin
+vcore.bin binary size 0x23510 bytes. Smallest app partition is 0x100000 bytes. 0xdcaf0 bytes (86%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader && /Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.bin
+Bootloader binary size 0x6640 bytes. 0x9c0 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] Running utility command for flash
+esptool --chip esp32 -p /dev/cu.usbserial-0001 -b 460800 --before=default-reset --after=hard-reset write-flash --flash-mode dio --flash-freq 40m --flash-size 4MB 0x1000 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 vcore.bin --diff-with bootloader/bootloader_flashed.bin partition_table/partition-table_flashed.bin vcore_flashed.bin
+esptool v5.5.0
+Serial port /dev/cu.usbserial-0001:
+Connecting....
+Connected to ESP32 on /dev/cu.usbserial-0001:
+Chip type:          ESP32-D0WD-V3 (revision v3.1)
+Features:           Wi-Fi, BT, Dual Core + LP Core, 240MHz, Vref calibration in eFuse, Coding Scheme None
+Crystal frequency:  40MHz
+MAC:                30:76:f5:92:11:2c
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+
+Writing 'bootloader/bootloader.bin' at 0x00001000...
+SHA digest in image updated.
+SHA digest in image updated.
+No changed sectors found, verifying if data is in flash...
+'bootloader/bootloader.bin' at 0x00001000 verified.
+
+Writing 'partition_table/partition-table.bin' at 0x00008000...
+No changed sectors found, verifying if data is in flash...
+'partition_table/partition-table.bin' at 0x00008000 verified.
+
+Writing 'vcore.bin' at 0x00010000...
+No changed sectors found, verifying if data is in flash...
+'vcore.bin' at 0x00010000 verified.
+
+Hard resetting via RTS pin...
+--- esp-idf-monitor 1.10.0 on /dev/cu.usbserial-0001 115200
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+Executing action: monitor
+Running idf_monitor in directory /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore
+Executing "/Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/vcore.elf /Users/prajwalnavadagp/Engineering/Projects/V-Core/vcore/build/bootloader/bootloader.elf -m '/Users/prajwalnavadagp/.espressif/tools/python/v6.1/venv/bin/python' '/Users/prajwalnavadagp/.espressif/v6.1/esp-idf/tools/idf.py'"...
+L�S	V-CORE:  EXPERIMENT 002: TIMING VARIA�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15824
+load:0x40080400,len:3988
+--- 0x40080400: _invalid_pc_placeholder at /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/xtensa/xtensa_vectors.S:2259
+entry 0x40080644
+--- 0x40080644: call_start_cpu0 at /Users/prajwalnavadagp/.espressif/v6.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c:27
+[0;32mI (27) boot: ESP-IDF v6.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Oct 13 2026 23:28:51[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=08c9ch ( 35996) map[0m
+[0;32mI (99) esp_image: segment 1: paddr=00018cc4 vaddr=3ffb0000 size=02b0ch ( 11020) load[0m
+[0;32mI (103) esp_image: segment 2: paddr=0001b7d8 vaddr=40080000 size=04840h ( 18496) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0d0d4h ( 53460) map[0m
+[0;32mI (131) esp_image: segment 4: paddr=0002d0fc vaddr=40084840 size=063c0h ( 25536) load[0m
+[0;32mI (141) esp_image: segment 5: paddr=000334c4 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (147) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (147) boot: Disabling RNG early entropy source...[0m
+[0;32mI (159) cpu_start: Multicore app[0m
+[0;32mI (168) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (168) cpu_start: Pro cpu start user code[0m
+[0;32mI (168) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (174) app_init: Project name:     vcore[0m
+[0;32mI (177) app_init: App version:      1[0m
+[0;32mI (181) app_init: Compile time:     Oct 13 2026 23:28:43[0m
+[0;32mI (186) app_init: ELF file SHA256:  20fe874ef...[0m
+[0;32mI (190) app_init: ESP-IDF:          v6.1[0m
+[0;32mI (194) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (198) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (202) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (206) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (212) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (217) heap_init: At 3FFB7478 len 00028B88 (162 KiB): DRAM[0m
+[0;32mI (222) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (227) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (233) heap_init: At 4008AC00 len 00015400 (85 KiB): IRAM[0m
+[0;32mI (240) spi_flash: detected chip: generic[0m
+[0;32mI (242) spi_flash: flash io: dio[0m
+[0;32mI (246) main_task: Started on CPU0[0m
+[0;32mI (246) main_task: Calling app_main()[0m
+[0;32mI (246) V-CORE: ========================================[0m
+[0;32mI (256) V-CORE:  V-CORE: DOT-PRODUCT BENCHMARK[0m
+[0;32mI (256) V-CORE:  EXPERIMENT 002: TIMING VARIABILITY[0m
+[0;32mI (256) V-CORE: ========================================[0m
+[0;32mI (276) V-CORE: ========== SMALL WORKLOAD ==========[0m
+[0;32mI (276) V-CORE: Vector size: 64[0m
+[0;32mI (276) V-CORE: Trials: 1000[0m
+[0;32mI (276) V-CORE: Result:   25984[0m
+[0;32mI (286) V-CORE: Expected: 25984[0m
+[0;32mI (286) V-CORE: Correct:  YES[0m
+[0;32mI (286) V-CORE: Minimum:  1974 cycles[0m
+[0;32mI (296) V-CORE: Median:   1974 cycles[0m
+[0;32mI (296) V-CORE: Mean:     1975.32 cycles[0m
+[0;32mI (296) V-CORE: Std dev:  41.66 cycles[0m
+[0;32mI (306) V-CORE: P90:      1974 cycles[0m
+[0;32mI (306) V-CORE: P95:      1974 cycles[0m
+[0;32mI (306) V-CORE: P99:      1974 cycles[0m
+[0;32mI (316) V-CORE: Maximum:  3292 cycles[0m
+[0;32mI (516) V-CORE: ========== LARGE WORKLOAD ==========[0m
+[0;32mI (516) V-CORE: Vector size: 1024[0m
+[0;32mI (516) V-CORE: Trials: 1000[0m
+[0;32mI (516) V-CORE: Result:   15634[0m
+[0;32mI (516) V-CORE: Expected: 15634[0m
+[0;32mI (526) V-CORE: Correct:  YES[0m
+[0;32mI (526) V-CORE: Minimum:  31716 cycles[0m
+[0;32mI (526) V-CORE: Median:   31716 cycles[0m
+[0;32mI (536) V-CORE: Mean:     31742.12 cycles[0m
+[0;32mI (536) V-CORE: Std dev:  181.80 cycles[0m
+[0;32mI (536) V-CORE: P90:      31716 cycles[0m
+[0;32mI (546) V-CORE: P95:      31716 cycles[0m
+[0;32mI (546) V-CORE: P99:      33014 cycles[0m
+[0;32mI (546) V-CORE: Maximum:  33032 cycles[0m
+
+RAW_SAMPLES_BEGIN
+rank,small_cycles,large_cycles
+1,1974,31716
+2,1974,31716
+3,1974,31716
+4,1974,31716
+5,1974,31716
+6,1974,31716
+7,1974,31716
+8,1974,31716
+9,1974,31716
+10,1974,31716
+11,1974,31716
+12,1974,31716
+13,1974,31716
+14,1974,31716
+15,1974,31716
+16,1974,31716
+17,1974,31716
+18,1974,31716
+19,1974,31716
+20,1974,31716
+21,1974,31716
+22,1974,31716
+23,1974,31716
+24,1974,31716
+25,1974,31716
+26,1974,31716
+27,1974,31716
+28,1974,31716
+29,1974,31716
+30,1974,31716
+31,1974,31716
+32,1974,31716
+33,1974,31716
+34,1974,31716
+35,1974,31716
+36,1974,31716
+37,1974,31716
+38,1974,31716
+39,1974,31716
+40,1974,31716
+41,1974,31716
+42,1974,31716
+43,1974,31716
+44,1974,31716
+45,1974,31716
+46,1974,31716
+47,1974,31716
+48,1974,31716
+49,1974,31716
+50,1974,31716
+51,1974,31716
+52,1974,31716
+53,1974,31716
+54,1974,31716
+55,1974,31716
+56,1974,31716
+57,1974,31716
+58,1974,31716
+59,1974,31716
+60,1974,31716
+61,1974,31716
+62,1974,31716
+63,1974,31716
+64,1974,31716
+65,1974,31716
+66,1974,31716
+67,1974,31716
+68,1974,31716
+69,1974,31716
+70,1974,31716
+71,1974,31716
+72,1974,31716
+73,1974,31716
+74,1974,31716
+75,1974,31716
+76,1974,31716
+77,1974,31716
+78,1974,31716
+79,1974,31716
+80,1974,31716
+81,1974,31716
+82,1974,31716
+83,1974,31716
+84,1974,31716
+85,1974,31716
+86,1974,31716
+87,1974,31716
+88,1974,31716
+89,1974,31716
+90,1974,31716
+91,1974,31716
+92,1974,31716
+93,1974,31716
+94,1974,31716
+95,1974,31716
+96,1974,31716
+97,1974,31716
+98,1974,31716
+99,1974,31716
+100,1974,31716
+101,1974,31716
+102,1974,31716
+103,1974,31716
+104,1974,31716
+105,1974,31716
+106,1974,31716
+107,1974,31716
+108,1974,31716
+109,1974,31716
+110,1974,31716
+111,1974,31716
+112,1974,31716
+113,1974,31716
+114,1974,31716
+115,1974,31716
+116,1974,31716
+117,1974,31716
+118,1974,31716
+119,1974,31716
+120,1974,31716
+121,1974,31716
+122,1974,31716
+123,1974,31716
+124,1974,31716
+125,1974,31716
+126,1974,31716
+127,1974,31716
+128,1974,31716
+129,1974,31716
+130,1974,31716
+131,1974,31716
+132,1974,31716
+133,1974,31716
+134,1974,31716
+135,1974,31716
+136,1974,31716
+137,1974,31716
+138,1974,31716
+139,1974,31716
+140,1974,31716
+141,1974,31716
+142,1974,31716
+143,1974,31716
+144,1974,31716
+145,1974,31716
+146,1974,31716
+147,1974,31716
+148,1974,31716
+149,1974,31716
+150,1974,31716
+151,1974,31716
+152,1974,31716
+153,1974,31716
+154,1974,31716
+155,1974,31716
+156,1974,31716
+157,1974,31716
+158,1974,31716
+159,1974,31716
+160,1974,31716
+161,1974,31716
+162,1974,31716
+163,1974,31716
+164,1974,31716
+165,1974,31716
+166,1974,31716
+167,1974,31716
+168,1974,31716
+169,1974,31716
+170,1974,31716
+171,1974,31716
+172,1974,31716
+173,1974,31716
+174,1974,31716
+175,1974,31716
+176,1974,31716
+177,1974,31716
+178,1974,31716
+179,1974,31716
+180,1974,31716
+181,1974,31716
+182,1974,31716
+183,1974,31716
+184,1974,31716
+185,1974,31716
+186,1974,31716
+187,1974,31716
+188,1974,31716
+189,1974,31716
+190,1974,31716
+191,1974,31716
+192,1974,31716
+193,1974,31716
+194,1974,31716
+195,1974,31716
+196,1974,31716
+197,1974,31716
+198,1974,31716
+199,1974,31716
+200,1974,31716
+201,1974,31716
+202,1974,31716
+203,1974,31716
+204,1974,31716
+205,1974,31716
+206,1974,31716
+207,1974,31716
+208,1974,31716
+209,1974,31716
+210,1974,31716
+211,1974,31716
+212,1974,31716
+213,1974,31716
+214,1974,31716
+215,1974,31716
+216,1974,31716
+217,1974,31716
+218,1974,31716
+219,1974,31716
+220,1974,31716
+221,1974,31716
+222,1974,31716
+223,1974,31716
+224,1974,31716
+225,1974,31716
+226,1974,31716
+227,1974,31716
+228,1974,31716
+229,1974,31716
+230,1974,31716
+231,1974,31716
+232,1974,31716
+233,1974,31716
+234,1974,31716
+235,1974,31716
+236,1974,31716
+237,1974,31716
+238,1974,31716
+239,1974,31716
+240,1974,31716
+241,1974,31716
+242,1974,31716
+243,1974,31716
+244,1974,31716
+245,1974,31716
+246,1974,31716
+247,1974,31716
+248,1974,31716
+249,1974,31716
+250,1974,31716
+251,1974,31716
+252,1974,31716
+253,1974,31716
+254,1974,31716
+255,1974,31716
+256,1974,31716
+257,1974,31716
+258,1974,31716
+259,1974,31716
+260,1974,31716
+261,1974,31716
+262,1974,31716
+263,1974,31716
+264,1974,31716
+265,1974,31716
+266,1974,31716
+267,1974,31716
+268,1974,31716
+269,1974,31716
+270,1974,31716
+271,1974,31716
+272,1974,31716
+273,1974,31716
+274,1974,31716
+275,1974,31716
+276,1974,31716
+277,1974,31716
+278,1974,31716
+279,1974,31716
+280,1974,31716
+281,1974,31716
+282,1974,31716
+283,1974,31716
+284,1974,31716
+285,1974,31716
+286,1974,31716
+287,1974,31716
+288,1974,31716
+289,1974,31716
+290,1974,31716
+291,1974,31716
+292,1974,31716
+293,1974,31716
+294,1974,31716
+295,1974,31716
+296,1974,31716
+297,1974,31716
+298,1974,31716
+299,1974,31716
+300,1974,31716
+301,1974,31716
+302,1974,31716
+303,1974,31716
+304,1974,31716
+305,1974,31716
+306,1974,31716
+307,1974,31716
+308,1974,31716
+309,1974,31716
+310,1974,31716
+311,1974,31716
+312,1974,31716
+313,1974,31716
+314,1974,31716
+315,1974,31716
+316,1974,31716
+317,1974,31716
+318,1974,31716
+319,1974,31716
+320,1974,31716
+321,1974,31716
+322,1974,31716
+323,1974,31716
+324,1974,31716
+325,1974,31716
+326,1974,31716
+327,1974,31716
+328,1974,31716
+329,1974,31716
+330,1974,31716
+331,1974,31716
+332,1974,31716
+333,1974,31716
+334,1974,31716
+335,1974,31716
+336,1974,31716
+337,1974,31716
+338,1974,31716
+339,1974,31716
+340,1974,31716
+341,1974,31716
+342,1974,31716
+343,1974,31716
+344,1974,31716
+345,1974,31716
+346,1974,31716
+347,1974,31716
+348,1974,31716
+349,1974,31716
+350,1974,31716
+351,1974,31716
+352,1974,31716
+353,1974,31716
+354,1974,31716
+355,1974,31716
+356,1974,31716
+357,1974,31716
+358,1974,31716
+359,1974,31716
+360,1974,31716
+361,1974,31716
+362,1974,31716
+363,1974,31716
+364,1974,31716
+365,1974,31716
+366,1974,31716
+367,1974,31716
+368,1974,31716
+369,1974,31716
+370,1974,31716
+371,1974,31716
+372,1974,31716
+373,1974,31716
+374,1974,31716
+375,1974,31716
+376,1974,31716
+377,1974,31716
+378,1974,31716
+379,1974,31716
+380,1974,31716
+381,1974,31716
+382,1974,31716
+383,1974,31716
+384,1974,31716
+385,1974,31716
+386,1974,31716
+387,1974,31716
+388,1974,31716
+389,1974,31716
+390,1974,31716
+391,1974,31716
+392,1974,31716
+393,1974,31716
+394,1974,31716
+395,1974,31716
+396,1974,31716
+397,1974,31716
+398,1974,31716
+399,1974,31716
+400,1974,31716
+401,1974,31716
+402,1974,31716
+403,1974,31716
+404,1974,31716
+405,1974,31716
+406,1974,31716
+407,1974,31716
+408,1974,31716
+409,1974,31716
+410,1974,31716
+411,1974,31716
+412,1974,31716
+413,1974,31716
+414,1974,31716
+415,1974,31716
+416,1974,31716
+417,1974,31716
+418,1974,31716
+419,1974,31716
+420,1974,31716
+421,1974,31716
+422,1974,31716
+423,1974,31716
+424,1974,31716
+425,1974,31716
+426,1974,31716
+427,1974,31716
+428,1974,31716
+429,1974,31716
+430,1974,31716
+431,1974,31716
+432,1974,31716
+433,1974,31716
+434,1974,31716
+435,1974,31716
+436,1974,31716
+437,1974,31716
+438,1974,31716
+439,1974,31716
+440,1974,31716
+441,1974,31716
+442,1974,31716
+443,1974,31716
+444,1974,31716
+445,1974,31716
+446,1974,31716
+447,1974,31716
+448,1974,31716
+449,1974,31716
+450,1974,31716
+451,1974,31716
+452,1974,31716
+453,1974,31716
+454,1974,31716
+455,1974,31716
+456,1974,31716
+457,1974,31716
+458,1974,31716
+459,1974,31716
+460,1974,31716
+461,1974,31716
+462,1974,31716
+463,1974,31716
+464,1974,31716
+465,1974,31716
+466,1974,31716
+467,1974,31716
+468,1974,31716
+469,1974,31716
+470,1974,31716
+471,1974,31716
+472,1974,31716
+473,1974,31716
+474,1974,31716
+475,1974,31716
+476,1974,31716
+477,1974,31716
+478,1974,31716
+479,1974,31716
+480,1974,31716
+481,1974,31716
+482,1974,31716
+483,1974,31716
+484,1974,31716
+485,1974,31716
+486,1974,31716
+487,1974,31716
+488,1974,31716
+489,1974,31716
+490,1974,31716
+491,1974,31716
+492,1974,31716
+493,1974,31716
+494,1974,31716
+495,1974,31716
+496,1974,31716
+497,1974,31716
+498,1974,31716
+499,1974,31716
+500,1974,31716
+501,1974,31716
+502,1974,31716
+503,1974,31716
+504,1974,31716
+505,1974,31716
+506,1974,31716
+507,1974,31716
+508,1974,31716
+509,1974,31716
+510,1974,31716
+511,1974,31716
+512,1974,31716
+513,1974,31716
+514,1974,31716
+515,1974,31716
+516,1974,31716
+517,1974,31716
+518,1974,31716
+519,1974,31716
+520,1974,31716
+521,1974,31716
+522,1974,31716
+523,1974,31716
+524,1974,31716
+525,1974,31716
+526,1974,31716
+527,1974,31716
+528,1974,31716
+529,1974,31716
+530,1974,31716
+531,1974,31716
+532,1974,31716
+533,1974,31716
+534,1974,31716
+535,1974,31716
+536,1974,31716
+537,1974,31716
+538,1974,31716
+539,1974,31716
+540,1974,31716
+541,1974,31716
+542,1974,31716
+543,1974,31716
+544,1974,31716
+545,1974,31716
+546,1974,31716
+547,1974,31716
+548,1974,31716
+549,1974,31716
+550,1974,31716
+551,1974,31716
+552,1974,31716
+553,1974,31716
+554,1974,31716
+555,1974,31716
+556,1974,31716
+557,1974,31716
+558,1974,31716
+559,1974,31716
+560,1974,31716
+561,1974,31716
+562,1974,31716
+563,1974,31716
+564,1974,31716
+565,1974,31716
+566,1974,31716
+567,1974,31716
+568,1974,31716
+569,1974,31716
+570,1974,31716
+571,1974,31716
+572,1974,31716
+573,1974,31716
+574,1974,31716
+575,1974,31716
+576,1974,31716
+577,1974,31716
+578,1974,31716
+579,1974,31716
+580,1974,31716
+581,1974,31716
+582,1974,31716
+583,1974,31716
+584,1974,31716
+585,1974,31716
+586,1974,31716
+587,1974,31716
+588,1974,31716
+589,1974,31716
+590,1974,31716
+591,1974,31716
+592,1974,31716
+593,1974,31716
+594,1974,31716
+595,1974,31716
+596,1974,31716
+597,1974,31716
+598,1974,31716
+599,1974,31716
+600,1974,31716
+601,1974,31716
+602,1974,31716
+603,1974,31716
+604,1974,31716
+605,1974,31716
+606,1974,31716
+607,1974,31716
+608,1974,31716
+609,1974,31716
+610,1974,31716
+611,1974,31716
+612,1974,31716
+613,1974,31716
+614,1974,31716
+615,1974,31716
+616,1974,31716
+617,1974,31716
+618,1974,31716
+619,1974,31716
+620,1974,31716
+621,1974,31716
+622,1974,31716
+623,1974,31716
+624,1974,31716
+625,1974,31716
+626,1974,31716
+627,1974,31716
+628,1974,31716
+629,1974,31716
+630,1974,31716
+631,1974,31716
+632,1974,31716
+633,1974,31716
+634,1974,31716
+635,1974,31716
+636,1974,31716
+637,1974,31716
+638,1974,31716
+639,1974,31716
+640,1974,31716
+641,1974,31716
+642,1974,31716
+643,1974,31716
+644,1974,31716
+645,1974,31716
+646,1974,31716
+647,1974,31716
+648,1974,31716
+649,1974,31716
+650,1974,31716
+651,1974,31716
+652,1974,31716
+653,1974,31716
+654,1974,31716
+655,1974,31716
+656,1974,31716
+657,1974,31716
+658,1974,31716
+659,1974,31716
+660,1974,31716
+661,1974,31716
+662,1974,31716
+663,1974,31716
+664,1974,31716
+665,1974,31716
+666,1974,31716
+667,1974,31716
+668,1974,31716
+669,1974,31716
+670,1974,31716
+671,1974,31716
+672,1974,31716
+673,1974,31716
+674,1974,31716
+675,1974,31716
+676,1974,31716
+677,1974,31716
+678,1974,31716
+679,1974,31716
+680,1974,31716
+681,1974,31716
+682,1974,31716
+683,1974,31716
+684,1974,31716
+685,1974,31716
+686,1974,31716
+687,1974,31716
+688,1974,31716
+689,1974,31716
+690,1974,31716
+691,1974,31716
+692,1974,31716
+693,1974,31716
+694,1974,31716
+695,1974,31716
+696,1974,31716
+697,1974,31716
+698,1974,31716
+699,1974,31716
+700,1974,31716
+701,1974,31716
+702,1974,31716
+703,1974,31716
+704,1974,31716
+705,1974,31716
+706,1974,31716
+707,1974,31716
+708,1974,31716
+709,1974,31716
+710,1974,31716
+711,1974,31716
+712,1974,31716
+713,1974,31716
+714,1974,31716
+715,1974,31716
+716,1974,31716
+717,1974,31716
+718,1974,31716
+719,1974,31716
+720,1974,31716
+721,1974,31716
+722,1974,31716
+723,1974,31716
+724,1974,31716
+725,1974,31716
+726,1974,31716
+727,1974,31716
+728,1974,31716
+729,1974,31716
+730,1974,31716
+731,1974,31716
+732,1974,31716
+733,1974,31716
+734,1974,31716
+735,1974,31716
+736,1974,31716
+737,1974,31716
+738,1974,31716
+739,1974,31716
+740,1974,31716
+741,1974,31716
+742,1974,31716
+743,1974,31716
+744,1974,31716
+745,1974,31716
+746,1974,31716
+747,1974,31716
+748,1974,31716
+749,1974,31716
+750,1974,31716
+751,1974,31716
+752,1974,31716
+753,1974,31716
+754,1974,31716
+755,1974,31716
+756,1974,31716
+757,1974,31716
+758,1974,31716
+759,1974,31716
+760,1974,31716
+761,1974,31716
+762,1974,31716
+763,1974,31716
+764,1974,31716
+765,1974,31716
+766,1974,31716
+767,1974,31716
+768,1974,31716
+769,1974,31716
+770,1974,31716
+771,1974,31716
+772,1974,31716
+773,1974,31716
+774,1974,31716
+775,1974,31716
+776,1974,31716
+777,1974,31716
+778,1974,31716
+779,1974,31716
+780,1974,31716
+781,1974,31716
+782,1974,31716
+783,1974,31716
+784,1974,31716
+785,1974,31716
+786,1974,31716
+787,1974,31716
+788,1974,31716
+789,1974,31716
+790,1974,31716
+791,1974,31716
+792,1974,31716
+793,1974,31716
+794,1974,31716
+795,1974,31716
+796,1974,31716
+797,1974,31716
+798,1974,31716
+799,1974,31716
+800,1974,31716
+801,1974,31716
+802,1974,31716
+803,1974,31716
+804,1974,31716
+805,1974,31716
+806,1974,31716
+807,1974,31716
+808,1974,31716
+809,1974,31716
+810,1974,31716
+811,1974,31716
+812,1974,31716
+813,1974,31716
+814,1974,31716
+815,1974,31716
+816,1974,31716
+817,1974,31716
+818,1974,31716
+819,1974,31716
+820,1974,31716
+821,1974,31716
+822,1974,31716
+823,1974,31716
+824,1974,31716
+825,1974,31716
+826,1974,31716
+827,1974,31716
+828,1974,31716
+829,1974,31716
+830,1974,31716
+831,1974,31716
+832,1974,31716
+833,1974,31716
+834,1974,31716
+835,1974,31716
+836,1974,31716
+837,1974,31716
+838,1974,31716
+839,1974,31716
+840,1974,31716
+841,1974,31716
+842,1974,31716
+843,1974,31716
+844,1974,31716
+845,1974,31716
+846,1974,31716
+847,1974,31716
+848,1974,31716
+849,1974,31716
+850,1974,31716
+851,1974,31716
+852,1974,31716
+853,1974,31716
+854,1974,31716
+855,1974,31716
+856,1974,31716
+857,1974,31716
+858,1974,31716
+859,1974,31716
+860,1974,31716
+861,1974,31716
+862,1974,31716
+863,1974,31716
+864,1974,31716
+865,1974,31716
+866,1974,31716
+867,1974,31716
+868,1974,31716
+869,1974,31716
+870,1974,31716
+871,1974,31716
+872,1974,31716
+873,1974,31716
+874,1974,31716
+875,1974,31716
+876,1974,31716
+877,1974,31716
+878,1974,31716
+879,1974,31716
+880,1974,31716
+881,1974,31716
+882,1974,31716
+883,1974,31716
+884,1974,31716
+885,1974,31716
+886,1974,31716
+887,1974,31716
+888,1974,31716
+889,1974,31716
+890,1974,31716
+891,1974,31716
+892,1974,31716
+893,1974,31716
+894,1974,31716
+895,1974,31716
+896,1974,31716
+897,1974,31716
+898,1974,31716
+899,1974,31716
+900,1974,31716
+901,1974,31716
+902,1974,31716
+903,1974,31716
+904,1974,31716
+905,1974,31716
+906,1974,31716
+907,1974,31716
+908,1974,31716
+909,1974,31716
+910,1974,31716
+911,1974,31716
+912,1974,31716
+913,1974,31716
+914,1974,31716
+915,1974,31716
+916,1974,31716
+917,1974,31716
+918,1974,31716
+919,1974,31716
+920,1974,31716
+921,1974,31716
+922,1974,31716
+923,1974,31716
+924,1974,31716
+925,1974,31716
+926,1974,31716
+927,1974,31716
+928,1974,31716
+929,1974,31716
+930,1974,31716
+931,1974,31716
+932,1974,31716
+933,1974,31716
+934,1974,31716
+935,1974,31716
+936,1974,31716
+937,1974,31716
+938,1974,31716
+939,1974,31716
+940,1974,31716
+941,1974,31716
+942,1974,31716
+943,1974,31716
+944,1974,31716
+945,1974,31716
+946,1974,31716
+947,1974,31716
+948,1974,31716
+949,1974,31716
+950,1974,31716
+951,1974,31716
+952,1974,31716
+953,1974,31716
+954,1974,31716
+955,1974,31716
+956,1974,31716
+957,1974,31716
+958,1974,31716
+959,1974,31716
+960,1974,31716
+961,1974,31719
+962,1974,31719
+963,1974,31720
+964,1974,31720
+965,1974,31720
+966,1974,31720
+967,1974,31721
+968,1974,31721
+969,1974,31722
+970,1974,31723
+971,1974,31723
+972,1974,31723
+973,1974,31724
+974,1974,31725
+975,1974,31725
+976,1974,31726
+977,1974,31726
+978,1974,31726
+979,1974,31728
+980,1974,31731
+981,1974,33011
+982,1974,33011
+983,1974,33013
+984,1974,33013
+985,1974,33013
+986,1974,33014
+987,1974,33014
+988,1974,33014
+989,1974,33014
+990,1974,33014
+991,1974,33014
+992,1974,33014
+993,1974,33014
+994,1974,33014
+995,1974,33015
+996,1974,33015
+997,1974,33015
+998,1976,33015
+999,1978,33015
+1000,3292,33032
+RAW_SAMPLES_END
+[0;32mI (1936) V-CORE: ========================================[0m
+[0;32mI (1946) main_task: Returned from app_main()[0m
+
+Done
+END OF RUN 5

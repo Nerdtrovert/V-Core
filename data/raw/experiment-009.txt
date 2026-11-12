@@ -1,0 +1,146 @@
+I (247) V-CORE-EXP009: ========================================
+I (257) V-CORE-EXP009: V-CORE EXPERIMENT 009 - Interference Analysis
+I (257) V-CORE-EXP009: Dot product: Core 0 | arithmetic workload: Core 1
+I (267) V-CORE-EXP009: Warm-up: 100 | measured: 1000
+I (267) V-CORE-EXP009: ========================================
+I (277) V-CORE-EXP009: 
+I (277) V-CORE-EXP009: ========== N = 16 ==========
+I (287) V-CORE-EXP009: Condition A: Core 1 arithmetic workload INACTIVE
+I (297) V-CORE-EXP009: Vector size: 16 elements
+I (297) V-CORE-EXP009: CCOUNT: min=515, mean=517.229, median=515, stddev=50.359, P95=515, P99=515, max=1798
+I (317) V-CORE-EXP009: Wall time: min=2 us, mean=2.679 us, median=3 us, stddev=0.518, P95=3 us, P99=3 us, max=8 us
+I (317) V-CORE-EXP009: Result checksum: 911
+I (317) main_task: Returned from app_main()
+I (327) V-CORE-EXP009: Condition B: Core 1 arithmetic workload ACTIVE
+I (327) V-CORE-EXP009: Vector size: 16 elements
+I (327) V-CORE-EXP009: CCOUNT: min=515, mean=515.000, median=515, stddev=0.000, P95=515, P99=515, max=515
+I (347) V-CORE-EXP009: Wall time: min=2 us, mean=2.688 us, median=3 us, stddev=0.463, P95=3 us, P99=3 us, max=3 us
+I (347) V-CORE-EXP009: Result checksum: 911
+I (377) V-CORE-EXP009: ========================================
+I (377) V-CORE-EXP009: 
+I (377) V-CORE-EXP009: ========== N = 64 ==========
+I (377) V-CORE-EXP009: Condition A: Core 1 arithmetic workload INACTIVE
+I (387) V-CORE-EXP009: Vector size: 64 elements
+I (387) V-CORE-EXP009: CCOUNT: min=1955, mean=1956.285, median=1955, stddev=40.615, P95=1955, P99=1955, max=3240
+I (407) V-CORE-EXP009: Wall time: min=8 us, mean=8.686 us, median=9 us, stddev=0.495, P95=9 us, P99=9 us, max=14 us
+I (407) V-CORE-EXP009: Result checksum: 3928
+I (417) V-CORE-EXP009: Condition B: Core 1 arithmetic workload ACTIVE
+I (427) V-CORE-EXP009: Vector size: 64 elements
+I (427) V-CORE-EXP009: CCOUNT: min=1955, mean=1957.344, median=1955, stddev=74.087, P95=1955, P99=1955, max=4299
+I (437) V-CORE-EXP009: Wall time: min=8 us, mean=8.682 us, median=9 us, stddev=0.554, P95=9 us, P99=9 us, max=18 us
+I (437) V-CORE-EXP009: Result checksum: 3928
+I (467) V-CORE-EXP009: ========================================
+I (467) V-CORE-EXP009: 
+I (467) V-CORE-EXP009: ========== N = 256 ==========
+I (467) V-CORE-EXP009: Condition A: Core 1 arithmetic workload INACTIVE
+I (507) V-CORE-EXP009: Vector size: 256 elements
+I (507) V-CORE-EXP009: CCOUNT: min=7715, mean=7718.851, median=7715, stddev=70.204, P95=7715, P99=7715, max=8999
+I (517) V-CORE-EXP009: Wall time: min=32 us, mean=32.701 us, median=33 us, stddev=0.547, P95=33 us, P99=33 us, max=38 us
+I (517) V-CORE-EXP009: Result checksum: 15904
+I (537) V-CORE-EXP009: Condition B: Core 1 arithmetic workload ACTIVE
+I (567) V-CORE-EXP009: Vector size: 256 elements
+I (567) V-CORE-EXP009: CCOUNT: min=7715, mean=7722.032, median=7715, stddev=128.193, P95=7715, P99=7715, max=10060
+I (587) V-CORE-EXP009: Wall time: min=32 us, mean=32.711 us, median=33 us, stddev=0.704, P95=33 us, P99=33 us, max=43 us
+I (587) V-CORE-EXP009: Result checksum: 15904
+I (607) V-CORE-EXP009: ========================================
+I (607) V-CORE-EXP009: 
+I (607) V-CORE-EXP009: ========== N = 1024 ==========
+I (607) V-CORE-EXP009: Condition A: Core 1 arithmetic workload INACTIVE
+I (757) V-CORE-EXP009: Vector size: 1024 elements
+I (757) V-CORE-EXP009: CCOUNT: min=30755, mean=30771.690, median=30755, stddev=145.426, P95=30755, P99=32038, max=32040
+I (767) V-CORE-EXP009: Wall time: min=128 us, mean=128.752 us, median=129 us, stddev=0.759, P95=129 us, P99=134 us, max=134 us
+I (767) V-CORE-EXP009: Result checksum: 64149
+I (777) V-CORE-EXP009: Condition B: Core 1 arithmetic workload ACTIVE
+I (917) V-CORE-EXP009: Vector size: 1024 elements
+I (917) V-CORE-EXP009: CCOUNT: min=30755, mean=30785.485, median=30755, stddev=265.628, P95=30755, P99=33099, max=33101
+I (937) V-CORE-EXP009: Wall time: min=128 us, mean=128.801 us, median=129 us, stddev=1.212, P95=129 us, P99=138 us, max=139 us
+I (937) V-CORE-EXP009: Result checksum: 64149
+I (957) V-CORE-EXP009: ========================================
+I (957) V-CORE-EXP009: 
+I (957) V-CORE-EXP009: ========== N = 4096 ==========
+I (957) V-CORE-EXP009: Condition A: Core 1 arithmetic workload INACTIVE
+I (1527) V-CORE-EXP009: Vector size: 4096 elements
+I (1527) V-CORE-EXP009: CCOUNT: min=122915, mean=122981.757, median=122915, stddev=285.027, P95=124197, P99=124200, max=124200
+I (1537) V-CORE-EXP009: Wall time: min=512 us, mean=512.955 us, median=513 us, stddev=1.266, P95=518 us, P99=518 us, max=518 us
+I (1547) V-CORE-EXP009: Result checksum: 257987
+I (1557) V-CORE-EXP009: Condition B: Core 1 arithmetic workload ACTIVE
+I (2117) V-CORE-EXP009: Vector size: 4096 elements
+I (2117) V-CORE-EXP009: CCOUNT: min=122915, mean=123034.593, median=122915, stddev=515.859, P95=125258, P99=125261, max=125261
+I (2137) V-CORE-EXP009: Wall time: min=512 us, mean=513.171 us, median=513 us, stddev=2.207, P95=522 us, P99=523 us, max=523 us
+I (2137) V-CORE-EXP009: Result checksum: 257987
+I (2157) V-CORE-EXP009: ========================================
+I (2157) V-CORE-EXP009: EXPERIMENT 009 COMPLETE
+
+I (247) V-CORE-EXP009: ========================================
+I (257) V-CORE-EXP009: V-CORE EXPERIMENT 009 - Interference Analysis
+I (257) V-CORE-EXP009: Dot product: Core 0 | arithmetic workload: Core 1
+I (267) V-CORE-EXP009: Warm-up: 100 | measured: 1000
+I (267) V-CORE-EXP009: ========================================
+I (277) V-CORE-EXP009: 
+I (277) V-CORE-EXP009: ========== N = 4096 ==========
+I (287) main_task: Returned from app_main()
+I (297) V-CORE-EXP009: Condition B: Core 1 arithmetic workload ACTIVE
+I (857) V-CORE-EXP009: Vector size: 4096 elements
+I (857) V-CORE-EXP009: CCOUNT: min=122915, mean=123035.550, median=122915, stddev=516.530, P95=125259, P99=125260, max=125261
+I (877) V-CORE-EXP009: Wall time: min=512 us, mean=513.181 us, median=513 us, stddev=2.208, P95=522 us, P99=523 us, max=523 us
+I (877) V-CORE-EXP009: Result checksum: 257987
+I (897) V-CORE-EXP009: Condition A: Core 1 arithmetic workload INACTIVE
+I (1457) V-CORE-EXP009: Vector size: 4096 elements
+I (1457) V-CORE-EXP009: CCOUNT: min=122915, mean=122980.448, median=122915, stddev=282.289, P95=124154, P99=124200, max=124200
+I (1477) V-CORE-EXP009: Wall time: min=512 us, mean=512.956 us, median=513 us, stddev=1.268, P95=518 us, P99=518 us, max=519 us
+I (1477) V-CORE-EXP009: Result checksum: 257987
+I (1477) V-CORE-EXP009: ========================================
+I (1487) V-CORE-EXP009: 
+I (1487) V-CORE-EXP009: ========== N = 1024 ==========
+I (1507) V-CORE-EXP009: Condition B: Core 1 arithmetic workload ACTIVE
+I (1647) V-CORE-EXP009: Vector size: 1024 elements
+I (1647) V-CORE-EXP009: CCOUNT: min=30755, mean=30785.482, median=30755, stddev=265.601, P95=30755, P99=33099, max=33101
+I (1657) V-CORE-EXP009: Wall time: min=128 us, mean=128.802 us, median=129 us, stddev=1.187, P95=129 us, P99=138 us, max=139 us
+I (1657) V-CORE-EXP009: Result checksum: 64149
+I (1687) V-CORE-EXP009: Condition A: Core 1 arithmetic workload INACTIVE
+I (1827) V-CORE-EXP009: Vector size: 1024 elements
+I (1827) V-CORE-EXP009: CCOUNT: min=30755, mean=30771.680, median=30755, stddev=145.339, P95=30755, P99=32037, max=32039
+I (1837) V-CORE-EXP009: Wall time: min=128 us, mean=128.745 us, median=129 us, stddev=0.762, P95=129 us, P99=134 us, max=134 us
+I (1837) V-CORE-EXP009: Result checksum: 64149
+I (1847) V-CORE-EXP009: ========================================
+I (1847) V-CORE-EXP009: 
+I (1847) V-CORE-EXP009: ========== N = 256 ==========
+I (1867) V-CORE-EXP009: Condition B: Core 1 arithmetic workload ACTIVE
+I (1897) V-CORE-EXP009: Vector size: 256 elements
+I (1897) V-CORE-EXP009: CCOUNT: min=7715, mean=7722.033, median=7715, stddev=128.212, P95=7715, P99=7715, max=10060
+I (1917) V-CORE-EXP009: Wall time: min=32 us, mean=32.706 us, median=33 us, stddev=0.705, P95=33 us, P99=33 us, max=43 us
+I (1917) V-CORE-EXP009: Result checksum: 15904
+I (1937) V-CORE-EXP009: Condition A: Core 1 arithmetic workload INACTIVE
+I (1967) V-CORE-EXP009: Vector size: 256 elements
+I (1967) V-CORE-EXP009: CCOUNT: min=7715, mean=7718.848, median=7715, stddev=70.149, P95=7715, P99=7715, max=8998
+I (1987) V-CORE-EXP009: Wall time: min=32 us, mean=32.696 us, median=33 us, stddev=0.549, P95=33 us, P99=33 us, max=38 us
+I (1987) V-CORE-EXP009: Result checksum: 15904
+I (1987) V-CORE-EXP009: ========================================
+I (1997) V-CORE-EXP009: 
+I (1997) V-CORE-EXP009: ========== N = 64 ==========
+I (2007) V-CORE-EXP009: Condition B: Core 1 arithmetic workload ACTIVE
+I (2017) V-CORE-EXP009: Vector size: 64 elements
+I (2017) V-CORE-EXP009: CCOUNT: min=1955, mean=1957.344, median=1955, stddev=74.087, P95=1955, P99=1955, max=4299
+I (2027) V-CORE-EXP009: Wall time: min=8 us, mean=8.689 us, median=9 us, stddev=0.552, P95=9 us, P99=9 us, max=18 us
+I (2027) V-CORE-EXP009: Result checksum: 3928
+I (2057) V-CORE-EXP009: Condition A: Core 1 arithmetic workload INACTIVE
+I (2067) V-CORE-EXP009: Vector size: 64 elements
+I (2067) V-CORE-EXP009: CCOUNT: min=1955, mean=1956.282, median=1955, stddev=40.520, P95=1955, P99=1955, max=3237
+I (2077) V-CORE-EXP009: Wall time: min=8 us, mean=8.672 us, median=9 us, stddev=0.500, P95=9 us, P99=9 us, max=14 us
+I (2077) V-CORE-EXP009: Result checksum: 3928
+I (2077) V-CORE-EXP009: ========================================
+I (2087) V-CORE-EXP009: 
+I (2087) V-CORE-EXP009: ========== N = 16 ==========
+I (2107) V-CORE-EXP009: Condition B: Core 1 arithmetic workload ACTIVE
+I (2107) V-CORE-EXP009: Vector size: 16 elements
+I (2107) V-CORE-EXP009: CCOUNT: min=515, mean=515.000, median=515, stddev=0.000, P95=515, P99=515, max=515
+I (2127) V-CORE-EXP009: Wall time: min=2 us, mean=2.672 us, median=3 us, stddev=0.469, P95=3 us, P99=3 us, max=3 us
+I (2127) V-CORE-EXP009: Result checksum: 911
+I (2147) V-CORE-EXP009: Condition A: Core 1 arithmetic workload INACTIVE
+I (2147) V-CORE-EXP009: Vector size: 16 elements
+I (2147) V-CORE-EXP009: CCOUNT: min=515, mean=515.000, median=515, stddev=0.000, P95=515, P99=515, max=515
+I (2157) V-CORE-EXP009: Wall time: min=2 us, mean=2.665 us, median=3 us, stddev=0.472, P95=3 us, P99=3 us, max=3 us
+I (2157) V-CORE-EXP009: Result checksum: 911
+I (2167) V-CORE-EXP009: ========================================
+I (2167) V-CORE-EXP009: EXPERIMENT 009 COMPLETE
+

@@ -1,0 +1,72 @@
+
+Exp011 FINAL booting...
+CPU frequency configured by ESP-IDF.
+Expected target: ESP32-WROOM-32 dual-core.
+
+Exp011 FINAL starting: balanced ABBA execution order.
+
+================================================
+Exp011 A1: Shared-core
+System task: Core 0 | Producer: Core 0 | Compute: Core 0
+Warm-up: 100 | Measured: 1000 | Event period: 10 ms
+Priorities: producer=7, compute=6, system=5
+Compute chunk: 16384 iterations, then 1 RTOS tick delay
+================================================
+I (257) main_task: Returned from app_main()
+
+[Exp011 A1: Shared-core] System response latency (Core 0 CCOUNT)
+min=286509, mean=286648.358, median=286648, SD=4.657, P95=286651, P99=286651, max=286651 cycles
+mean=1194.368 us at 240 MHz | median=1194.367 us at 240 MHz
+Compute chunk diagnostics Core 0: chunks=1101, min=278539, mean=278540.98, max=280724 cycles
+compute_sink_core0=3056899704
+
+================================================
+Exp011 B1: Core-separated
+System task: Core 0 | Producer: Core 0 | Compute: Core 1
+Warm-up: 100 | Measured: 1000 | Event period: 10 ms
+Priorities: producer=7, compute=6, system=5
+Compute chunk: 16384 iterations, then 1 RTOS tick delay
+================================================
+
+[Exp011 B1: Core-separated] System response latency (Core 0 CCOUNT)
+min=5777, mean=5904.370, median=5904, SD=4.299, P95=5907, P99=5907, max=5907 cycles
+mean=24.602 us at 240 MHz | median=24.600 us at 240 MHz
+Compute chunk diagnostics Core 1: chunks=1100, min=278539, mean=278539.86, max=279485 cycles
+compute_sink_core1=4238300793
+
+================================================
+Exp011 B2: Core-separated
+System task: Core 0 | Producer: Core 0 | Compute: Core 1
+Warm-up: 100 | Measured: 1000 | Event period: 10 ms
+Priorities: producer=7, compute=6, system=5
+Compute chunk: 16384 iterations, then 1 RTOS tick delay
+================================================
+
+[Exp011 B2: Core-separated] System response latency (Core 0 CCOUNT)
+min=5777, mean=5904.370, median=5904, SD=4.299, P95=5907, P99=5907, max=5907 cycles
+mean=24.602 us at 240 MHz | median=24.600 us at 240 MHz
+Compute chunk diagnostics Core 1: chunks=1100, min=278539, mean=278539.00, max=278539 cycles
+compute_sink_core1=3876214393
+
+================================================
+Exp011 A2: Shared-core
+System task: Core 0 | Producer: Core 0 | Compute: Core 0
+Warm-up: 100 | Measured: 1000 | Event period: 10 ms
+Priorities: producer=7, compute=6, system=5
+Compute chunk: 16384 iterations, then 1 RTOS tick delay
+================================================
+
+[Exp011 A2: Shared-core] System response latency (Core 0 CCOUNT)
+min=286509, mean=286648.358, median=286648, SD=4.657, P95=286651, P99=286651, max=286651 cycles
+mean=1194.368 us at 240 MHz | median=1194.367 us at 240 MHz
+Compute chunk diagnostics Core 0: chunks=1101, min=278539, mean=278539.00, max=278539 cycles
+compute_sink_core0=2587154040
+
+================================================
+Exp011 FINAL complete.
+Execution order: A1 -> B1 -> B2 -> A2
+Compare A1/A2 against B1/B2 for order consistency.
+================================================
+
+
+In the tested ESP32 dual-core configuration, statically partitioning a periodic compute workload onto Core 1 substantially reduced Core 0 system-event response latency compared with executing both workloads on Core 0. The measured mean latency decreased from approximately 1.194 ms to 24.60 µs, a 48.58× improvement. The compute chunk diagnostics were comparable across cores, indicating that the improvement arose primarily from reduced scheduling interference on Core 0.    

@@ -1,0 +1,282 @@
+I (247) V-CORE: V-CORE EXPERIMENT 007
+I (257) V-CORE: Computational Latency Characterization
+I (257) V-CORE: CPU frequency: 240 MHz
+I (267) V-CORE: Core: 1
+I (267) V-CORE: Workload sizes: 16, 64, 256, 1024, 4096
+I (267) V-CORE: ========================================
+I (277) V-CORE: 
+I (277) V-CORE: ========================================
+I (277) V-CORE: Vector size: 16 elements
+I (287) V-CORE: Warm-up samples: 100
+I (287) V-CORE: Measured samples: 1000
+I (297) V-CORE: ========================================
+I (297) V-CORE: Results for 16 elements:
+I (297) V-CORE: CCOUNT statistics:
+I (307) V-CORE:   Minimum: 515 cycles
+I (307) V-CORE:   Mean: 515.000 cycles
+I (307) V-CORE:   Median: 515 cycles
+I (317) V-CORE:   Std deviation: 0.000 cycles
+I (317) V-CORE:   P95: 515 cycles
+I (317) V-CORE:   P99: 515 cycles
+I (327) V-CORE:   Maximum: 515 cycles
+I (337) V-CORE: Wall-clock statistics:
+I (337) V-CORE:   Minimum: 2 us
+I (337) V-CORE:   Mean: 2.691 us
+I (337) V-CORE:   Median: 3 us
+I (337) V-CORE:   Std deviation: 0.475 us
+I (347) V-CORE:   P95: 3 us
+I (347) V-CORE:   P99: 3 us
+I (347) V-CORE:   Maximum: 6 us
+I (347) V-CORE: Result checksum: 911
+I (357) V-CORE: Approx. throughput: 466019.42 dot products/sec
+I (357) V-CORE: ========================================
+I (367) V-CORE: 
+I (367) V-CORE: ========================================
+I (367) V-CORE: Vector size: 64 elements
+I (377) V-CORE: Warm-up samples: 100
+I (377) V-CORE: Measured samples: 1000
+I (387) V-CORE: ========================================
+I (397) V-CORE: Results for 64 elements:
+I (397) V-CORE: CCOUNT statistics:
+I (397) V-CORE:   Minimum: 1955 cycles
+I (397) V-CORE:   Mean: 1955.948 cycles
+I (397) V-CORE:   Median: 1955 cycles
+I (407) V-CORE:   Std deviation: 29.869 cycles
+I (407) V-CORE:   P95: 1955 cycles
+I (407) V-CORE:   P99: 1955 cycles
+I (417) V-CORE:   Maximum: 2900 cycles
+I (427) V-CORE: Wall-clock statistics:
+I (427) V-CORE:   Minimum: 8 us
+I (427) V-CORE:   Mean: 8.673 us
+I (427) V-CORE:   Median: 9 us
+I (427) V-CORE:   Std deviation: 0.490 us
+I (437) V-CORE:   P95: 9 us
+I (437) V-CORE:   P99: 9 us
+I (437) V-CORE:   Maximum: 13 us
+I (447) V-CORE: Result checksum: 3928
+I (447) V-CORE: Approx. throughput: 122762.15 dot products/sec
+I (447) V-CORE: ========================================
+I (457) V-CORE: 
+I (457) V-CORE: ========================================
+I (467) V-CORE: Vector size: 256 elements
+I (467) V-CORE: Warm-up samples: 100
+I (467) V-CORE: Measured samples: 1000
+I (477) V-CORE: ========================================
+I (517) V-CORE: Results for 256 elements:
+I (517) V-CORE: CCOUNT statistics:
+I (517) V-CORE:   Minimum: 7715 cycles
+I (517) V-CORE:   Mean: 7718.783 cycles
+I (517) V-CORE:   Median: 7715 cycles
+I (517) V-CORE:   Std deviation: 59.600 cycles
+I (527) V-CORE:   P95: 7715 cycles
+I (527) V-CORE:   P99: 7715 cycles
+I (527) V-CORE:   Maximum: 8661 cycles
+I (547) V-CORE: Wall-clock statistics:
+I (547) V-CORE:   Minimum: 32 us
+I (547) V-CORE:   Mean: 32.697 us
+I (547) V-CORE:   Median: 33 us
+I (547) V-CORE:   Std deviation: 0.532 us
+I (547) V-CORE:   P95: 33 us
+I (557) V-CORE:   P99: 33 us
+I (557) V-CORE:   Maximum: 37 us
+I (557) V-CORE: Result checksum: 15904
+I (567) V-CORE: Approx. throughput: 31108.23 dot products/sec
+I (567) V-CORE: ========================================
+I (577) V-CORE: 
+I (577) V-CORE: ========================================
+I (577) V-CORE: Vector size: 1024 elements
+I (587) V-CORE: Warm-up samples: 100
+I (587) V-CORE: Measured samples: 1000
+I (587) V-CORE: ========================================
+I (737) V-CORE: Results for 1024 elements:
+I (737) V-CORE: CCOUNT statistics:
+I (737) V-CORE:   Minimum: 30755 cycles
+I (737) V-CORE:   Mean: 30767.289 cycles
+I (737) V-CORE:   Median: 30755 cycles
+I (747) V-CORE:   Std deviation: 106.991 cycles
+I (747) V-CORE:   P95: 30755 cycles
+I (747) V-CORE:   P99: 31699 cycles
+I (757) V-CORE:   Maximum: 31701 cycles
+I (767) V-CORE: Wall-clock statistics:
+I (767) V-CORE:   Minimum: 128 us
+I (767) V-CORE:   Mean: 128.730 us
+I (767) V-CORE:   Median: 129 us
+I (767) V-CORE:   Std deviation: 0.640 us
+I (777) V-CORE:   P95: 129 us
+I (777) V-CORE:   P99: 132 us
+I (777) V-CORE:   Maximum: 133 us
+I (787) V-CORE: Result checksum: 64149
+I (787) V-CORE: Approx. throughput: 7803.61 dot products/sec
+I (787) V-CORE: ========================================
+I (797) V-CORE: 
+I (797) V-CORE: ========================================
+I (807) V-CORE: Vector size: 4096 elements
+I (807) V-CORE: Warm-up samples: 100
+I (807) V-CORE: Measured samples: 1000
+I (817) V-CORE: ========================================
+I (1387) V-CORE: Results for 4096 elements:
+I (1387) V-CORE: CCOUNT statistics:
+I (1387) V-CORE:   Minimum: 122915 cycles
+I (1387) V-CORE:   Mean: 122964.170 cycles
+I (1387) V-CORE:   Median: 122915 cycles
+I (1397) V-CORE:   Std deviation: 209.764 cycles
+I (1397) V-CORE:   P95: 123858 cycles
+I (1397) V-CORE:   P99: 123860 cycles
+I (1407) V-CORE:   Maximum: 123860 cycles
+I (1417) V-CORE: Wall-clock statistics:
+I (1417) V-CORE:   Minimum: 512 us
+I (1417) V-CORE:   Mean: 512.898 us
+I (1417) V-CORE:   Median: 513 us
+I (1427) V-CORE:   Std deviation: 0.998 us
+I (1427) V-CORE:   P95: 516 us
+I (1427) V-CORE:   P99: 517 us
+I (1437) V-CORE:   Maximum: 517 us
+I (1437) V-CORE: Result checksum: 257987
+I (1437) V-CORE: Approx. throughput: 1952.57 dot products/sec
+I (1447) V-CORE: ========================================
+I (1447) V-CORE: 
+I (1447) V-CORE: ========================================
+I (1457) V-CORE: EXPERIMENT 007 COMPLETE
+I (1457) V-CORE: ========================================
+
+I (247) V-CORE: V-CORE EXPERIMENT 007
+I (257) V-CORE: Computational Latency Characterization
+I (257) V-CORE: CPU frequency: 240 MHz
+I (267) V-CORE: Core: 1
+I (267) V-CORE: Workload sizes: 16, 64, 256, 1024, 4096
+I (267) V-CORE: ========================================
+I (277) V-CORE: 
+I (277) V-CORE: ========================================
+I (277) V-CORE: Vector size: 16 elements
+I (287) V-CORE: Warm-up samples: 100
+I (287) V-CORE: Measured samples: 1000
+I (297) V-CORE: ========================================
+I (297) V-CORE: Results for 16 elements:
+I (297) V-CORE: CCOUNT statistics:
+I (307) V-CORE:   Minimum: 515 cycles
+I (307) V-CORE:   Mean: 515.000 cycles
+I (307) V-CORE:   Median: 515 cycles
+I (317) V-CORE:   Std deviation: 0.000 cycles
+I (317) V-CORE:   P95: 515 cycles
+I (317) V-CORE:   P99: 515 cycles
+I (327) V-CORE:   Maximum: 515 cycles
+I (337) V-CORE: Wall-clock statistics:
+I (337) V-CORE:   Minimum: 2 us
+I (337) V-CORE:   Mean: 2.669 us
+I (337) V-CORE:   Median: 3 us
+I (337) V-CORE:   Std deviation: 0.483 us
+I (347) V-CORE:   P95: 3 us
+I (347) V-CORE:   P99: 3 us
+I (347) V-CORE:   Maximum: 6 us
+I (347) V-CORE: Result checksum: 911
+I (357) V-CORE: Approx. throughput: 466019.42 dot products/sec
+I (357) V-CORE: ========================================
+I (367) V-CORE: 
+I (367) V-CORE: ========================================
+I (367) V-CORE: Vector size: 64 elements
+I (377) V-CORE: Warm-up samples: 100
+I (377) V-CORE: Measured samples: 1000
+I (387) V-CORE: ========================================
+I (397) V-CORE: Results for 64 elements:
+I (397) V-CORE: CCOUNT statistics:
+I (397) V-CORE:   Minimum: 1955 cycles
+I (397) V-CORE:   Mean: 1955.951 cycles
+I (397) V-CORE:   Median: 1955 cycles
+I (407) V-CORE:   Std deviation: 29.869 cycles
+I (407) V-CORE:   P95: 1955 cycles
+I (407) V-CORE:   P99: 1955 cycles
+I (417) V-CORE:   Maximum: 2900 cycles
+I (427) V-CORE: Wall-clock statistics:
+I (427) V-CORE:   Minimum: 8 us
+I (427) V-CORE:   Mean: 8.690 us
+I (427) V-CORE:   Median: 9 us
+I (427) V-CORE:   Std deviation: 0.484 us
+I (437) V-CORE:   P95: 9 us
+I (437) V-CORE:   P99: 9 us
+I (437) V-CORE:   Maximum: 13 us
+I (447) V-CORE: Result checksum: 3928
+I (447) V-CORE: Approx. throughput: 122762.15 dot products/sec
+I (447) V-CORE: ========================================
+I (457) V-CORE: 
+I (457) V-CORE: ========================================
+I (467) V-CORE: Vector size: 256 elements
+I (467) V-CORE: Warm-up samples: 100
+I (467) V-CORE: Measured samples: 1000
+I (477) V-CORE: ========================================
+I (517) V-CORE: Results for 256 elements:
+I (517) V-CORE: CCOUNT statistics:
+I (517) V-CORE:   Minimum: 7715 cycles
+I (517) V-CORE:   Mean: 7718.790 cycles
+I (517) V-CORE:   Median: 7715 cycles
+I (517) V-CORE:   Std deviation: 59.647 cycles
+I (527) V-CORE:   P95: 7715 cycles
+I (527) V-CORE:   P99: 7715 cycles
+I (527) V-CORE:   Maximum: 8660 cycles
+I (547) V-CORE: Wall-clock statistics:
+I (547) V-CORE:   Minimum: 32 us
+I (547) V-CORE:   Mean: 32.694 us
+I (547) V-CORE:   Median: 33 us
+I (547) V-CORE:   Std deviation: 0.526 us
+I (547) V-CORE:   P95: 33 us
+I (557) V-CORE:   P99: 33 us
+I (557) V-CORE:   Maximum: 37 us
+I (557) V-CORE: Result checksum: 15904
+I (567) V-CORE: Approx. throughput: 31108.23 dot products/sec
+I (567) V-CORE: ========================================
+I (577) V-CORE: 
+I (577) V-CORE: ========================================
+I (577) V-CORE: Vector size: 1024 elements
+I (587) V-CORE: Warm-up samples: 100
+I (587) V-CORE: Measured samples: 1000
+I (587) V-CORE: ========================================
+I (737) V-CORE: Results for 1024 elements:
+I (737) V-CORE: CCOUNT statistics:
+I (737) V-CORE:   Minimum: 30755 cycles
+I (737) V-CORE:   Mean: 30767.252 cycles
+I (737) V-CORE:   Median: 30755 cycles
+I (747) V-CORE:   Std deviation: 106.606 cycles
+I (747) V-CORE:   P95: 30755 cycles
+I (747) V-CORE:   P99: 31699 cycles
+I (757) V-CORE:   Maximum: 31701 cycles
+I (767) V-CORE: Wall-clock statistics:
+I (767) V-CORE:   Minimum: 128 us
+I (767) V-CORE:   Mean: 128.724 us
+I (767) V-CORE:   Median: 129 us
+I (767) V-CORE:   Std deviation: 0.666 us
+I (777) V-CORE:   P95: 129 us
+I (777) V-CORE:   P99: 133 us
+I (777) V-CORE:   Maximum: 133 us
+I (787) V-CORE: Result checksum: 64149
+I (787) V-CORE: Approx. throughput: 7803.61 dot products/sec
+I (787) V-CORE: ========================================
+I (797) V-CORE: 
+I (797) V-CORE: ========================================
+I (807) V-CORE: Vector size: 4096 elements
+I (807) V-CORE: Warm-up samples: 100
+I (807) V-CORE: Measured samples: 1000
+I (817) V-CORE: ========================================
+I (1387) V-CORE: Results for 4096 elements:
+I (1387) V-CORE: CCOUNT statistics:
+I (1387) V-CORE:   Minimum: 122915 cycles
+I (1387) V-CORE:   Mean: 122964.191 cycles
+I (1387) V-CORE:   Median: 122915 cycles
+I (1397) V-CORE:   Std deviation: 209.831 cycles
+I (1397) V-CORE:   P95: 123860 cycles
+I (1397) V-CORE:   P99: 123860 cycles
+I (1407) V-CORE:   Maximum: 123861 cycles
+I (1417) V-CORE: Wall-clock statistics:
+I (1417) V-CORE:   Minimum: 512 us
+I (1417) V-CORE:   Mean: 512.876 us
+I (1417) V-CORE:   Median: 513 us
+I (1417) V-CORE:   Std deviation: 0.982 us
+I (1427) V-CORE:   P95: 516 us
+I (1427) V-CORE:   P99: 517 us
+I (1427) V-CORE:   Maximum: 517 us
+I (1437) V-CORE: Result checksum: 257987
+I (1437) V-CORE: Approx. throughput: 1952.57 dot products/sec
+I (1447) V-CORE: ========================================
+I (1447) V-CORE: 
+I (1447) V-CORE: ========================================
+I (1457) V-CORE: EXPERIMENT 007 COMPLETE
+I (1457) V-CORE: ========================================
+

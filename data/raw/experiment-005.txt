@@ -1,0 +1,252 @@
+Experiment ID: 005
+
+1. OBJECTIVE
+
+The objective of Experiment 005 was to complete the initial measurement baseline before introducing architectural changes to V-Core.
+
+Two measurements were performed:
+1. Instrumentation overhead: characterize back-to-back CCOUNT reads and esp_timer_get_time() calls.
+2. Idle periodic-task timing: characterize the timing intervals of a periodic FreeRTOS task without a competing compute task.
+
+The hardware and software configuration remained unchanged from the previous experiments.
+
+2. EXPERIMENTAL CONFIGURATION
+
+Hardware: ESP32 DevKit V1, ESP32-WROOM-32
+Framework: ESP-IDF 6.1
+CPU frequency: 240 MHz
+FreeRTOS tick frequency: 100 Hz
+Periodic task period: 10 ms
+Periodic task priority: 5
+Task core affinity: Core 0
+Number of measurement samples: 1,000
+Warm-up periodic activations: 5
+Competing compute task: None during idle timing test
+
+No changes were made to the existing hardware or software configuration.
+
+3. TEST A — INSTRUMENTATION OVERHEAD
+
+3.1 Methodology
+
+Two back-to-back measurement operations were evaluated:
+- Consecutive reads of the Xtensa CCOUNT register.
+- Consecutive calls to esp_timer_get_time().
+
+Twenty warm-up iterations were performed before collecting 1,000 samples for each measurement.
+
+For CCOUNT, the difference between two consecutive counter reads was recorded in CPU cycles.
+For the wall-clock timer, the difference between two consecutive timer readings was recorded in microseconds.
+
+3.2 CCOUNT Results
+
+Samples: 1,000
+Minimum: 1 cycle
+Mean: 1.000 cycles
+Median: 1 cycle
+P95: 1 cycle
+P99: 1 cycle
+Maximum: 1 cycle
+
+3.3 Wall-Clock Timer Results
+
+Samples: 1,000
+Minimum: 0 µs
+Mean: 0.531 µs
+Median: 1 µs
+P95: 1 µs
+P99: 1 µs
+Maximum: 1 µs
+
+3.4 Observations
+
+The measured difference between consecutive CCOUNT reads was consistently one cycle in this sample.
+
+At a CPU frequency of 240 MHz, one CPU cycle corresponds to approximately 4.17 ns.
+
+The consecutive esp_timer_get_time() measurements had a mean observed difference of 0.530 µs. Some measurements were zero because the timer reports time in microseconds and cannot resolve every sub-microsecond difference.
+
+These results characterize the observed differences between consecutive reads. They do not represent the complete execution cost of the measurement instrumentation, nor do they account for every possible interaction between instrumentation and the code being measured.
+
+3.5 Conclusion
+
+The instrumentation sanity check established the observed resolution and back-to-back measurement behavior of the two timing mechanisms. The results provide useful context for interpreting subsequent execution-time measurements.
+
+4. TEST B — IDLE PERIODIC-TASK TIMING
+
+4.1 Objective
+
+Measure the interval stability of a periodic FreeRTOS task operating without a competing compute task.
+
+This test establishes an idle reference for comparison with the periodic-task measurements collected during Experiment 004.
+
+4.2 Methodology
+
+A periodic task was pinned to Core 0 and configured with a 10 ms period.
+
+The task used vTaskDelayUntil() to maintain periodic execution.
+
+Five warm-up activations were performed before collecting 1,000 interval measurements.
+
+Consecutive timestamps were obtained using esp_timer_get_time().
+
+For each sample:
+interval = current_timestamp - previous_timestamp
+interval_error = measured_interval - expected_interval
+
+The expected interval was 10,000 µs.
+
+An interval was classified as outside the accepted range if it was below 9,000 µs or above 11,000 µs.
+
+4.3 Raw Interval Results
+
+Samples: 1,000
+Expected interval: 10,000 µs
+Minimum interval: 10,000 µs
+Mean interval: 10,000.000 µs
+Median interval: 10,000 µs
+P95: 10,000 µs
+P99: 10,000 µs
+Maximum interval: 10,000 µs
+
+4.4 Interval Error Results
+
+Minimum error: 0 µs
+Mean error: 0.000 µs
+Median error: 0 µs
+P95: 0 µs
+P99: 0 µs
+Maximum error: 0 µs
+Intervals outside 9–11 ms: 0/1,000
+
+4.5 Observations
+
+All 1,000 measured intervals were reported as exactly 10,000 µs.
+
+No measured intervals fell outside the 9–11 ms acceptance range.
+
+No interval variation was observed at the reported microsecond resolution under this configuration.
+
+These measurements characterize the intervals between consecutive observations of the periodic task. They do not directly measure absolute wake-up latency, task-release latency, or context-switch overhead.
+
+The absence of observed interval variation does not establish zero scheduling latency or prove that the system exhibits perfectly deterministic real-time behavior.
+
+4.6 Conclusion
+
+The idle periodic-task test established a reference interval distribution for the existing FreeRTOS scheduling configuration. The measured intervals were consistent with the requested 10 ms period across all 1,000 samples.
+
+5. RELATIONSHIP TO EXPERIMENT 004
+
+Experiment 004 established the initial compute-time and periodic-timing measurements. Experiment 005 added the instrumentation sanity check and idle periodic-task reference.
+
+Measurement — Experiment — Status
+Isolated dot-product CCOUNT measurement — 004 — Complete
+Isolated dot-product wall-clock measurement — 004 — Complete
+Periodic timing under ordinary compute load — 004 — Complete
+Periodic timing under masked-interrupt load — 004 — Complete; preliminary interpretation
+Back-to-back CCOUNT measurements — 005 — Complete
+Back-to-back wall-clock timer measurements — 005 — Complete
+Idle periodic-task interval measurements — 005 — Complete
+
+The masked-interrupt result remains preliminary. The precise mechanism responsible for its unusual interval pattern has not been independently verified.
+
+The measurements in Experiments 004 and 005 characterize different aspects of the existing execution environment and should not be treated as interchangeable.
+
+6. OVERALL FINDINGS
+
+Experiment 005 produced three principal findings:
+
+1. Instrumentation: Consecutive CCOUNT reads differed by one cycle in every recorded sample. Consecutive wall-clock timer readings differed by a mean of 0.531 µs.
+2. Idle periodic timing: All 1,000 recorded intervals were 10,000 µs, with no measured interval errors.
+3. Baseline comparison: The idle periodic-task results are consistent with the absence of observed interval variation in the earlier ordinary-compute-load experiment.
+
+These findings establish a useful preliminary timing reference for the existing ESP32 and FreeRTOS environment.
+
+They do not establish absolute scheduling latency, worst-case execution time, or complete instrumentation overhead.
+
+7. LIMITATIONS
+
+- Wall-clock measurements have microsecond resolution.
+- Back-to-back timer measurements do not characterize the complete instrumentation cost for arbitrary measurement sequences.
+- Consecutive periodic intervals do not directly reveal absolute task-release or wake-up latency.
+- Results apply to the tested hardware, software configuration, and workload.
+- The measurements do not establish worst-case timing guarantees.
+- The masked-interrupt behavior observed in Experiment 004 requires further investigation if its precise cause becomes relevant to later experiments.
+
+8. FINAL STATUS
+
+Experiment 005: COMPLETE
+
+The instrumentation sanity check and idle periodic-task measurements have been completed.
+
+The existing hardware and software configuration remains unchanged.
+
+Together with Experiment 004, these results provide an initial reference for execution time and periodic timing behavior before architectural changes are introduced.
+
+The next phase of V-Core can investigate computation/communication separation, core placement, and cross-core coordination using explicitly defined experimental hypotheses and controlled comparisons.
+
+End of Experiment 005 Report
+
+
+I (246) V-CORE: V-CORE EXPERIMENT 005
+I (246) V-CORE: Baseline completion
+I (256) V-CORE: CPU/core configuration should be verified
+I (256) V-CORE: ========================================
+I (266) V-CORE: 
+I (266) V-CORE: ========================================
+I (266) V-CORE: TEST A: INSTRUMENTATION OVERHEAD
+I (276) V-CORE: ========================================
+I (276) V-CORE: ---- Back-to-back CCOUNT reads ----
+I (286) V-CORE: Samples: 1000
+I (286) V-CORE: Minimum: 1 cycles
+I (286) V-CORE: Mean: 1.000 cycles
+I (296) V-CORE: Median: 1 cycles
+I (296) V-CORE: P95: 1 cycles
+I (296) V-CORE: P99: 1 cycles
+I (296) V-CORE: Maximum: 1 cycles
+I (316) V-CORE: ---- Back-to-back esp_timer calls ----
+I (316) V-CORE: Samples: 1000
+I (316) V-CORE: Minimum: 0 us
+I (316) V-CORE: Mean: 0.531 us
+I (316) V-CORE: Median: 1 us
+I (316) V-CORE: P95: 1 us
+I (326) V-CORE: P99: 1 us
+I (326) V-CORE: Maximum: 1 us
+I (326) V-CORE: 
+I (326) V-CORE: ========================================
+I (336) V-CORE: TEST B: IDLE PERIODIC-TASK BASELINE
+I (336) V-CORE: ========================================
+I (346) V-CORE: Period: 10 ms
+I (346) V-CORE: Samples: 1000
+I (346) V-CORE: No competing compute task
+I (356) main_task: Returned from app_main()
+I (10406) V-CORE: 
+I (10406) V-CORE: ---- Raw interval statistics ----
+I (10406) V-CORE: ---- Periodic intervals ----
+I (10406) V-CORE: Samples: 1000
+I (10406) V-CORE: Minimum: 10000 us
+I (10406) V-CORE: Mean: 10000.000 us
+I (10406) V-CORE: Median: 10000 us
+I (10416) V-CORE: P95: 10000 us
+I (10416) V-CORE: P99: 10000 us
+I (10416) V-CORE: Maximum: 10000 us
+I (10426) V-CORE: 
+I (10426) V-CORE: ---- Interval error statistics ----
+I (10426) V-CORE: ---- Interval errors ----
+I (10436) V-CORE: Samples: 1000
+I (10436) V-CORE: Minimum: 0 us
+I (10436) V-CORE: Mean: 0.000 us
+I (10436) V-CORE: Median: 0 us
+I (10446) V-CORE: P95: 0 us
+I (10446) V-CORE: P99: 0 us
+I (10446) V-CORE: Maximum: 0 us
+I (10456) V-CORE: 
+I (10456) V-CORE: Expected interval: 10000 us
+I (10456) V-CORE: Minimum interval: 10000 us
+I (10466) V-CORE: Maximum interval: 10000 us
+I (10466) V-CORE: Mean interval error: 0.000 us
+I (10466) V-CORE: Intervals outside 9-11 ms: 0/1000
+I (10476) V-CORE: 
+I (10476) V-CORE: ========================================
+I (10486) V-CORE: EXPERIMENT 005 BASELINE TESTS COMPLETE
+I (10486) V-CORE: ========================================

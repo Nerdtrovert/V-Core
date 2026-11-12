@@ -1,0 +1,118 @@
+I (247) V-CORE-EXP010A: V-CORE EXPERIMENT 010A
+I (247) V-CORE-EXP010A: Computational Workload Partitioning
+I (257) V-CORE-EXP010A: Configuration A: single-core reference
+I (267) V-CORE-EXP010A: CPU frequency assumption: 240 MHz
+I (267) V-CORE-EXP010A: Execution core: 0
+I (267) V-CORE-EXP010A: Workload sizes: 16, 64, 256, 1024, 4096
+I (277) V-CORE-EXP010A: Primary timing source: Xtensa CCOUNT
+I (287) V-CORE-EXP010A: No esp_timer calls inside the measured interval.
+I (287) V-CORE-EXP010A: ========================================
+I (297) V-CORE-EXP010A: 
+I (297) V-CORE-EXP010A: ========================================
+I (307) V-CORE-EXP010A: Configuration A: single-core baseline
+I (307) V-CORE-EXP010A: Core: 0
+I (307) V-CORE-EXP010A: Vector size: 16 elements
+I (317) V-CORE-EXP010A: Warm-up samples: 100
+I (317) V-CORE-EXP010A: Measured samples: 1000
+I (327) V-CORE-EXP010A: Measurement: CCOUNT immediately around dot product
+I (327) V-CORE-EXP010A: ========================================
+I (337) V-CORE-EXP010A: Results for 16 elements:
+I (337) V-CORE-EXP010A: CCOUNT statistics:
+I (347) V-CORE-EXP010A:   Minimum: 517 cycles
+I (347) V-CORE-EXP010A:   Mean: 517.000 cycles
+I (347) V-CORE-EXP010A:   Median: 517 cycles
+I (357) V-CORE-EXP010A:   Std deviation: 0.000 cycles
+I (357) V-CORE-EXP010A:   P95: 517 cycles
+I (367) V-CORE-EXP010A:   P99: 517 cycles
+I (367) V-CORE-EXP010A:   Maximum: 517 cycles
+I (377) V-CORE-EXP010A: Result checksum: 911
+I (377) V-CORE-EXP010A: Approx. throughput: 464216.63 dot products/sec
+I (387) V-CORE-EXP010A: ========================================
+I (387) V-CORE-EXP010A: 
+I (387) V-CORE-EXP010A: ========================================
+I (397) V-CORE-EXP010A: Configuration A: single-core baseline
+I (397) V-CORE-EXP010A: Core: 0
+I (407) V-CORE-EXP010A: Vector size: 64 elements
+I (407) V-CORE-EXP010A: Warm-up samples: 100
+I (417) V-CORE-EXP010A: Measured samples: 1000
+I (417) V-CORE-EXP010A: Measurement: CCOUNT immediately around dot product
+I (427) V-CORE-EXP010A: ========================================
+I (437) V-CORE-EXP010A: Results for 64 elements:
+I (437) V-CORE-EXP010A: CCOUNT statistics:
+I (437) V-CORE-EXP010A:   Minimum: 1957 cycles
+I (437) V-CORE-EXP010A:   Mean: 1958.286 cycles
+I (447) V-CORE-EXP010A:   Median: 1957 cycles
+I (447) V-CORE-EXP010A:   Std deviation: 40.615 cycles
+I (457) V-CORE-EXP010A:   P95: 1957 cycles
+I (457) V-CORE-EXP010A:   P99: 1957 cycles
+I (467) V-CORE-EXP010A:   Maximum: 3242 cycles
+I (467) V-CORE-EXP010A: Result checksum: 3928
+I (467) V-CORE-EXP010A: Approx. throughput: 122636.69 dot products/sec
+I (477) V-CORE-EXP010A: ========================================
+I (487) V-CORE-EXP010A: 
+I (487) V-CORE-EXP010A: ========================================
+I (487) V-CORE-EXP010A: Configuration A: single-core baseline
+I (497) V-CORE-EXP010A: Core: 0
+I (497) V-CORE-EXP010A: Vector size: 256 elements
+I (507) V-CORE-EXP010A: Warm-up samples: 100
+I (507) V-CORE-EXP010A: Measured samples: 1000
+I (507) V-CORE-EXP010A: Measurement: CCOUNT immediately around dot product
+I (517) V-CORE-EXP010A: ========================================
+I (557) V-CORE-EXP010A: Results for 256 elements:
+I (557) V-CORE-EXP010A: CCOUNT statistics:
+I (557) V-CORE-EXP010A:   Minimum: 7717 cycles
+I (557) V-CORE-EXP010A:   Mean: 7720.862 cycles
+I (567) V-CORE-EXP010A:   Median: 7717 cycles
+I (567) V-CORE-EXP010A:   Std deviation: 70.222 cycles
+I (577) V-CORE-EXP010A:   P95: 7717 cycles
+I (577) V-CORE-EXP010A:   P99: 7717 cycles
+I (577) V-CORE-EXP010A:   Maximum: 9002 cycles
+I (587) V-CORE-EXP010A: Result checksum: 15904
+I (587) V-CORE-EXP010A: Approx. throughput: 31100.17 dot products/sec
+I (597) V-CORE-EXP010A: ========================================
+I (597) V-CORE-EXP010A: 
+I (607) V-CORE-EXP010A: ========================================
+I (607) V-CORE-EXP010A: Configuration A: single-core baseline
+I (617) V-CORE-EXP010A: Core: 0
+I (617) V-CORE-EXP010A: Vector size: 1024 elements
+I (627) V-CORE-EXP010A: Warm-up samples: 100
+I (627) V-CORE-EXP010A: Measured samples: 1000
+I (627) V-CORE-EXP010A: Measurement: CCOUNT immediately around dot product
+I (637) V-CORE-EXP010A: ========================================
+I (787) V-CORE-EXP010A: Results for 1024 elements:
+I (787) V-CORE-EXP010A: CCOUNT statistics:
+I (787) V-CORE-EXP010A:   Minimum: 30757 cycles
+I (787) V-CORE-EXP010A:   Mean: 30773.718 cycles
+I (787) V-CORE-EXP010A:   Median: 30757 cycles
+I (797) V-CORE-EXP010A:   Std deviation: 145.406 cycles
+I (797) V-CORE-EXP010A:   P95: 30757 cycles
+I (807) V-CORE-EXP010A:   P99: 32040 cycles
+I (807) V-CORE-EXP010A:   Maximum: 32042 cycles
+I (807) V-CORE-EXP010A: Result checksum: 64149
+I (817) V-CORE-EXP010A: Approx. throughput: 7803.10 dot products/sec
+I (817) V-CORE-EXP010A: ========================================
+I (827) V-CORE-EXP010A: 
+I (827) V-CORE-EXP010A: ========================================
+I (837) V-CORE-EXP010A: Configuration A: single-core baseline
+I (837) V-CORE-EXP010A: Core: 0
+I (847) V-CORE-EXP010A: Vector size: 4096 elements
+I (847) V-CORE-EXP010A: Warm-up samples: 100
+I (857) V-CORE-EXP010A: Measured samples: 1000
+I (857) V-CORE-EXP010A: Measurement: CCOUNT immediately around dot product
+I (867) V-CORE-EXP010A: ========================================
+I (1437) V-CORE-EXP010A: Results for 4096 elements:
+I (1437) V-CORE-EXP010A: CCOUNT statistics:
+I (1437) V-CORE-EXP010A:   Minimum: 122917 cycles
+I (1437) V-CORE-EXP010A:   Mean: 122983.857 cycles
+I (1437) V-CORE-EXP010A:   Median: 122917 cycles
+I (1447) V-CORE-EXP010A:   Std deviation: 285.058 cycles
+I (1447) V-CORE-EXP010A:   P95: 124199 cycles
+I (1457) V-CORE-EXP010A:   P99: 124202 cycles
+I (1457) V-CORE-EXP010A:   Maximum: 124202 cycles
+I (1467) V-CORE-EXP010A: Result checksum: 257987
+I (1467) V-CORE-EXP010A: Approx. throughput: 1952.54 dot products/sec
+I (1477) V-CORE-EXP010A: ========================================
+I (1477) V-CORE-EXP010A: 
+I (1477) V-CORE-EXP010A: ========================================
+I (1487) V-CORE-EXP010A: EXPERIMENT 010A COMPLETE
+I (1487) V-CORE-EXP010A: ========================================

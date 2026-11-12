@@ -1,0 +1,307 @@
+I (247) V-CORE-EXP008: V-CORE EXPERIMENT 008
+I (247) V-CORE-EXP008: Synchronization Latency Characterization
+I (257) V-CORE-EXP008: Timing source: esp_timer_get_time()
+I (267) V-CORE-EXP008: Four tests: same/cross core x polling/notification-wait receiver
+I (267) V-CORE-EXP008: Metric includes scheduling, request and acknowledgment work.
+I (277) V-CORE-EXP008: Notification-wait tests verify eBlocked state before each timed request.
+I (287) V-CORE-EXP008: ========================================
+I (287) V-CORE-EXP008: 
+I (297) V-CORE-EXP008: ========================================
+I (297) V-CORE-EXP008: A: Same-core / receiver polling
+I (307) V-CORE-EXP008: Sender core: 0; receiver core: 0
+I (307) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (317) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (317) V-CORE-EXP008: ========================================
+I (357) V-CORE-EXP008: Results (elapsed microseconds):
+I (367) V-CORE-EXP008:   Min: 20 us
+I (367) V-CORE-EXP008:   Mean: 20.785 us
+I (367) V-CORE-EXP008:   Median: 21 us
+I (367) V-CORE-EXP008:   Std deviation: 0.670 us
+I (367) V-CORE-EXP008:   P95: 21 us
+I (367) V-CORE-EXP008:   P99: 21 us
+I (377) V-CORE-EXP008:   Max: 32 us
+I (377) V-CORE-EXP008: ========================================
+I (387) V-CORE-EXP008: 
+I (387) V-CORE-EXP008: ========================================
+I (387) V-CORE-EXP008: B: Same-core / receiver notification-wait
+I (397) V-CORE-EXP008: Sender core: 0; receiver core: 0
+I (397) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (407) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (417) V-CORE-EXP008: ========================================
+I (457) V-CORE-EXP008: Results (elapsed microseconds):
+I (457) V-CORE-EXP008:   Min: 26 us
+I (457) V-CORE-EXP008:   Mean: 26.024 us
+I (457) V-CORE-EXP008:   Median: 26 us
+I (457) V-CORE-EXP008:   Std deviation: 0.340 us
+I (457) V-CORE-EXP008:   P95: 26 us
+I (467) V-CORE-EXP008:   P99: 26 us
+I (467) V-CORE-EXP008:   Max: 33 us
+I (467) V-CORE-EXP008: ========================================
+I (477) V-CORE-EXP008: 
+I (477) V-CORE-EXP008: ========================================
+I (487) V-CORE-EXP008: C: Cross-core / receiver polling
+I (487) V-CORE-EXP008: Sender core: 0; receiver core: 1
+I (497) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (497) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (507) V-CORE-EXP008: ========================================
+I (537) V-CORE-EXP008: Results (elapsed microseconds):
+I (547) V-CORE-EXP008:   Min: 18 us
+I (547) V-CORE-EXP008:   Mean: 18.805 us
+I (547) V-CORE-EXP008:   Median: 19 us
+I (547) V-CORE-EXP008:   Std deviation: 0.448 us
+I (547) V-CORE-EXP008:   P95: 19 us
+I (557) V-CORE-EXP008:   P99: 19 us
+I (557) V-CORE-EXP008:   Max: 25 us
+I (557) V-CORE-EXP008: ========================================
+I (567) V-CORE-EXP008: 
+I (567) V-CORE-EXP008: ========================================
+I (577) V-CORE-EXP008: D: Cross-core / receiver notification-wait
+I (577) V-CORE-EXP008: Sender core: 0; receiver core: 1
+I (587) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (587) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (597) V-CORE-EXP008: ========================================
+I (507) main_task: Returned from app_main()
+I (637) V-CORE-EXP008: Results (elapsed microseconds):
+I (657) V-CORE-EXP008:   Min: 28 us
+I (657) V-CORE-EXP008:   Mean: 28.655 us
+I (657) V-CORE-EXP008:   Median: 29 us
+I (657) V-CORE-EXP008:   Std deviation: 0.879 us
+I (657) V-CORE-EXP008:   P95: 29 us
+I (657) V-CORE-EXP008:   P99: 33 us
+I (667) V-CORE-EXP008:   Max: 38 us
+I (667) V-CORE-EXP008: ========================================
+I (677) V-CORE-EXP008: 
+I (677) V-CORE-EXP008: ========================================
+I (677) V-CORE-EXP008: EXPERIMENT 008 FINISHED
+I (687) V-CORE-EXP008: ========================================
+
+I (247) V-CORE-EXP008: V-CORE EXPERIMENT 008
+I (247) V-CORE-EXP008: Synchronization Latency Characterization
+I (257) V-CORE-EXP008: Timing source: esp_timer_get_time()
+I (267) V-CORE-EXP008: Four tests: same/cross core x polling/notification-wait receiver
+I (267) V-CORE-EXP008: Metric includes scheduling, request and acknowledgment work.
+I (277) V-CORE-EXP008: Notification-wait tests verify eBlocked state before each timed request.
+I (287) V-CORE-EXP008: ========================================
+I (287) V-CORE-EXP008: 
+I (297) V-CORE-EXP008: ========================================
+I (297) V-CORE-EXP008: A: Same-core / receiver polling
+I (307) V-CORE-EXP008: Sender core: 0; receiver core: 0
+I (307) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (317) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (317) V-CORE-EXP008: ========================================
+I (357) V-CORE-EXP008: Results (elapsed microseconds):
+I (367) V-CORE-EXP008:   Min: 20 us
+I (367) V-CORE-EXP008:   Mean: 20.771 us
+I (367) V-CORE-EXP008:   Median: 21 us
+I (367) V-CORE-EXP008:   Std deviation: 0.564 us
+I (367) V-CORE-EXP008:   P95: 21 us
+I (367) V-CORE-EXP008:   P99: 21 us
+I (377) V-CORE-EXP008:   Max: 28 us
+I (377) V-CORE-EXP008: ========================================
+I (387) V-CORE-EXP008: 
+I (387) V-CORE-EXP008: ========================================
+I (387) V-CORE-EXP008: B: Same-core / receiver notification-wait
+I (397) V-CORE-EXP008: Sender core: 0; receiver core: 0
+I (397) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (407) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (417) V-CORE-EXP008: ========================================
+I (457) V-CORE-EXP008: Results (elapsed microseconds):
+I (467) V-CORE-EXP008:   Min: 25 us
+I (467) V-CORE-EXP008:   Mean: 25.729 us
+I (467) V-CORE-EXP008:   Median: 26 us
+I (467) V-CORE-EXP008:   Std deviation: 0.569 us
+I (467) V-CORE-EXP008:   P95: 26 us
+I (467) V-CORE-EXP008:   P99: 26 us
+I (477) V-CORE-EXP008:   Max: 32 us
+I (477) V-CORE-EXP008: ========================================
+I (487) V-CORE-EXP008: 
+I (487) V-CORE-EXP008: ========================================
+I (487) V-CORE-EXP008: C: Cross-core / receiver polling
+I (497) V-CORE-EXP008: Sender core: 0; receiver core: 1
+I (497) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (507) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (507) V-CORE-EXP008: ========================================
+I (547) V-CORE-EXP008: Results (elapsed microseconds):
+I (557) V-CORE-EXP008:   Min: 17 us
+I (557) V-CORE-EXP008:   Mean: 18.825 us
+I (557) V-CORE-EXP008:   Median: 19 us
+I (557) V-CORE-EXP008:   Std deviation: 0.700 us
+I (557) V-CORE-EXP008:   P95: 19 us
+I (557) V-CORE-EXP008:   P99: 19 us
+I (567) V-CORE-EXP008:   Max: 32 us
+I (567) V-CORE-EXP008: ========================================
+I (567) V-CORE-EXP008: 
+I (577) V-CORE-EXP008: ========================================
+I (577) V-CORE-EXP008: D: Cross-core / receiver notification-wait
+I (587) V-CORE-EXP008: Sender core: 0; receiver core: 1
+I (587) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (597) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (607) V-CORE-EXP008: ========================================
+I (517) main_task: Returned from app_main()
+I (647) V-CORE-EXP008: Results (elapsed microseconds):
+I (657) V-CORE-EXP008:   Min: 23 us
+I (657) V-CORE-EXP008:   Mean: 28.650 us
+I (657) V-CORE-EXP008:   Median: 29 us
+I (657) V-CORE-EXP008:   Std deviation: 0.906 us
+I (667) V-CORE-EXP008:   P95: 29 us
+I (667) V-CORE-EXP008:   P99: 30 us
+I (667) V-CORE-EXP008:   Max: 38 us
+I (677) V-CORE-EXP008: ========================================
+I (677) V-CORE-EXP008: 
+I (677) V-CORE-EXP008: ========================================
+I (687) V-CORE-EXP008: EXPERIMENT 008 FINISHED
+I (687) V-CORE-EXP008: ========================================
+
+I (247) V-CORE-EXP008: V-CORE EXPERIMENT 008
+I (247) V-CORE-EXP008: Synchronization Latency Characterization
+I (257) V-CORE-EXP008: Timing source: esp_timer_get_time()
+I (267) V-CORE-EXP008: Four tests: same/cross core x polling/notification-wait receiver
+I (267) V-CORE-EXP008: Metric includes scheduling, request and acknowledgment work.
+I (277) V-CORE-EXP008: Notification-wait tests verify eBlocked state before each timed request.
+I (287) V-CORE-EXP008: ========================================
+I (287) V-CORE-EXP008: 
+I (297) V-CORE-EXP008: ========================================
+I (297) V-CORE-EXP008: A: Same-core / receiver polling
+I (307) V-CORE-EXP008: Sender core: 0; receiver core: 0
+I (307) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (317) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (317) V-CORE-EXP008: ========================================
+I (357) V-CORE-EXP008: Results (elapsed microseconds):
+I (367) V-CORE-EXP008:   Min: 20 us
+I (367) V-CORE-EXP008:   Mean: 20.776 us
+I (367) V-CORE-EXP008:   Median: 21 us
+I (367) V-CORE-EXP008:   Std deviation: 0.585 us
+I (367) V-CORE-EXP008:   P95: 21 us
+I (367) V-CORE-EXP008:   P99: 21 us
+I (377) V-CORE-EXP008:   Max: 27 us
+I (377) V-CORE-EXP008: ========================================
+I (387) V-CORE-EXP008: 
+I (387) V-CORE-EXP008: ========================================
+I (387) V-CORE-EXP008: B: Same-core / receiver notification-wait
+I (397) V-CORE-EXP008: Sender core: 0; receiver core: 0
+I (397) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (407) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (417) V-CORE-EXP008: ========================================
+I (457) V-CORE-EXP008: Results (elapsed microseconds):
+I (467) V-CORE-EXP008:   Min: 25 us
+I (467) V-CORE-EXP008:   Mean: 25.703 us
+I (467) V-CORE-EXP008:   Median: 26 us
+I (467) V-CORE-EXP008:   Std deviation: 0.584 us
+I (467) V-CORE-EXP008:   P95: 26 us
+I (467) V-CORE-EXP008:   P99: 26 us
+I (477) V-CORE-EXP008:   Max: 33 us
+I (477) V-CORE-EXP008: ========================================
+I (487) V-CORE-EXP008: 
+I (487) V-CORE-EXP008: ========================================
+I (487) V-CORE-EXP008: C: Cross-core / receiver polling
+I (497) V-CORE-EXP008: Sender core: 0; receiver core: 1
+I (497) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (507) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (507) V-CORE-EXP008: ========================================
+I (547) V-CORE-EXP008: Results (elapsed microseconds):
+I (557) V-CORE-EXP008:   Min: 17 us
+I (557) V-CORE-EXP008:   Mean: 18.838 us
+I (557) V-CORE-EXP008:   Median: 19 us
+I (557) V-CORE-EXP008:   Std deviation: 0.898 us
+I (557) V-CORE-EXP008:   P95: 19 us
+I (557) V-CORE-EXP008:   P99: 19 us
+I (567) V-CORE-EXP008:   Max: 34 us
+I (567) V-CORE-EXP008: ========================================
+I (577) V-CORE-EXP008: 
+I (577) V-CORE-EXP008: ========================================
+I (577) V-CORE-EXP008: D: Cross-core / receiver notification-wait
+I (587) V-CORE-EXP008: Sender core: 0; receiver core: 1
+I (587) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (597) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (607) V-CORE-EXP008: ========================================
+I (517) main_task: Returned from app_main()
+I (647) V-CORE-EXP008: Results (elapsed microseconds):
+I (657) V-CORE-EXP008:   Min: 25 us
+I (657) V-CORE-EXP008:   Mean: 28.645 us
+I (657) V-CORE-EXP008:   Median: 29 us
+I (657) V-CORE-EXP008:   Std deviation: 0.865 us
+I (667) V-CORE-EXP008:   P95: 29 us
+I (667) V-CORE-EXP008:   P99: 31 us
+I (667) V-CORE-EXP008:   Max: 39 us
+I (677) V-CORE-EXP008: ========================================
+I (677) V-CORE-EXP008: 
+I (677) V-CORE-EXP008: ========================================
+I (687) V-CORE-EXP008: EXPERIMENT 008 FINISHED
+I (687) V-CORE-EXP008: ========================================
+
+I (247) V-CORE-EXP008: V-CORE EXPERIMENT 008
+I (247) V-CORE-EXP008: Synchronization Latency Characterization
+I (257) V-CORE-EXP008: Timing source: esp_timer_get_time()
+I (267) V-CORE-EXP008: Four tests: same/cross core x polling/notification-wait receiver
+I (267) V-CORE-EXP008: Metric includes scheduling, request and acknowledgment work.
+I (277) V-CORE-EXP008: Notification-wait tests verify eBlocked state before each timed request.
+I (287) V-CORE-EXP008: ========================================
+I (287) V-CORE-EXP008: 
+I (297) V-CORE-EXP008: ========================================
+I (297) V-CORE-EXP008: A: Same-core / receiver polling
+I (307) V-CORE-EXP008: Sender core: 0; receiver core: 0
+I (307) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (317) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (317) V-CORE-EXP008: ========================================
+I (357) V-CORE-EXP008: Results (elapsed microseconds):
+I (367) V-CORE-EXP008:   Min: 20 us
+I (367) V-CORE-EXP008:   Mean: 20.771 us
+I (367) V-CORE-EXP008:   Median: 21 us
+I (367) V-CORE-EXP008:   Std deviation: 0.563 us
+I (367) V-CORE-EXP008:   P95: 21 us
+I (367) V-CORE-EXP008:   P99: 21 us
+I (377) V-CORE-EXP008:   Max: 28 us
+I (377) V-CORE-EXP008: ========================================
+I (387) V-CORE-EXP008: 
+I (387) V-CORE-EXP008: ========================================
+I (387) V-CORE-EXP008: B: Same-core / receiver notification-wait
+I (397) V-CORE-EXP008: Sender core: 0; receiver core: 0
+I (397) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (407) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (417) V-CORE-EXP008: ========================================
+I (457) V-CORE-EXP008: Results (elapsed microseconds):
+I (467) V-CORE-EXP008:   Min: 25 us
+I (467) V-CORE-EXP008:   Mean: 25.718 us
+I (467) V-CORE-EXP008:   Median: 26 us
+I (467) V-CORE-EXP008:   Std deviation: 0.636 us
+I (477) V-CORE-EXP008:   P95: 26 us
+I (477) V-CORE-EXP008:   P99: 26 us
+I (477) V-CORE-EXP008:   Max: 35 us
+I (487) V-CORE-EXP008: ========================================
+I (487) V-CORE-EXP008: 
+I (487) V-CORE-EXP008: ========================================
+I (497) V-CORE-EXP008: C: Cross-core / receiver polling
+I (507) V-CORE-EXP008: Sender core: 0; receiver core: 1
+I (507) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (507) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (517) V-CORE-EXP008: ========================================
+I (557) V-CORE-EXP008: Results (elapsed microseconds):
+I (557) V-CORE-EXP008:   Min: 17 us
+I (557) V-CORE-EXP008:   Mean: 18.833 us
+I (557) V-CORE-EXP008:   Median: 19 us
+I (557) V-CORE-EXP008:   Std deviation: 0.754 us
+I (567) V-CORE-EXP008:   P95: 19 us
+I (567) V-CORE-EXP008:   P99: 19 us
+I (567) V-CORE-EXP008:   Max: 34 us
+I (577) V-CORE-EXP008: ========================================
+I (577) V-CORE-EXP008: 
+I (577) V-CORE-EXP008: ========================================
+I (587) V-CORE-EXP008: D: Cross-core / receiver notification-wait
+I (597) V-CORE-EXP008: Sender core: 0; receiver core: 1
+I (597) V-CORE-EXP008: Warm-up: 100; measured: 1000
+I (607) V-CORE-EXP008: Metric: request publication to sender-observed acknowledgment
+I (607) V-CORE-EXP008: ========================================
+I (527) main_task: Returned from app_main()
+I (657) V-CORE-EXP008: Results (elapsed microseconds):
+I (667) V-CORE-EXP008:   Min: 23 us
+I (667) V-CORE-EXP008:   Mean: 28.649 us
+I (667) V-CORE-EXP008:   Median: 29 us
+I (667) V-CORE-EXP008:   Std deviation: 0.914 us
+I (667) V-CORE-EXP008:   P95: 29 us
+I (677) V-CORE-EXP008:   P99: 33 us
+I (677) V-CORE-EXP008:   Max: 39 us
+I (677) V-CORE-EXP008: ========================================
+I (687) V-CORE-EXP008: 
+I (687) V-CORE-EXP008: ========================================
+I (697) V-CORE-EXP008: EXPERIMENT 008 FINISHED
+I (697) V-CORE-EXP008: ========================================

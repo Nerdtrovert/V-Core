@@ -1,0 +1,70 @@
+V-CORE EXPERIMENT 006
+Computational Latency Characterization
+Repeatability Record — Run 2
+Date: 2026-10-21
+Platform: ESP32 DevKit V1 / ESP32-WROOM-32
+ESP-IDF: v6.1.0
+CPU frequency: 240 MHz
+Core: 0
+Configuration: 100 warm-up samples and 1,000 measured samples per workload size
+
+PURPOSE
+Characterize dot-product computational latency across five vector sizes using the Xtensa CCOUNT cycle counter and esp_timer_get_time() wall-clock measurements. This second run checks repeatability against the first Experiment 006 run.
+
+LATEST RUN RESULTS
+
+Vector size: 16 elements
+CCOUNT: minimum 515 cycles; mean 515.000; median 515; std deviation 0.000; P95 515; P99 515; maximum 515.
+Wall-clock: minimum 2 us; mean 2.692; median 3; std deviation 0.483; P95 3; P99 3; maximum 7.
+Checksum: 911. Approx. throughput: 466019.42 dot products/sec.
+
+Vector size: 64 elements
+CCOUNT: minimum 1955 cycles; mean 1956.283; median 1955; std deviation 40.552; P95 1955; P99 1955; maximum 3238.
+Wall-clock: minimum 8 us; mean 8.674; median 9; std deviation 0.500; P95 9; P99 9; maximum 14.
+Checksum: 3928. Approx. throughput: 122762.15 dot products/sec.
+
+Vector size: 256 elements
+CCOUNT: minimum 7715 cycles; mean 7718.857; median 7715; std deviation 70.240; P95 7715; P99 7715; maximum 9000.
+Wall-clock: minimum 32 us; mean 32.691; median 33; std deviation 0.551; P95 33; P99 33; maximum 38.
+Checksum: 15904. Approx. throughput: 31108.23 dot products/sec.
+
+Vector size: 1024 elements
+CCOUNT: minimum 30755 cycles; mean 30771.728; median 30755; std deviation 145.484; P95 30755; P99 32038; maximum 32040.
+Wall-clock: minimum 128 us; mean 128.754; median 129; std deviation 0.759; P95 129; P99 134; maximum 134.
+Checksum: 64149. Approx. throughput: 7803.61 dot products/sec.
+
+Vector size: 4096 elements
+CCOUNT: minimum 122915 cycles; mean 122980.581; median 122915; std deviation 282.619; P95 124198; P99 124200; maximum 124201.
+Wall-clock: minimum 512 us; mean 512.954; median 513; std deviation 1.264; P95 518; P99 518; maximum 519.
+Checksum: 257987. Approx. throughput: 1952.57 dot products/sec.
+
+REPEATABILITY COMPARISON WITH FIRST EXPERIMENT 006 RUN
+Median CCOUNT values matched exactly between the two runs:
+  16 elements:   515 cycles
+  64 elements:  1955 cycles
+  256 elements: 7715 cycles
+  1024 elements: 30755 cycles
+  4096 elements: 122915 cycles
+
+Checksums also matched. Means and standard deviations were very close, with small sample-to-sample differences.
+
+INTERPRETATION
+- Median cycle count scales approximately linearly with vector size for these workloads.
+- At 240 MHz, median CCOUNT measurements correspond to approximately 2.15, 8.15, 32.15, 128.15, and 512.15 us for vector sizes 16, 64, 256, 1024, and 4096 respectively.
+- Median cycles per element are approximately 32.19, 30.55, 30.14, 30.03, and 30.01 for those same sizes.
+- Larger workloads approach roughly 30 measured cycles per element in this implementation and build. This is an observation for the tested configuration, not a universal ESP32 dot-product cost.
+- Wall-clock values are quantized to whole microseconds and include measurement-boundary/overhead effects; they need not convert exactly to CCOUNT-derived times.
+
+UNRESOLVED BASELINE COMPARISON
+An earlier Experiment 004 measurement for a 1024-element dot product reported a median of approximately 31,721 cycles (mean approximately 31,737 cycles). Experiment 006 reports 30,755 cycles median (mean 30,771.728 cycles), about 3.05% lower by median.
+
+The repeated Experiment 006 run reproduces its own median exactly, but does not explain the difference from Experiment 004. Do not treat the two measurements as directly equivalent until the source, compiler/build configuration, measurement boundaries, CPU frequency, and runtime conditions have been checked. The cause remains unresolved.
+
+LIMITATIONS / DATA PRESERVATION
+- This record contains aggregate statistics, not every individual timing sample. The Experiment 006 code prints summary statistics rather than exporting all raw samples.
+- The two matching runs support repeatability under the same tested setup; they do not prove universal repeatability or eliminate all measurement effects.
+- Keep the serial logs, source file, sdkconfig/build configuration, and firmware version together with this report.
+
+STATUS
+Experiment 006: COMPLETE — repeatability checked with a second run.
+Experiment 004 versus 006 baseline discrepancy: UNRESOLVED; documented for future review.

@@ -1,0 +1,115 @@
+V-Core — Experiment 004 Lab Log
+
+Record 1 — Isolated Dot-Product Baseline
+
+Experiment: 004
+Measurement: Dot-product execution time using CCOUNT and wall-clock timing
+CPU frequency: 240 MHz
+Vector size: 1024
+Samples: 1000
+
+Wall-clock results
+I (426) V-CORE: ========== WALL-CLOCK RESULTS ==========
+I (426) V-CORE: Samples: 1000
+I (426) V-CORE: Minimum time: 132 us
+I (426) V-CORE: Mean time: 132.761 us
+I (426) V-CORE: Median time: 133 us
+I (436) V-CORE: P95 time: 133 us
+I (436) V-CORE: P99 time: 138 us
+I (436) V-CORE: Maximum time: 138 us
+
+CCOUNT results
+From the earlier measurement:
+Metric      Result
+Minimum     31,721 cycles
+Mean        31,737 cycles
+Median      31,721 cycles
+P95.        31,721 cycles
+P99         33,004 cycles
+Maximum     33,006 cycles
+
+Observation
+The median CCOUNT measurement corresponds to approximately 132.17 µs at 240 MHz,
+consistent with the wall-clock median of 133 µs.
+The measurements establish an isolated execution-time reference for the 1024-element dot product. 
+They do not establish worst-case execution time.
+
+Status: Baseline recorded.
+
+==================================================================================
+
+Record 2 — Periodic Task Under Ordinary Compute Load
+
+Experiment: 004
+Measurement: Periodic-task interval stability under ordinary compute load
+Period: 10 ms
+Samples: 1000 intervals
+FreeRTOS tick frequency: 100 Hz
+Periodic-task priority: 5
+Compute-task priority: 4
+Core: Core 0 for both tasks
+
+Configuration
+* Periodic task uses vTaskDelayUntil().
+* Compute task performs batches of 100 dot products, each using vectors of size 1024.
+* No critical section is used around the compute burst.
+* Intervals are measured using esp_timer_get_time().
+
+Results-
+Metric                    Result
+Minimum raw interval.     10,000 µs
+Maximum raw interval.     10,000 µs
+Mean interval error.      0 µs
+Median interval error.    0 µs
+P95 interval error.       0 µs
+P99 interval error.       0 µs
+Maximum interval error    0 µs
+Intervals outside 9–11 ms 0/1000
+
+Here, interval error is:
+e_i = \text{measured interval}_i - 10{,}000\ \mu s
+Observation-
+No interval variation was observed at the reported microsecond resolution under this configuration.
+This does not prove zero scheduling latency.
+Measuring consecutive intervals also cannot independently determine the absolute wake-up latency of each periodic activation.
+
+Status: Ordinary-compute reference recorded.
+
+==================================================================================
+
+Record 3 — Periodic Task Under Masked-Interrupt Load
+
+Experiment: 004
+Measurement: Periodic-task interval behavior while the compute task masks interrupts
+Period: 10 ms
+Samples: 1000 intervals
+Core: Core 0
+
+Configuration-
+The compute task performs batches of 100 dot products inside a critical section 
+using portENTER_CRITICAL() and portEXIT_CRITICAL().
+This differs from Record 2: the compute task now masks interrupts locally while executing the burst.
+
+Results
+Metric                    Result
+Minimum interval error.   −9,991 µs
+Median interval error.    +3,243 µs
+P95 interval error.       +3,246 µs
+P99 interval error.       +3,246 µs
+Maximum interval error.   +3,255 µs
+Intervals outside 9–11 ms 1000/1000
+
+The raw intervals showed a repeating pattern:
+* Some intervals were approximately 13,242–13,254 µs.
+* Other intervals were approximately 9–18 µs.
+
+Observation
+The masked-interrupt configuration produced a substantial change in the measured interval distribution 
+compared with ordinary compute load.
+One possible explanation is delayed tick processing followed by catch-up behavior in vTaskDelayUntil(). 
+However, this mechanism has not yet been independently verified.
+
+Important: These are preliminary results. The experiment demonstrates an association between the masked-interrupt configuration and the observed timing pattern; it does not yet establish the precise mechanism responsible.
+
+Status: Preliminary result recorded; requires further investigation.
+
